@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/toolbarCar">
+
+        <ImageView
+            android:id="@+id/car_Icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/iconbus" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/carName_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/car_Icon"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/close_Button"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/close" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout_Top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/black"
+                    android:text="@string/label_get_car_fuel_TextView"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/plateText1_TextView"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView"
+                    android:layout_margin="5dp"
+                    android:layout_toLeftOf="@+id/plateText2_TextView"
+                    android:background="@drawable/textview_report_style"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/plateText2_TextView"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:textSize="12sp"
+                    android:background="@drawable/textview_report_style"
+                    android:gravity="center"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/getCarFuel_Search"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/plateText1_TextView"
+                    android:layout_marginTop="20dp"
+                    android:background="@mipmap/btn_car"
+                    android:text="@string/label_get_car_fuel_SearchButton"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/relativeLayout_Bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout_Top"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/nameFvBefore_TV"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:lineSpacingExtra="5dp"
+                        android:text="---"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:text="@string/label_get_car_fuel_nameFvBefore"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/intParam2_TV"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:lineSpacingExtra="5dp"
+                        android:text="---"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:text="@string/label_get_car_fuel_intParam2"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/movedKm_TV"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:lineSpacingExtra="5dp"
+                        android:text="---"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:text="@string/label_get_car_fuel_movedKm"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/parameter1_TV"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:lineSpacingExtra="5dp"
+                        android:text="---"
+                        android:textSize="12sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:text="@string/label_get_car_fuel_parameter1"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/remainedFullValueFV_TV"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:lineSpacingExtra="5dp"
+                        android:text="---"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:text="@string/label_get_car_fuel_remainedFullValueFV"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

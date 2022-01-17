@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/toolbarLine"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_driverIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/iconline" />
+
+        <TextView
+            android:id="@+id/lineCodeTitle_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/img_driverIcon"
+            android:text="@string/tab_line_title_complaint"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@mipmap/arrow_back" />
+
+        <RelativeLayout
+            android:id="@+id/addIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/backIcon">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/pluss" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_OptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_option_text"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+    <!--Radio Button Groupe-->
+    <LinearLayout
+        android:id="@+id/rel_radio"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/layout_OptionText"
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/ComplaintReportType_OP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@+id/r_btn_day">
+
+            <RadioButton
+                android:id="@+id/incident_report_type_monthly"
+                android:text="@string/label_optionButton_monthly"
+                android:theme="@style/MyRadioButtonLine"
+                android:layout_width="wrap_content"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/incident_report_type_daily"
+                android:text="@string/label_optionButton_daily"
+                android:theme="@style/MyRadioButtonLine"
+                android:layout_width="wrap_content"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:id="@+id/incident_report_type_periodic"
+                android:text="@string/label_optionButton_periodic"
+                android:theme="@style/MyRadioButtonLine"
+                android:layout_width="wrap_content"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/incident_report_type_multi_month"
+                android:text="@string/label_optionButton_multiMonth"
+                android:theme="@style/MyRadioButtonLine"
+                android:layout_width="wrap_content"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!--layour for select option-->
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_radio"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/search_Icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:background="@mipmap/search_line" />
+
+        <!--دوره ای-->
+        <RelativeLayout
+            android:id="@+id/layout_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/start_ET"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_alignParentRight="true"
+                android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+                android:gravity="right"
+                android:hint="@string/label_fromDate"
+                android:textSize="14sp"
+                android:editable="false"/>
+
+            <EditText
+                android:id="@+id/end_ET"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@+id/start_ET"
+                android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+                android:gravity="right"
+                android:hint="@string/label_toDate"
+                android:textSize="14sp"
+                android:editable="false"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_Spinner"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_margin="5dp"
+                android:layout_width="100dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"/>
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/label_spinner_prevYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@+id/spinner"
+                android:text="@string/label_spinner_prevYear"
+                android:textSize="12sp" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/selectSpinnerDate_TV"
+                android:text=""
+                android:textSize="12sp"
+                android:layout_toLeftOf="@+id/label_spinner_prevYear"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/selectSpinnerDate1_TV"
+                android:text="@string/label_spinner_prevDay"
+                android:textSize="12sp"
+                android:layout_toLeftOf="@+id/selectSpinnerDate_TV"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_Monthly"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+            <Spinner
+                android:id="@+id/spinner_year"
+                android:layout_margin="5dp"
+                android:layout_width="120dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"/>
+            <Spinner
+                android:id="@+id/spinner_month"
+                android:layout_margin="5dp"
+                android:layout_width="100dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_Daily"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:text="@string/label_date"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:textSize="12sp"/>
+
+            <EditText
+                android:id="@+id/daily_TV"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_toLeftOf="@+id/txt_date"
+                android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+                android:gravity="right"
+                android:editable="false"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_counter"
+        android:layout_marginTop="10dp"
+        android:background="@color/toolbarLine"
+        android:visibility="gone">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/complaint_complaintList_subject"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="#ffffff" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/label_complaintList_requestDate"
+            android:textSize="12dp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="#ffffff" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/label_complaintList_requestType"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_counter"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_below="@+id/linearLayout" >
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/counter_TV"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:textSize="12sp"
+            android:text="@string/label_driverJobList_counter"
+            android:textColor="@color/red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/complaint_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rel"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_ReportStatistical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/statistical_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/statistical_icon" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+</RelativeLayout>

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linlay1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/toolbarCar"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_carIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/iconbus" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/plateText_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/img_carIcon"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/backIcon"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/arrow_back" />
+
+            <RelativeLayout
+                android:id="@+id/addIcon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/backIcon">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/pluss" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_OptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_option_text"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+
+    <!--Radio Button Groupe-->
+    <LinearLayout
+        android:id="@+id/rel_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_OptionText"
+        android:layout_marginTop="5dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/incidentReportType_OP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/r_btn_day"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/incident_report_type_monthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="@string/label_optionButton_monthly"
+                android:theme="@style/MyRadioButtonCar" />
+
+            <RadioButton
+                android:id="@+id/incident_report_type_daily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="@string/label_optionButton_daily"
+                android:theme="@style/MyRadioButtonCar" />
+
+            <RadioButton
+                android:id="@+id/incident_report_type_periodic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="@string/label_optionButton_periodic"
+                android:theme="@style/MyRadioButtonCar" />
+
+            <RadioButton
+                android:id="@+id/incident_report_type_multi_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="@string/label_optionButton_multiMonth"
+                android:theme="@style/MyRadioButtonCar" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!--layour for select option-->
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_radio"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/search_Icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/search_car" />
+
+        <!--دوره ای-->
+        <RelativeLayout
+            android:id="@+id/layout_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/start_ET"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+                android:editable="false"
+                android:gravity="right"
+                android:hint="@string/label_fromDate"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/end_ET"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@+id/start_ET"
+                android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+                android:editable="false"
+                android:gravity="right"
+                android:hint="@string/label_toDate"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_Spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/label_spinner_prevYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@+id/spinner"
+                android:text="@string/label_spinner_prevYear"
+                android:textSize="12sp" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/selectSpinnerDate_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@+id/label_spinner_prevYear"
+                android:text=""
+                android:textSize="12sp" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/selectSpinnerDate1_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@+id/selectSpinnerDate_TV"
+                android:text="@string/label_spinner_prevDay"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_Monthly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <Spinner
+                android:id="@+id/spinner_year"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp" />
+
+            <Spinner
+                android:id="@+id/spinner_month"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_Daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:text="@string/label_date"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/daily_TV"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:layout_toLeftOf="@+id/txt_date"
+                android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+                android:editable="false"
+                android:gravity="right"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_counter"
+        android:layout_marginTop="10dp"
+        android:background="@color/toolbarCar"
+        android:visibility="gone">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/label_violation_watchingDate"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="#ffffff" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/label_violationBaseAction_actionText"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="#ffffff" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/label_violationBase_code"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_counter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:gravity="right"
+        android:visibility="gone">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/counter_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/red"
+            android:textSize="10sp" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/label_driverJobList_counter"
+            android:textColor="@color/red"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/violation_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_ReportStatistical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/statistical_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/statistical_icon" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

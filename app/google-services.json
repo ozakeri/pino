@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "266915874718",
+    "project_id": "bischatapp",
+    "storage_bucket": "bischatapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266915874718:android:8db06f737a1340fee3388f",
+        "android_client_info": {
+          "package_name": "com.gap.bis_inspection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266915874718-c7dql1prnvjqqej88tvdfqrhf9nmhen5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gap.bis_inspection",
+            "certificate_hash": "74b0e6dd9855571d41e35daa5cc02e07e4aea357"
+          }
+        },
+        {
+          "client_id": "266915874718-11v603111qcdhogdi2f0gqsi0saeo7ji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgU0Wl4bngzkuXAj-COUeFlweeBaqFz8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266915874718-11v603111qcdhogdi2f0gqsi0saeo7ji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

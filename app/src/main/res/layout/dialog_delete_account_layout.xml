@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bgColor">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/toolbarNotification">
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_layout"
+        android:orientation="vertical">
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/title_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/question_dialog_delete_account"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+
+            <Button
+                android:id="@+id/action_YES"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="15dp"
+                android:background="@mipmap/btn_settingt"
+                android:text="تایید"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/title_TV"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/action_NO"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/title_TV"
+                android:background="@mipmap/btn_settingt"
+                android:text="لغو"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="title_activity_second">Second Activity</string>
+    <string name="toast_track_exception">Exception is recorded. Check the Crashes and Exceptions on Google Dashboard!</string>
+    <string name="toast_app_crash">The app will crash now! Check the Crashes and Exceptions on Google Dashboard!</string>
+    <string name="fragment_footer">Fragment is loaded! Check the screen view on Google Analytics Dashboard.</string>
+    <string name="msg_instructions">Click on each button to see the appropriate tracking on Google Analytics</string>
+    <string name="btn_second_screen">Second Screen</string>
+    <string name="btn_send_event">Track Event</string>
+    <string name="btn_exception_tracking">Track Exception</string>
+    <string name="btn_app_crash">Track App Crash</string>
+    <string name="btn_load_fragment">Fragment Tracking</string>
+
+    <string name="app_name">PINO</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_sync">یکسان سازی</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="click_image">Click Image</string>
+    <string name="search">Search</string>
+    <string name="from_gallery">From Gallery</string>
+    <string name="image_content">Image</string>
+    <string name="send">Submit</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="label_menu_logo"> لوگو</string>
+    <string name="label_menu_version"> ورژن نصب شده</string>
+    <string name="label_menu_sync"> آخرین بروزرسانی</string>
+    <string name="label_menu_syncToast">  بروزرسانی انجام شد</string>
+    <string name="label_menu_home">خانه</string>
+    <string name="label_menu_setting">تنظیمات </string>
+    <string name="label_menu_notification">پیام ها</string>
+    <string name="label_menu_ETnotification">نوشتن پیام </string>
+    <string name="label_menu_report">گزارشات</string>
+    <string name="label_menu_line">خط</string>
+    <string name="label_menu_form">فرم ها</string>
+    <string name="label_menu_car">خودرو</string>
+    <string name="label_menu_driver">راننده</string>
+    <string name="label_menu_about">درباره ما</string>
+    <string name="label_menu_notify">نوتیفیکیشن</string>
+    <string name="label_menu_exit">خروج از حساب کاربری</string>
+    <string name="label_menu_floatingActionButton">منو</string>
+    <string name="label_menu_floatingActionButtonMap">نقشه</string>
+    <string name="label_menu_floatingActionButtonAdd">افزودن</string>
+    <string name="checkList">چک لیست بازدید</string>
+    <string name="label_menu_exit_alert">آیا مایلید از برنامه خارج شوید؟</string>
+    <string name="graph">نمودار</string>
+
+    <string name="label_home_driver">راننده</string>
+    <string name="label_home_car">خودرو</string>
+    <string name="label_home_form">فرم ها</string>
+    <string name="label_home_report">گزارشات</string>
+    <string name="label_home_line">خط</string>
+    <string name="label_home_advert">تبلیغات</string>
+    <string name="label_home_message">پیام ها</string>
+    <string name="label_home_checkList">چک لیست ها</string>
+    <string name="label_home_chart">مدیریت ناوگان</string>
+
+    <string name="label_timeFrom">از ساعت </string>
+    <string name="label_timeTo">تا ساعت </string>
+
+    <string name="label_get_car_fuel_TextView">شماره پلاک 7 رقمی خودرو را وارد کنید</string>
+    <string name="label_get_car_fuel_movedKm">کیلومتر طی شده : </string>
+    <string name="label_get_car_fuel_intParam2">مقدار سوختگیری مجاز(لیتر/بار):</string>
+    <string name="label_get_car_fuel_remainedFullValueFV">مانده سوخت پیش بینی شده : </string>
+    <string name="label_get_car_fuel_parameter1">کیلومتر طی شده در خط : </string>
+    <string name="label_get_car_fuel_nameFvBefore"> سوخت گیری : </string>
+    <string name="label_get_car_fuel_SearchButton">جستجو</string>
+    <string name="label_get_car_fuel_textTitle">گزارش سوخت/جستجو بر اساس پلاک خودرو</string>
+
+    <string name="label_reportDetail_send">ارسال شده است </string>
+    <string name="label_reportDetail_notSend">ارسال نشده است </string>
+
+    <string name="label_progress_dialog">لطفا منتظر بمانید...</string>
+
+    <string name="label_setlect_option">یکی از موارد زیر را انتخاب کنید...</string>
+
+    <string name="label_toolbar_driver">کد راننده را وارد کنید</string>
+
+    <string name="label_activitySetting_title">تعریف مجدد گذرواژه BIS </string>
+    <string name="label_activitySetting_autoLogin"> فعال کردن autoLogin </string>
+    <string name="label_activitySetting_userName">آیا مایلید از برنامه خارج شوید؟</string>
+    <string name="label_activitySetting_password">آیا مایلید از برنامه خارج شوید؟</string>
+
+    <string name="label_ChatGroupAdapter_sendFile">sendingFile</string>
+
+    <string name="label_optionButton_daily">روزانه</string>
+    <string name="label_optionButton_monthly">ماهانه</string>
+    <string name="label_optionButton_periodic">دوره ای</string>
+    <string name="label_optionButton_multiMonth"> مدت دار</string>
+    <string name="label_spinner_prevYear"> ماه گذشته </string>
+    <string name="label_spinner_prevDay"> روز  </string>
+    <string name="label_fromDate">از تاریخ</string>
+    <string name="label_toDate">تا تاریخ</string>
+    <string name="label_date"> تاریخ :</string>
+    <string name="label_durationCredit">مانده اعتبار</string>
+    <string name="notification_channel_id">notification_channel_id</string>
+
+    <string name="label_report_opDriver">راننده</string>
+    <string name="label_report_opCar">خودرو</string>
+    <string name="label_report_opLine">خط</string>
+    <string name="label_report_opOthers">سایر</string>
+
+    <string name="label_check_network">اتصال خود را با اینترنت بررسی کنید</string>
+
+    <string name="label_report_plateText_IR">ایران</string>
+    <string name="label_report_plateText_Temporary">موقت</string>
+
+    <string name="label_report_enterCode_driver">کد راننده را وارد کنید:</string>
+    <string name="label_report_enterCode_line">کد خط را وارد کنید:</string>
+    <string name="label_report_enterCode_car">کد خودرو را وارد کنید:</string>
+
+    <string name="txt_car">خودرو</string>
+    <string name="label_dialog_detail">جزییات</string>
+    <string name="incidentedate">تاریخ حادثه </string>
+
+    <string name="label_reportList_name">نام  </string>
+    <string name="label_reportList_reportDate"> تاریخ گزارش </string>
+    <string name="label_reportList_report">گزارش</string>
+    <string name="label_reportList_reportCode1">کد گزارش</string>
+    <string name="label_report_sendMsg">گزارش ارسال شد </string>
+    <string name="error_location_permission">مجوز برای دریافت موقعیت فعلی شما لازم است.</string>
+    <string name="error_location_null">موقعیت مکانی فعال نمی باشد</string>
+
+
+    <string name="label_reportDetail_entityNameEn">راننده :</string>
+    <string name="label_reportList_reportCode">کد گزارش :</string>
+    <string name="label_reportList_reportStr"> گزارش :</string>
+    <string name="label_reportList_reportDate1"> تاریخ ثبت :</string>
+    <string name="label_reportList_deliverIs">وضعیت :</string>
+    <string name="label_reportList_deliverDate">تاریخ ارسال :</string>
+
+    <string name="label_reportList_title">گزارش بازرسی</string>
+    <string name="label_notification_groupName">نام گروه :</string>
+
+    <string name="label_reportDetail_entityNameEn_driver"> راننده :</string>
+    <string name="label_reportDetail_entityNameEn_line"> خط :</string>
+    <string name="label_reportDetail_entityNameEn_car">خودرو :</string>
+
+
+    <string name="label_fullAttach_checkList">امکان افزودن تصویر وجود ندارد</string>
+    <string name="label_reportStrTv_NotNull">اطلاعات را کامل وارد کنید</string>
+    <string name="label_inputGetDriverInfo_plateText_NotNull">پلاک خودرو را 5 یا 7 رقم وارد کنید</string>
+    <string name="label_inputGetDriverInfo_propertyCode_NotNull">کد خودرو را وارد کنید</string>
+    <string name="label_reportStrTv_reportCode">کد تخلف را وارد کنید (اختیاری)</string>
+    <string name="label_reportStrTv_reportStr">متن گزارش را وارد کنید (اجباری)</string>
+    <string name="label_reportStrTv_sendReport">ارسال</string>
+    <string name="label_reportStrTv_titleReport">ثبت گزارش</string>
+
+    <string name="label_person_name">نام   </string>
+    <string name="label_person_family">نام خانوادگی:</string>
+    <string name="label_person_ageFV">سن</string>
+    <string name="label_driverCode_val1">کد پرسنلی:</string>
+    <string name="label_driverCode_val2">کد پرسنلی</string>
+    <string name="label_drivingLicence_licenceNo"> گواهینامه</string>
+    <string name="label_drivingLicence_licGroupEn">نوع گواهینامه":</string>
+    <string name="label_drivingLicence_expireDate">مانده اعتبار</string>
+    <string name="label_address_mobileNo">شماره موبایل </string>
+    <string name="label_address_company">شعبه بهره بردار </string>
+
+    <string name="label_carOption_generalEnum">نوع اشتغال : </string>
+    <string name="label_carOption_driverTypeEn"> نوع حکم :</string>
+    <string name="label_carOption_optionNo">شماره حکم : </string>
+    <string name="label_carOption_dateConfirm"> تاریخ حکم :</string>
+    <string name="label_carOption_startDate">تاریخ شروع : </string>
+    <string name="label_carOption_expireDate">تاریخ پایان : </string>
+
+    <string name="label_licence_licenceNo">شماره پروانه:</string>
+    <string name="label_licence_driveLicenceTypeEn">نوع پروانه:</string>
+    <string name="label_licence_hejriStartDate">تاریخ اعتبار از:</string>
+    <string name="label_licence_hejriExpireDate">تاریخ اعتبار تا:</string>
+
+    <string name="label_driverJobList_counter">تعداد نتایج جستجو :</string>
+    <string name="label_SettingActivity_BiSPass">گذرواژه سامانه  خود را وارد کنید</string>
+    <string name="label_SettingActivity_changePassword"> انجام شد </string>
+    <string name="label_LoginFragment_Pass">گذرواژه محلی خود را وارد کنید </string>
+    <string name="label_PassCreationFragment">تعریف گذرواژه محلی</string>
+    <string name="label_PassCreationFragment1"> گذرواژه محلی را مجدد تعریف کنید </string>
+    <string name="label_PassCreation_userName">نام کاربری</string>
+    <string name="label_PassCreation_password">رمز عبور</string>
+    <string name="label_ActivationFragment_phoneNumber">شماره خود را وارد کنید</string>
+    <string name="label_ActivationFragment_code">کد را وارد کنید</string>
+
+    <string name="label_login_toast">نام کاربری یا رمز عبور اشتباه است</string>
+    <string name="label_exit_toast">برای خروج یکبار دیگر دکمه بازگشت را فشار دهید</string>
+    <string name="label_option_text">لطفا یکی از موارد زیر را انتخاب کنید:</string>
+    <string name="label_option_plateText">نوع پلاک :</string>
+    <string name="label_option_plateTextTemporary">پلاک :</string>
+
+    <string name="label_driverJobList_type_list">نوع اتوبوسران</string>
+    <string name="label_driverJobList_driverJobTypeEn_list">نوع شغل</string>
+    <string name="label_driverJobList_Line_list">خط</string>
+    <string name="label_car_plateText_list">خودرو</string>
+
+
+    <string name="label_violationBase_code">کد تخلف </string>
+    <string name="label_violationBaseAction_actionText">شرح اقدام </string>
+    <string name="label_violation_watchingDate"> زمان وقوع</string>
+    <string name="label_complaintList_requestType"> نوع درخواست</string>
+    <string name="label_complaintList_requestDate"> تاریخ درخواست</string>
+    <string name="label_complaintList_requestDescription"> شرح درخواست</string>
+    <string name="complaint_complaintList_subject">موضوع</string>
+
+    <string name="driver_complaint_label">شکایت</string>
+    <string name="driver_incident_label">حوادث</string>
+    <string name="driver_activityLicence_label">حکم فعالیت</string>
+    <string name="driver_violation_label">تخلفات</string>
+    <string name="driver_officialLicence_label">پروانه فعالیت </string>
+    <string name="driver_info_label">اطلاعات شخصی</string>
+    <string name="driver_driverDailyActivity_label">تعرفه</string>
+    <string name="driver_driverJob_label">اطلاعات شغلی</string>
+
+    <string name="label_incidentType"> نوع حادثه</string>
+    <string name="label_incidentDamageType">نوع خسارت </string>
+    <string name="label_incidentDate">تاریخ حادثه </string>
+
+    <string name="label_form_list_name">نام فرم</string>
+    <string name="label_form_list_credit"> تاریخ فرم</string>
+    <string name="label_form_list_status">وضعیت</string>
+
+    <string name="label_form_textHeader_formName">نام فرم:</string>
+    <string name="label_form_textHeader_formDate">تاریخ فرم:</string>
+    <string name="label_form_textHeader_completeDate">تاریخ تکمیل:</string>
+    <string name="label_form_textHeader_creditDate">تاریخ اعتبار:</string>
+    <string name="label_form_textHeader_sendDate">تاریخ ارسال:</string>
+
+    <string name="label_form_list_statusNew">جدید </string>
+    <string name="label_form_list_statusDoing">در حال انجام </string>
+    <string name="label_form_list_statusComplete">تکمیل شده </string>
+
+    <string name="driver_label">تخلفات-راننده</string>
+    <string name="car_label">تخلفات-خودرو</string>
+    <string name="line_label">تخلفات-خط</string>
+
+    <string name="driver_label_violation">شکایات-راننده</string>
+    <string name="car_label_violation">شکایات-خودرو</string>
+    <string name="line_label_violation">شکایات-خط</string>
+    <string name="line_label_transaction">کارت بلیط</string>
+
+    <string name="vioCode_label">کد تخلف :  </string>
+    <string name="vioName_label">نام تخلف :  </string>
+    <string name="watchingdate_label">زمان وقوع :  </string>
+    <string name="time_label">  مرتبه وقوع :</string>
+    <string name="actiontext_label">شرح اقدام :  </string>
+    <string name="locateType_label">محل :  </string>
+    <string name="locateName_label"> نام محل : </string>
+    <string name="locateLine_label">  نام خط : </string>
+    <string name="locateTerminal_label">نام پایانه : </string>
+    <string name="locateGeoNet_label">نام عارضه :  </string>
+
+    <string name="incident_label_driver">حوادث-راننده</string>
+    <string name="incident_label_car">حوادث-خودرو</string>
+    <string name="incident_label_line">حوادث-خط</string>
+    <string name="complaint_label">شکایات</string>
+    <string name="violation_label">تخلفات</string>
+
+    <string name="label_surveyActivity_record">ثبت</string>
+    <string name="label_surveyActivity_complete"> تایید و ارسال</string>
+    <string name="label_surveyListActivity_Title">فرم ها</string>
+
+    <string name="label_checkListActivity_Title"> چک لیست ها</string>
+    <string name="label_newCheckListActivity_Title"> چک لیست جدبد </string>
+    <string name="label_checkListQuestionActivity_Title"> سوالات </string>
+    <string name="label_checkListAnswerActivity_locate"> محل بازدید </string>
+
+    <string name="label_surveyActivity_rowTitle">ردیف </string>
+    <string name="label_surveyActivity_questionTitle">سوالات </string>
+    <string name="label_surveyActivity_answerTitle">امتیاز </string>
+
+    <string name="incidentDate_label">تاریخ : </string>
+    <string name="incDivParam_label">نوع حادثه :</string>
+    <string name="incidentLocate_label">محل : </string>
+    <string name="incidentDescription_label">توضیحات : </string>
+
+    <string name="incTypeEn_label">نوع حادثه : </string>
+    <string name="incidentDamageType_label">نوع خسارت : </string>
+
+    <string name="incidentLocateName_label">نام محل : </string>
+    <string name="incidentDes_label">خلاصه حادثه : </string>
+
+    <string name="locateNameEn_line_label">نام خط :</string>
+    <string name="locateNameEn_terminal_label">نام پایانه :</string>
+    <string name="locateNameEn_parking_label">نام توقفگاه :</string>
+    <string name="locateNameEn_workshop_label">نام تعمیرگاه :</string>
+
+    <string name="User.Chat.Group.ListTitle">گروه :</string>
+
+    <string name="user_label"> نام کاربر :</string>
+    <string name="company_label">شعبه :</string>
+    <string name="lastLoginDate_label"> آخرین ورود</string>
+
+    <string name="line.timeLine.op1">عادی</string>
+    <string name="line.timeLine.op2">تعطیل</string>
+    <string name="line.timeLine.op3">نیمه تعطیل</string>
+
+    <string name="getCarInfo_type1_search">جستجو بر اساس پلاک خودرو</string>
+    <string name="getCarInfo_type2_search">جستجو بر اساس کد خودرو</string>
+
+    <string name="username">نام کاربری</string>
+    <string name="password">گذرواژه</string>
+    <string name="password1">رمز عبور</string>
+
+    <string name="car_plateText_Search_label">شماره پلاک خودرو را وارد کنید</string>
+    <string name="car_propertyCode_Search_label">کد خودرو را وارد کنید</string>
+    <string name="line_code_Search_label">کد خط را وارد کنید</string>
+
+
+    <string name="b1">خودرو</string>
+    <string name="b2">راننده</string>
+    <string name="b3">خط</string>
+    <string name="b4">فرم ها</string>
+    <string name="sendChatMessageAttachFileToast">حداکثر سایز مجاز برای پیوست 10 مگابایت می باشد</string>
+
+    <string name="car_tabLabel_car">خودرو</string>
+    <string name="car_tabLabel_user">کاربری</string>
+    <string name="car_tabLabel_tarrif">تعرفه</string>
+    <string name="car_tabLabel_license">حکم فعالیت</string>
+    <string name="car_tabLabel_carLineDailyReport">کارکرد خودرو در خط</string>
+    <string name="car_tabLabel_driver">راننده</string>
+    <string name="car_tabLabel_transaction">کارت بلیط</string>
+    <string name="car_tabLabel_incident">حوادث</string>
+    <string name="car_tabLabel_violation">تخلفات</string>
+    <string name="car_tabLabel_complaint">شکایات</string>
+
+    <string name="complaint_requestType">نوع : </string>
+    <string name="complaint_requestDate">تاریخ : </string>
+    <string name="complaint_requestNo">شماره : </string>
+    <string name="complaint_requestDescription">شرح : </string>
+    <string name="complaint_complaintBase_subject">موضوع : </string>
+    <string name="complaint_requesterName">نام درخواست کننده: </string>
+    <string name="complaint_processStatus">وضعیت درخواست : </string>
+    <string name="complaint_detail_dec">توضیحات : </string>
+
+    <string name="line_list_pathType_label">نوع مسیر</string>
+    <string name="line_list_pathText_label">مسیر</string>
+    <string name="line_list_pathKm_label">طول مسیر</string>
+    <string name="line_list_stationNo_label">تعداد ایستگاه ها</string>
+
+    <string name="line_timeLine_mainList_pathTypeEn">نوع مسیر</string>
+    <string name="line_timeLine_mainList_dayTypeOnHolidayEn">نوع روز</string>
+    <string name="line_timeLine_mainList_startTime"> شروع حرکت</string>
+    <string name="line_timeLine_mainList_endTime"> پایان حرکت</string>
+
+    <string name="line_timeLine_title">  جزییات زمانبندی </string>
+    <string name="label_sharePart">دانگ</string>
+    <string name="label_expireDate">پایان اعتبار تا :</string>
+    <string name="label_codeLast">کد</string>
+
+    <string name="label_message_dialogAttachFile_camera">گرفتن عکس</string>
+    <string name="label_message_dialogAttachFile_file">فایل</string>
+    <string name="label_message_dialogAttachFile_gallery">گالری</string>
+    <string name="label_message_dialogAttachFile_title">انتخاب فایل</string>
+
+    <string name="line_timeLine_detailList_moveDistance"> سر فاصله </string>
+    <string name="line_timeLine_detailList_halfPathSum"> مجموع تعداد نیمراه </string>
+
+    <string name="line_timeLine_mainDetail_pathTypeEn">نوع مسیر : </string>
+    <string name="line_timeLine_mainDetail_dayTypeOnHolidayEn">نوع روز : </string>
+    <string name="line_timeLine_mainDetail_startTime">  ساعت شروع حرکت :</string>
+    <string name="line_timeLine_mainDetail_endTime"> ساعت پایان حرکت : </string>
+    <string name="line_timeLine_mainDetail_halfPathSum"> مجموع تعداد نیمراه : </string>
+    <string name="line_timeLine_mainDetail_StartDate"> تاریخ شروع اعتبار : </string>
+
+    <string name="line.timeLine.detailList.StartTime">ساعت شروع حرکت :</string>
+    <string name="line.timeLine.detailList.endTime">ساعت پایان حرکت :</string>
+    <string name="line_timeLine_detailList_moveDistance1">سرفاصله حرکت (ثانیه) :</string>
+    <string name="line.timeLine.detailList.halfPath">نیمراه :</string>
+    <string name="line.timeLine.detailList.halfPathTimeAvrOnMin">متوسط زمان (دقیقه) :</string>
+    <string name="line.timeLine.detailList.pasNoInHalfPathMax">حداکثر مسافر :</string>
+    <string name="line.timeLine.detailList.pasNoInHalfPathMin">حداقل مسافر :</string>
+    <string name="line.timeLine.detailList.pasNoInHalfPathAvr">متوسط مسافر :</string>
+    <string name="line_timeLine_detailList_halfPathSum1">مجموع تعداد نیمراه :</string>
+
+    <string name="pathTypeDetail_label">نوع مسیر : </string>
+    <string name="pathTextDetail_label">مسیر : </string>
+    <string name="convertNoDetail_label">تعداد باجه : </string>
+    <string name="pathKmDetail_label">طول مسیر : </string>
+    <string name="stationNoDetail_label">تعداد ایستگاه ها : </string>
+
+    <string name="label_tabChart_day">روزانه</string>
+    <string name="label_tabChart_month">ماهانه</string>
+    <string name="label_tabChart_year">سالانه</string>
+    <string name="label_close">بستن</string>
+    <string name="label_error">خطا</string>
+    <string name="label_complete_form">اطلاعات تکمیل شد</string>
+    <string name="label_record_form">اطلاعات ثبت شد</string>
+    <string name="label_Statistically_1">شنبه</string>
+    <string name="label_Statistically_2">یک شنبه</string>
+    <string name="label_Statistically_3">دو شنبه</string>
+    <string name="label_Statistically_4">سه شنبه</string>
+    <string name="label_Statistically_5">چهار شنبه</string>
+    <string name="label_Statistically_6">پنج شنبه</string>
+    <string name="label_Statistically_7">جمعه</string>
+
+    <string name="label_Statistically_month1">فرودین</string>
+    <string name="label_Statistically_month2">اردیبهشت</string>
+    <string name="label_Statistically_month3">خرداد</string>
+    <string name="label_Statistically_month4">تیر</string>
+    <string name="label_Statistically_month5">مرداد</string>
+    <string name="label_Statistically_month6">شهریور</string>
+    <string name="label_Statistically_month7">مهر</string>
+    <string name="label_Statistically_month8">آبان</string>
+    <string name="label_Statistically_month9">آذر</string>
+    <string name="label_Statistically_month10">دی</string>
+    <string name="label_Statistically_month11">بهمن</string>
+    <string name="label_Statistically_month12">اسفند</string>
+
+    <string name="rial_label">ریال</string>
+    <string name="label_NullFinishDate">بدون تاریخ پایان</string>
+    <string name="label_NullStartDate">بدون تاریخ شروع</string>
+    <string name="lineCode_label">کد خط</string>
+
+    <string name="line_code_label">شماره خط :</string>
+    <string name="line_name_label">نام خط :</string>
+    <string name="line_lineGreade_label">سطح خط :</string>
+    <string name="line_lineCompanyProfit1_label">بهره بردار خصوصی :</string>
+    <string name="line_lineCompanyProfit2_label">بهره بردار عمومی :</string>
+    <string name="line_lineCompanyController_label">ناظر :</string>
+    <string name="line_serviceTime_label">زمان سرویس :</string>
+    <string name="line_lineProfitType_label"> بهره بردار :</string>
+    <string name="line_year_label">سال :</string>
+    <string name="line_priceCoFind_label">نرخ نقدی : </string>
+    <string name="line_eCardPrice_label">نرخ کارت بلیط :</string>
+
+    <string name="tab_line_title_line">اطلاعات خط</string>
+    <string name="tab_line_title_direction">مسیر-خط</string>
+    <string name="tab_line_title_rate">نرخ-خط</string>
+    <string name="tab_line_title_timing">زمانبندی-خط</string>
+    <string name="tab_line_title_incident">حوادث-خط</string>
+    <string name="tab_line_title_violation">تخلفات-خط</string>
+    <string name="tab_line_title_complaint">شکایات-خط</string>
+
+    <string name="tab_line_line">خط</string>
+    <string name="tab_line_direction">مسیر</string>
+    <string name="tab_line_rate">نرخ</string>
+    <string name="tab_line_timing">زمانبندی</string>
+    <string name="tab_line_incident">حوادث</string>
+    <string name="tab_line_violation">تخلفات</string>
+    <string name="tab_line_complaint">شکایات</string>
+
+    <string name="car_driver_list_finishDate">تاریخ پایان</string>
+    <string name="car_driver_list_driverType">نوع</string>
+    <string name="car_driver_list_driver">راننده</string>
+    <string name="car_driver_list_shiftType">شیفت</string>
+    <string name="car_driver_list_driverCode">کد پرسنلی</string>
+    <string name="car_driver_list_driverName">نام راننده</string>
+    <string name="car_driver_list_mobileNo1">شماره موبایل </string>
+
+    <string name="carusage_type_label">نوع کاربری : </string>
+    <string name="carusage_startdate_label">تاریخ شروع : </string>
+    <string name="carusage_enddate_label"> تاریخ پایان :</string>
+    <string name="carusage_linename_label">نام خط :</string>
+    <string name="carusage_des_label">توضیحات :</string>
+    <string name="carusage_companyProfit_label">بهره بردار :</string>
+    <string name="carusage_companyController_label">ناظر :</string>
+    <string name="carusage_price_label">قیمت بلیط :</string>
+
+    <string name="car_driver_list_type">نوع اتوبوسران : </string>
+    <string name="car_driver_list_typeEn">نوع شغل : </string>
+    <string name="car_driver_list_driverNameFv"> راننده :</string>
+    <string name="car_driver_list_mobileNo"> شماره موبایل :</string>
+    <string name="car_driver_list_carPlateText"> خودرو :</string>
+    <string name="car_driver_list_lineNameFv"> خط :</string>
+    <string name="car_driver_list_providerCompany"> شعبه ارائه دهنده :</string>
+    <string name="car_driver_list_shiftTypeEn">شیفت : </string>
+    <string name="car_driver_list_driver1">راننده : </string>
+    <string name="car_driver_list_startDate"> تاریخ شروع :</string>
+    <string name="car_driver_list_endDate"> تاریخ پایان :</string>
+
+
+    <string name="nameFv_label"> خودرو : </string>
+    <string name="plateText_label">پلاک :</string>
+    <string name="name_label">مدل :</string>
+    <string name="name_engineFuelType">نوع سوخت :</string>
+    <string name="color_label">رنگ :</string>
+    <string name="Owner_label">مالک :</string>
+    <string name="autoCompleteLabel_label"> بهره بردار :</string>
+    <string name="usageTypeEn_label"> کاربری :</string>
+    <string name="carOptionInsuranceFP_label">بیمه :</string>
+    <string name="carOptionTechnicalCheckFP_label">معاینه فنی :</string>
+    <string name="advertisementDetailFP_label">تبلیغ :</string>
+    <string name="advertisementDetail_label"> تبلیغ :</string>
+
+    <string name="expire_date">پایان اعتبار</string>
+
+    <string name="carOption_number">شماره حکم :</string>
+    <string name="carOption_driverNameFv_label">راننده :</string>
+    <string name="carOption_lineNameFv_label">خط :</string>
+    <string name="carOption_hejriStartDate_label">تاریخ شروع :</string>
+    <string name="carOption_hejriExpireDate_label">تاریخ پایان :</string>
+
+    <string name="error_selectedMonthIsBigerThanTwo">تعداد ماه های وارد شده بیش از دو ماه می باشد.</string>
+    <string name="error_dateIsGreaterThanCurrent">تاریخ وارد شده بزرگ تر از تاریخ فعلی می باشد.</string>
+    <string name="about">هسته مرکزی شرکت گارنو پرگاس بعد از همکاری در مراحل مختلف تحلیل، طراحی و پیاده سازی سامانه های مدیریتی، در سال 1389 تحت عنوان «گروه اندیشه‌پردازان پارس» فعالیت‌ خود را در تهران آغاز نمود. درپی توسعه گستره فعالیت اعضای «گروه اندیشه پردازان پارس»، نیاز تبدیل مجموعه بیان شده به یک شرکت ثبت شده احساس گردید. لذا، شركت گارنوپرگاس تحت شماره 425301 در تاريخ 1391/03/01 در اداره ثبت شركت ها و موسسات غيرتجاري براي مدت نامحدود به ثبت رسيد.</string>
+    <string name="about1"> از جمله فعالیت های این شرکت عبارتند از:
+-	تحلیل، طراحی، تولید و پشتیبانی نرم افزارهای جامع کاربردی و سفارش مشتری
+-	مشاوره، راه اندازی و پشتیبانی سرورهای لینوکس
+-	مشاوره و پیاده سازی طرح های مهاجرت به نرم افزارهای آزاد متن باز و محیط های مختلط (ویندوز و لینوکس)
+-	... </string>
+
+    <string name="label_webSite">GapCom.ir</string>
+
+    <string-array name="nav_drawer_labels">
+        <item>@string/title_home</item>
+        <item>@string/title_last_news</item>
+        <item>@string/title_setting</item>
+        <item>@string/title_contact</item>
+        <item>@string/title_about</item>
+    </string-array>
+
+    <string name="title_home">Home</string>
+    <string name="title_last_news">news</string>
+    <string name="title_setting">تنظیمات</string>
+    <string name="title_contact">contact</string>
+    <string name="title_about">about</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="fa_glass">&#xf000;</string>
+    <string name="fa_music">&#xf001;</string>
+    <string name="fa_search">&#xf002;</string>
+    <string name="fa_envelope_o">&#xf003;</string>
+    <string name="fa_heart">&#xf004;</string>
+    <string name="fa_star">&#xf005;</string>
+    <string name="fa_star_o">&#xf006;</string>
+    <string name="fa_user">&#xf007;</string>
+    <string name="fa_film">&#xf008;</string>
+    <string name="fa_th_large">&#xf009;</string>
+    <string name="fa_th">&#xf00a;</string>
+    <string name="fa_th_list">&#xf00b;</string>
+    <string name="fa_check">&#xf00c;</string>
+    <string name="fa_times">&#xf00d;</string>
+    <string name="fa_search_plus">&#xf00e;</string>
+    <string name="fa_search_minus">&#xf010;</string>
+    <string name="fa_power_off">&#xf011;</string>
+    <string name="fa_signal">&#xf012;</string>
+    <string name="fa_cog">&#xf013;</string>
+    <string name="fa_trash_o">&#xf014;</string>
+    <string name="fa_home">&#xf015;</string>
+    <string name="fa_file_o">&#xf016;</string>
+    <string name="fa_clock_o">&#xf017;</string>
+    <string name="fa_road">&#xf018;</string>
+    <string name="fa_download">&#xf019;</string>
+    <string name="fa_arrow_circle_o_down">&#xf01a;</string>
+    <string name="fa_arrow_circle_o_up">&#xf01b;</string>
+    <string name="fa_inbox">&#xf01c;</string>
+    <string name="fa_play_circle_o">&#xf01d;</string>
+    <string name="fa_repeat">&#xf01e;</string>
+    <string name="fa_refresh">&#xf021;</string>
+    <string name="fa_list_alt">&#xf022;</string>
+    <string name="fa_lock">&#xf023;</string>
+    <string name="fa_flag">&#xf024;</string>
+    <string name="fa_headphones">&#xf025;</string>
+    <string name="fa_volume_off">&#xf026;</string>
+    <string name="fa_volume_down">&#xf027;</string>
+    <string name="fa_volume_up">&#xf028;</string>
+    <string name="fa_qrcode">&#xf029;</string>
+    <string name="fa_barcode">&#xf02a;</string>
+    <string name="fa_tag">&#xf02b;</string>
+    <string name="fa_tags">&#xf02c;</string>
+    <string name="fa_book">&#xf02d;</string>
+    <string name="fa_bookmark">&#xf02e;</string>
+    <string name="fa_print">&#xf02f;</string>
+    <string name="fa_camera">&#xf030;</string>
+    <string name="fa_font">&#xf031;</string>
+    <string name="fa_bold">&#xf032;</string>
+    <string name="fa_italic">&#xf033;</string>
+    <string name="fa_text_height">&#xf034;</string>
+    <string name="fa_text_width">&#xf035;</string>
+    <string name="fa_align_left">&#xf036;</string>
+    <string name="fa_align_center">&#xf037;</string>
+    <string name="fa_align_right">&#xf038;</string>
+    <string name="fa_align_justify">&#xf039;</string>
+    <string name="fa_list">&#xf03a;</string>
+    <string name="fa_outdent">&#xf03b;</string>
+    <string name="fa_indent">&#xf03c;</string>
+    <string name="fa_video_camera">&#xf03d;</string>
+    <string name="fa_picture_o">&#xf03e;</string>
+    <string name="fa_pencil">&#xf040;</string>
+    <string name="fa_map_marker">&#xf041;</string>
+    <string name="fa_adjust">&#xf042;</string>
+    <string name="fa_tint">&#xf043;</string>
+    <string name="fa_pencil_square_o">&#xf044;</string>
+    <string name="fa_share_square_o">&#xf045;</string>
+    <string name="fa_check_square_o">&#xf046;</string>
+    <string name="fa_arrows">&#xf047;</string>
+    <string name="fa_step_backward">&#xf048;</string>
+    <string name="fa_fast_backward">&#xf049;</string>
+    <string name="fa_backward">&#xf04a;</string>
+    <string name="fa_play">&#xf04b;</string>
+    <string name="fa_pause">&#xf04c;</string>
+    <string name="fa_stop">&#xf04d;</string>
+    <string name="fa_forward">&#xf04e;</string>
+    <string name="fa_fast_forward">&#xf050;</string>
+    <string name="fa_step_forward">&#xf051;</string>
+    <string name="fa_eject">&#xf052;</string>
+    <string name="fa_chevron_left">&#xf053;</string>
+    <string name="fa_chevron_right">&#xf054;</string>
+    <string name="fa_plus_circle">&#xf055;</string>
+    <string name="fa_minus_circle">&#xf056;</string>
+    <string name="fa_times_circle">&#xf057;</string>
+    <string name="fa_check_circle">&#xf058;</string>
+    <string name="fa_question_circle">&#xf059;</string>
+    <string name="fa_info_circle">&#xf05a;</string>
+    <string name="fa_crosshairs">&#xf05b;</string>
+    <string name="fa_times_circle_o">&#xf05c;</string>
+    <string name="fa_check_circle_o">&#xf05d;</string>
+    <string name="fa_ban">&#xf05e;</string>
+    <string name="fa_arrow_left">&#xf060;</string>
+    <string name="fa_arrow_right">&#xf061;</string>
+    <string name="fa_arrow_up">&#xf062;</string>
+    <string name="fa_arrow_down">&#xf063;</string>
+    <string name="fa_share">&#xf064;</string>
+    <string name="fa_expand">&#xf065;</string>
+    <string name="fa_compress">&#xf066;</string>
+    <string name="fa_plus">&#xf067;</string>
+    <string name="fa_minus">&#xf068;</string>
+    <string name="fa_asterisk">&#xf069;</string>
+    <string name="fa_exclamation_circle">&#xf06a;</string>
+    <string name="fa_gift">&#xf06b;</string>
+    <string name="fa_leaf">&#xf06c;</string>
+    <string name="fa_fire">&#xf06d;</string>
+    <string name="fa_eye">&#xf06e;</string>
+    <string name="fa_eye_slash">&#xf070;</string>
+    <string name="fa_exclamation_triangle">&#xf071;</string>
+    <string name="fa_plane">&#xf072;</string>
+    <string name="fa_calendar">&#xf073;</string>
+    <string name="fa_random">&#xf074;</string>
+    <string name="fa_comment">&#xf075;</string>
+    <string name="fa_magnet">&#xf076;</string>
+    <string name="fa_chevron_up">&#xf077;</string>
+    <string name="fa_chevron_down">&#xf078;</string>
+    <string name="fa_retweet">&#xf079;</string>
+    <string name="fa_shopping_cart">&#xf07a;</string>
+    <string name="fa_folder">&#xf07b;</string>
+    <string name="fa_folder_open">&#xf07c;</string>
+    <string name="fa_arrows_v">&#xf07d;</string>
+    <string name="fa_arrows_h">&#xf07e;</string>
+    <string name="fa_bar_chart_o">&#xf080;</string>
+    <string name="fa_twitter_square">&#xf081;</string>
+    <string name="fa_facebook_square">&#xf082;</string>
+    <string name="fa_camera_retro">&#xf083;</string>
+    <string name="fa_key">&#xf084;</string>
+    <string name="fa_cogs">&#xf085;</string>
+    <string name="fa_comments">&#xf086;</string>
+    <string name="fa_thumbs_o_up">&#xf087;</string>
+    <string name="fa_thumbs_o_down">&#xf088;</string>
+    <string name="fa_star_half">&#xf089;</string>
+    <string name="fa_heart_o">&#xf08a;</string>
+    <string name="fa_sign_out">&#xf08b;</string>
+    <string name="fa_linkedin_square">&#xf08c;</string>
+    <string name="fa_thumb_tack">&#xf08d;</string>
+    <string name="fa_external_link">&#xf08e;</string>
+    <string name="fa_sign_in">&#xf090;</string>
+    <string name="fa_trophy">&#xf091;</string>
+    <string name="fa_github_square">&#xf092;</string>
+    <string name="fa_upload">&#xf093;</string>
+    <string name="fa_lemon_o">&#xf094;</string>
+    <string name="fa_phone">&#xf095;</string>
+    <string name="fa_square_o">&#xf096;</string>
+    <string name="fa_bookmark_o">&#xf097;</string>
+    <string name="fa_phone_square">&#xf098;</string>
+    <string name="fa_twitter">&#xf099;</string>
+    <string name="fa_facebook">&#xf09a;</string>
+    <string name="fa_github">&#xf09b;</string>
+    <string name="fa_unlock">&#xf09c;</string>
+    <string name="fa_credit_card">&#xf09d;</string>
+    <string name="fa_rss">&#xf09e;</string>
+    <string name="fa_hdd_o">&#xf0a0;</string>
+    <string name="fa_bullhorn">&#xf0a1;</string>
+    <string name="fa_bell">&#xf0f3;</string>
+    <string name="fa_certificate">&#xf0a3;</string>
+    <string name="fa_hand_o_right">&#xf0a4;</string>
+    <string name="fa_hand_o_left">&#xf0a5;</string>
+    <string name="fa_hand_o_up">&#xf0a6;</string>
+    <string name="fa_hand_o_down">&#xf0a7;</string>
+    <string name="fa_arrow_circle_left">&#xf0a8;</string>
+    <string name="fa_arrow_circle_right">&#xf0a9;</string>
+    <string name="fa_arrow_circle_up">&#xf0aa;</string>
+    <string name="fa_arrow_circle_down">&#xf0ab;</string>
+    <string name="fa_globe">&#xf0ac;</string>
+    <string name="fa_wrench">&#xf0ad;</string>
+    <string name="fa_tasks">&#xf0ae;</string>
+    <string name="fa_filter">&#xf0b0;</string>
+    <string name="fa_briefcase">&#xf0b1;</string>
+    <string name="fa_arrows_alt">&#xf0b2;</string>
+    <string name="fa_users">&#xf0c0;</string>
+    <string name="fa_link">&#xf0c1;</string>
+    <string name="fa_cloud">&#xf0c2;</string>
+    <string name="fa_flask">&#xf0c3;</string>
+    <string name="fa_scissors">&#xf0c4;</string>
+    <string name="fa_files_o">&#xf0c5;</string>
+    <string name="fa_paperclip">&#xf0c6;</string>
+    <string name="fa_floppy_o">&#xf0c7;</string>
+    <string name="fa_square">&#xf0c8;</string>
+    <string name="fa_bars">&#xf0c9;</string>
+    <string name="fa_list_ul">&#xf0ca;</string>
+    <string name="fa_list_ol">&#xf0cb;</string>
+    <string name="fa_strikethrough">&#xf0cc;</string>
+    <string name="fa_underline">&#xf0cd;</string>
+    <string name="fa_table">&#xf0ce;</string>
+    <string name="fa_magic">&#xf0d0;</string>
+    <string name="fa_truck">&#xf0d1;</string>
+    <string name="fa_pinterest">&#xf0d2;</string>
+    <string name="fa_pinterest_square">&#xf0d3;</string>
+    <string name="fa_google_plus_square">&#xf0d4;</string>
+    <string name="fa_google_plus">&#xf0d5;</string>
+    <string name="fa_money">&#xf0d6;</string>
+    <string name="fa_caret_down">&#xf0d7;</string>
+    <string name="fa_caret_up">&#xf0d8;</string>
+    <string name="fa_caret_left">&#xf0d9;</string>
+    <string name="fa_caret_right">&#xf0da;</string>
+    <string name="fa_columns">&#xf0db;</string>
+    <string name="fa_sort">&#xf0dc;</string>
+    <string name="fa_sort_asc">&#xf0dd;</string>
+    <string name="fa_sort_desc">&#xf0de;</string>
+    <string name="fa_envelope">&#xf0e0;</string>
+    <string name="fa_linkedin">&#xf0e1;</string>
+    <string name="fa_undo">&#xf0e2;</string>
+    <string name="fa_gavel">&#xf0e3;</string>
+    <string name="fa_tachometer">&#xf0e4;</string>
+    <string name="fa_comment_o">&#xf0e5;</string>
+    <string name="fa_comments_o">&#xf0e6;</string>
+    <string name="fa_bolt">&#xf0e7;</string>
+    <string name="fa_sitemap">&#xf0e8;</string>
+    <string name="fa_umbrella">&#xf0e9;</string>
+    <string name="fa_clipboard">&#xf0ea;</string>
+    <string name="fa_lightbulb_o">&#xf0eb;</string>
+    <string name="fa_exchange">&#xf0ec;</string>
+    <string name="fa_cloud_download">&#xf0ed;</string>
+    <string name="fa_cloud_upload">&#xf0ee;</string>
+    <string name="fa_user_md">&#xf0f0;</string>
+    <string name="fa_stethoscope">&#xf0f1;</string>
+    <string name="fa_suitcase">&#xf0f2;</string>
+    <string name="fa_bell_o">&#xf0a2;</string>
+    <string name="fa_coffee">&#xf0f4;</string>
+    <string name="fa_cutlery">&#xf0f5;</string>
+    <string name="fa_file_text_o">&#xf0f6;</string>
+    <string name="fa_building_o">&#xf0f7;</string>
+    <string name="fa_hospital_o">&#xf0f8;</string>
+    <string name="fa_ambulance">&#xf0f9;</string>
+    <string name="fa_medkit">&#xf0fa;</string>
+    <string name="fa_fighter_jet">&#xf0fb;</string>
+    <string name="fa_beer">&#xf0fc;</string>
+    <string name="fa_h_square">&#xf0fd;</string>
+    <string name="fa_plus_square">&#xf0fe;</string>
+    <string name="fa_angle_double_left">&#xf100;</string>
+    <string name="fa_angle_double_right">&#xf101;</string>
+    <string name="fa_angle_double_up">&#xf102;</string>
+    <string name="fa_angle_double_down">&#xf103;</string>
+    <string name="fa_angle_left">&#xf104;</string>
+    <string name="fa_angle_right">&#xf105;</string>
+    <string name="fa_angle_up">&#xf106;</string>
+    <string name="fa_angle_down">&#xf107;</string>
+    <string name="fa_desktop">&#xf108;</string>
+    <string name="fa_laptop">&#xf109;</string>
+    <string name="fa_tablet">&#xf10a;</string>
+    <string name="fa_mobile">&#xf10b;</string>
+    <string name="fa_circle_o">&#xf10c;</string>
+    <string name="fa_quote_left">&#xf10d;</string>
+    <string name="fa_quote_right">&#xf10e;</string>
+    <string name="fa_spinner">&#xf110;</string>
+    <string name="fa_circle">&#xf111;</string>
+    <string name="fa_reply">&#xf112;</string>
+    <string name="fa_github_alt">&#xf113;</string>
+    <string name="fa_folder_o">&#xf114;</string>
+    <string name="fa_folder_open_o">&#xf115;</string>
+    <string name="fa_smile_o">&#xf118;</string>
+    <string name="fa_frown_o">&#xf119;</string>
+    <string name="fa_meh_o">&#xf11a;</string>
+    <string name="fa_gamepad">&#xf11b;</string>
+    <string name="fa_keyboard_o">&#xf11c;</string>
+    <string name="fa_flag_o">&#xf11d;</string>
+    <string name="fa_flag_checkered">&#xf11e;</string>
+    <string name="fa_terminal">&#xf120;</string>
+    <string name="fa_code">&#xf121;</string>
+    <string name="fa_reply_all">&#xf122;</string>
+    <string name="fa_mail_reply_all">&#xf122;</string>
+    <string name="fa_star_half_o">&#xf123;</string>
+    <string name="fa_location_arrow">&#xf124;</string>
+    <string name="fa_crop">&#xf125;</string>
+    <string name="fa_code_fork">&#xf126;</string>
+    <string name="fa_chain_broken">&#xf127;</string>
+    <string name="fa_question">&#xf128;</string>
+    <string name="fa_info">&#xf129;</string>
+    <string name="fa_exclamation">&#xf12a;</string>
+    <string name="fa_superscript">&#xf12b;</string>
+    <string name="fa_subscript">&#xf12c;</string>
+    <string name="fa_subway">&#xf239;</string>
+    <string name="fa_eraser">&#xf12d;</string>
+    <string name="fa_puzzle_piece">&#xf12e;</string>
+    <string name="fa_microphone">&#xf130;</string>
+    <string name="fa_microphone_slash">&#xf131;</string>
+    <string name="fa_shield">&#xf132;</string>
+    <string name="fa_calendar_o">&#xf133;</string>
+    <string name="fa_fire_extinguisher">&#xf134;</string>
+    <string name="fa_rocket">&#xf135;</string>
+    <string name="fa_maxcdn">&#xf136;</string>
+    <string name="fa_chevron_circle_left">&#xf137;</string>
+    <string name="fa_chevron_circle_right">&#xf138;</string>
+    <string name="fa_chevron_circle_up">&#xf139;</string>
+    <string name="fa_chevron_circle_down">&#xf13a;</string>
+    <string name="fa_html5">&#xf13b;</string>
+    <string name="fa_css3">&#xf13c;</string>
+    <string name="fa_anchor">&#xf0ec;</string>
+    <string name="fa_unlock_alt">&#xf13e;</string>
+    <string name="fa_bullseye">&#xf140;</string>
+    <string name="fa_ellipsis_h">&#xf141;</string>
+    <string name="fa_ellipsis_v">&#xf142;</string>
+    <string name="fa_rss_square">&#xf143;</string>
+    <string name="fa_play_circle">&#xf144;</string>
+    <string name="fa_ticket">&#xf145;</string>
+    <string name="fa_minus_square">&#xf146;</string>
+    <string name="fa_minus_square_o">&#xf147;</string>
+    <string name="fa_level_up">&#xf148;</string>
+    <string name="fa_level_down">&#xf149;</string>
+    <string name="fa_check_square">&#xf14a;</string>
+    <string name="fa_pencil_square">&#xf14b;</string>
+    <string name="fa_external_link_square">&#xf14c;</string>
+    <string name="fa_share_square">&#xf14d;</string>
+    <string name="fa_compass">&#xf14e;</string>
+    <string name="fa_caret_square_o_down">&#xf150;</string>
+    <string name="fa_caret_square_o_up">&#xf151;</string>
+    <string name="fa_caret_square_o_right">&#xf152;</string>
+    <string name="fa_eur">&#xf153;</string>
+    <string name="fa_gbp">&#xf154;</string>
+    <string name="fa_usd">&#xf155;</string>
+    <string name="fa_inr">&#xf156;</string>
+    <string name="fa_jpy">&#xf157;</string>
+    <string name="fa_rub">&#xf158;</string>
+    <string name="fa_krw">&#xf159;</string>
+    <string name="fa_btc">&#xf15a;</string>
+    <string name="fa_file">&#xf15b;</string>
+    <string name="fa_file_text">&#xf15c;</string>
+    <string name="fa_sort_alpha_asc">&#xf15d;</string>
+    <string name="fa_sort_alpha_desc">&#xf15e;</string>
+    <string name="fa_sort_amount_asc">&#xf160;</string>
+    <string name="fa_sort_amount_desc">&#xf161;</string>
+    <string name="fa_sort_numeric_asc">&#xf162;</string>
+    <string name="fa_sort_numeric_desc">&#xf163;</string>
+
+    <string name="fa_youtube_square">&#xf166;</string>
+    <string name="fa_youtube">&#xf167;</string>
+    <string name="fa_xing">&#xf168;</string>
+    <string name="fa_xing_square">&#xf169;</string>
+    <string name="fa_youtube_play">&#xf16a;</string>
+    <string name="fa_dropbox">&#xf16b;</string>
+    <string name="fa_stack_overflow">&#xf16c;</string>
+    <string name="fa_instagram">&#xf16d;</string>
+    <string name="fa_flickr">&#xf16e;</string>
+    <string name="fa_adn">&#xf170;</string>
+    <string name="fa_bitbucket">&#xf171;</string>
+    <string name="fa_bitbucket_square">&#xf172;</string>
+    <string name="fa_tumblr">&#xf173;</string>
+    <string name="fa_tumblr_square">&#xf174;</string>
+    <string name="fa_long_arrow_down">&#xf175;</string>
+    <string name="fa_long_arrow_up">&#xf176;</string>
+    <string name="fa_long_arrow_left">&#xf177;</string>
+    <string name="fa_long_arrow_right">&#xf178;</string>
+    <string name="fa_apple">&#xf179;</string>
+    <string name="fa_windows">&#xf17a;</string>
+    <string name="fa_android">&#xf17b;</string>
+    <string name="fa_linux">&#xf17c;</string>
+    <string name="fa_dribbble">&#xf17d;</string>
+    <string name="fa_skype">&#xf17e;</string>
+    <string name="fa_foursquare">&#xf180;</string>
+    <string name="fa_trello">&#xf181;</string>
+    <string name="fa_gittip">&#xf184;</string>
+    <string name="fa_sun_o">&#xf185;</string>
+    <string name="fa_moon_o">&#xf186;</string>
+    <string name="fa_archive">&#xf187;</string>
+    <string name="fa_bug">&#xf188;</string>
+    <string name="fa_vk">&#xf189;</string>
+    <string name="fa_weibo">&#xf18a;</string>
+    <string name="fa_renren">&#xf18b;</string>
+    <string name="fa_pagelines">&#xf18c;</string>
+    <string name="fa_stack_exchange">&#xf18d;</string>
+    <string name="fa_arrow_circle_o_right">&#xf18e;</string>
+    <string name="fa_arrow_circle_o_left">&#xf190;</string>
+    <string name="fa_caret_square_o_left">&#xf191;</string>
+    <string name="fa_dot_circle_o">&#xf192;</string>
+    <string name="fa_wheelchair">&#xf193;</string>
+    <string name="fa_vimeo_square">&#xf194;</string>
+    <string name="fa_try">&#xf195;</string>
+    <string name="fa_plus_square_o">&#xf196;</string>
+    <string name="fa_bus">&#xf207;</string>
+    <string name="fa_taxi">&#xf1ba;</string>
+    <string name="fa_line_chart">&#xf201;</string>
+    <string name="fa_female">&#xf182;</string>
+    <string name="fa_male">&#xf183;</string>
+    <string name="fa_thumbs_up">&#xf164;</string>
+    <string name="fa_thumbs_down">&#xf165;</string>
+    <string name="title_activity_login">Login Activity</string>
+    <string name="title_activity_registration">Registration Activity</string>
+    <string name="title_activity_activation">Activation Activity</string>
+    <string name="title_activity_passwordCreation">Password Creation Activity</string>
+    <string name="title_activity_home">Home Activity</string>
+    <string name="title_activity_sync">Sync Activity</string>
+    <string name="title_activity_visit">Station Activity</string>
+    <string name="title_activity_station_visit">Station Visit Activity</string>
+    <string name="title_activity_station_gallery">Station Gallery Activity</string>
+    <string name="station_name">نام:</string>
+    <string name="station_code">کد:</string>
+    <string name="station_lastVisit">آخرین بازدید:</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="label_year">سال</string>
+    <string name="label_and">و</string>
+    <string name="label_month">ماه</string>
+    <string name="label_week">هفته</string>
+    <string name="label_day">روز</string>
+    <string name="label_hour">ساعت</string>
+    <string name="label_minute">دقیقه</string>
+    <string name="label_second">ثانیه</string>
+    <string name="label_millisecond">هزارم ثانیه</string>
+    <string name="label_score">امتیاز</string>
+
+    <string name="fa_char_ein">ع</string>
+    <string name="fa_char_dal">د</string>
+    <string name="fa_char_sin">س</string>
+    <string name="fa_char_ba">ب</string>
+    <string name="fa_char_ghaf">ق</string>
+    <string name="fa_char_ya">ی</string>
+
+    <string-array name="Day">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6 </item>
+        <item>7 </item>
+        <item>8 </item>
+        <item>9 </item>
+        <item>10 </item>
+        <item>11 </item>
+        <item>12 </item>
+        <item>13 </item>
+        <item>14 </item>
+        <item>15 </item>
+        <item>16 </item>
+        <item>17 </item>
+        <item>18 </item>
+        <item>19 </item>
+        <item>20 </item>
+        <item>21 </item>
+        <item>22 </item>
+        <item>23 </item>
+    </string-array>
+
+    <string-array name="Month">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6 </item>
+        <item>7 </item>
+        <item>8 </item>
+        <item>9 </item>
+        <item>10 </item>
+        <item>11 </item>
+        <item>12 </item>
+        <item>13 </item>
+        <item>14 </item>
+        <item>15 </item>
+        <item>16 </item>
+        <item>17 </item>
+        <item>18 </item>
+        <item>19 </item>
+        <item>20 </item>
+        <item>21 </item>
+        <item>22 </item>
+        <item>23 </item>
+        <item>24 </item>
+        <item>25 </item>
+        <item>26 </item>
+        <item>27 </item>
+        <item>28 </item>
+        <item>29 </item>
+        <item>30 </item>
+    </string-array>
+
+    <string-array name="Year">
+        <item>فروردین</item>
+        <item>اردیبهشت</item>
+        <item>خرداد</item>
+        <item>تیر</item>
+        <item>شهریور</item>
+        <item>مهر</item>
+        <item>آبان</item>
+        <item>آذر</item>
+        <item>دی</item>
+        <item>بهمن</item>
+        <item>اسفند</item>
+    </string-array>
+
+    <string-array name="year_months">
+        <item>فروردین</item>
+        <item>اردیبهشت</item>
+        <item>خرداد</item>
+        <item>تیر</item>
+        <item>مرداد</item>
+        <item>شهریور</item>
+        <item>مهر</item>
+        <item>آبان</item>
+        <item>آذر</item>
+        <item>دی</item>
+        <item>بهمن</item>
+        <item>اسفند</item>
+    </string-array>
+
+    <string-array name="checkList_item">
+        <item>نظافت بیرونی</item>
+        <item>وضعیت شیشه اتوبوس</item>
+        <item>وضعیت بدنه </item>
+        <item>دودزایی</item>
+        <item>وضعیت سپر جلو و عقب</item>
+        <item>وضعیت استیکر تابلو خط</item>
+        <item>نظافت داخلی</item>
+        <item>وضعیت سلامت صندلی</item>
+        <item>میله جداسازی</item>
+        <item>وجود وسایل اضافی</item>
+        <item>لباس فرم و آراستگی</item>
+        <item>استعمال دخانیات</item>
+        <item>حکم فعالیت</item>
+    </string-array>
+
+    <string-array name="checkList_item1">
+        <item>فرم بازدید اتوبوس ها</item>
+        <item>فرم نظارت اتوبوس ها</item>
+        <item>فرم بازرسی اتوبوس ها </item>
+    </string-array>
+
+    <string-array name="checkList_item2">
+        <item>بیرون اتوبوس</item>
+        <item>داخل اتوبوس</item>
+        <item>وضعیت راننده اتوبوس</item>
+    </string-array>
+
+    <!--    <string-array name="asia">
+        <item>Vietnam</item>
+        <item>Singapore</item>
+        <item>China</item>
+        <item>Japan</item>
+        <item>Korea</item>
+        <item>Iran</item>
+    </string-array>-->
+
+    <!--   <string-array name="europe">
+        <item>France</item>
+        <item>Poland</item>
+        <item>Spain</item>
+        <item>Germany</item>
+        <item>Noway</item>
+        <item>Denmark</item>
+    </string-array>-->
+    <string name="title_activity_driver">DriverActivity</string>
+
+    <string name="json_field_isNull">فاقد اطلاعات</string>
+
+    <string name="Some_error_accor_contact_admin">اتصال خود را به اینترنت بررسی کنید</string>
+
+    <string name="Some_error_enter_domain">دامنه وارد شده معتبر نمی باشد</string>
+
+    <string name="question_dialog_send_checkList">آیا مایل به ارسال گزارش هستید ؟</string>
+
+    <string name="question_dialog_delete_account">آیا مایل به انجام درخواست هستید ؟</string>
+
+    <string name="question_dialog_download">آیا مایل به دانلود برنامه BIS همراه هستید ؟</string>
+
+    <string name="forgotLocal_password">فراموش کردن گذرواژه محلی</string>
+
+    <string name="changeLocal_password">گذرواژه محلی جدید را وارد کنید</string>
+    <string name="changeLocal_password_EditText1">تعریف گذرواژه</string>
+    <string name="changeLocal_password_EditText2">تعریف مجدد گذرواژه</string>
+    <string name="changeLocal_password_checkConfirm">اطلاعات نادرست وارد شده است</string>
+
+    <string name="check_update_application_newVersion">بروز رسانی نرم افزار</string>
+    <string name="notification_application_newVersion"> بروز رسانی نرم افزار BIS همراه</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="subject_notifiction_new">پیام جدید</string>
+    <string name="subject_notifiction_new1">New Message</string>
+
+
+    <string name="enumType_GeneralEnum_Val1_Line">سطح یک</string>
+    <string name="enumType_GeneralEnum_Val2_Line">سطح دو</string>
+    <string name="enumType_GeneralEnum_Val3_Line">سطح سه</string>
+    <string name="enumType_GeneralEnum_Val4_Line">سطح چهار</string>
+
+    <string name="enumType_LineServiceTime_Daily">روز</string>
+    <string name="enumType_LineServiceTime_Nightly">شب</string>
+    <string name="enumType_LineServiceTime_BothItem">شبانه روز</string>
+
+    <string name="enumType_PathType_Main">مسیر رفت</string>
+    <string name="enumType_PathType_Returned">مسیر برگشت</string>
+
+    <string name="enumType_DayTypeOnHolidayEn_NotHoliday">عادی</string>
+    <string name="enumType_DayTypeOnHolidayEn_Holiday">تعطیل</string>
+    <string name="enumType_DayTypeOnHolidayEn_SemiHoliday">نیمه تعطیل</string>
+
+    <string name="enumType_IncidentTypeEn_Crash">تصادف</string>
+    <string name="enumType_IncidentTypeEn_Conflict">درگیری</string>
+    <string name="enumType_IncidentTypeEn_NaturalDisasters">حوادث طبیعی</string>
+    <string name="enumType_IncidentTypeEn_Riot">اغتشاش</string>
+    <string name="enumType_IncidentTypeEn_Theft">سرقت</string>
+    <string name="enumType_IncidentTypeEn_TechnicalDamages">خسارت فنی</string>
+    <string name="enumType_IncidentTypeEn_Fires">آتش سوزی</string>
+    <string name="enumType_IncidentTypeEn_Lost">مفقودی</string>
+    <string name="enumType_IncidentTypeEn_BusInternalIncidents">حوادث داخل اتوبوس</string>
+    <string name="enumType_IncidentTypeEn_DisorderInLine">اختلال در خط</string>
+    <string name="enumType_IncidentTypeEn_BusBodyIncidents">حوادث بدنه اتوبوس</string>
+    <string name="enumType_IncidentTypeEn_LineReport">گزارش خطوط</string>
+
+    <string name="enumType_IncidentDamageTypeEn_Damaging">خسارتی</string>
+    <string name="enumType_IncidentDamageTypeEn_Injury">جرحی</string>
+    <string name="enumType_IncidentDamageTypeEn_Death">فوتی</string>
+
+    <string name="enumType_IncidentLocateEn_Line">خط</string>
+    <string name="enumType_IncidentLocateEn_Terminal">پایانه</string>
+    <string name="enumType_IncidentLocateEn_Parking">توقفگاه</string>
+    <string name="enumType_IncidentLocateEn_Workshop">تعمیرگاه</string>
+    <string name="enumType_IncidentLocateEn_CityArea">سطح شهر</string>
+
+    <string name="enumType_ViolationLocateTypeEn_Line">خط</string>
+    <string name="enumType_ViolationLocateTypeEn_Terminal">پایانه</string>
+    <string name="enumType_ViolationLocateTypeEn_GeoNet">عارضه های شهر</string>
+    <string name="enumType_ViolationLocateTypeEn_Other">سایر</string>
+
+    <string name="enumType_BusUsageType_Line">خطی</string>
+    <string name="enumType_BusUsageType_DoorToDoor">دربستی</string>
+    <string name="enumType_BusUsageType_Services">خدماتی</string>
+    <string name="enumType_BusUsageType_SOS">امداد</string>
+    <string name="enumType_BusUsageType_BusFleetReserve">پشتیبان ناوگان</string>
+
+    <string name="enumType_DriverType_MainDriver">اتوبوسران اصلی</string>
+    <string name="enumType_DriverType_AssistantDriver">اتوبوسران کمکی</string>
+    <string name="enumType_DriverType_OrganizationDriver">راننده سازمانی</string>
+
+
+    <string name="enumType_DriverJobTypeEn_DetermineCarForDriver">راننده با خودرو مشخص</string>
+    <string name="enumType_DriverJobTypeEn_RotatoryDriverInLine">راننده گردشی درخط</string>
+    <string name="enumType_DriverJobTypeEn_DriverInParking">راننده مستقر در توقفگاه</string>
+    <string name="enumType_DriverJobTypeEn_RescuerSOS">راننده امداد</string>
+    <string name="enumType_DriverJobTypeEn_AssistantRescuerSOS">کمک راننده امداد</string>
+    <string name="enumType_DriverJobTypeEn_WorkOnContract">اشتغال براساس قرارداد</string>
+
+    <string name="enumType_DrivingLicTypeEn_Grade1">پایه یک</string>
+    <string name="enumType_DrivingLicTypeEn_Grade2">پایه دو</string>
+    <string name="enumType_DrivingLicTypeEn_CivilCard">کارت شهری</string>
+    <string name="enumType_DrivingLicTypeEn_TmpCertificate">گواهی موقت</string>
+    <string name="enumType_DrivingLicTypeEn_MotorDrivingLic">موتورسیکلت</string>
+    <string name="enumType_DrivingLicTypeEn_Grade1_Special">پایه یک ویژه</string>
+    <string name="enumType_DrivingLicTypeEn_Grade3">پایه سه</string>
+
+    <string name="driver_carUsage_typeEn0">معمولی</string>
+    <string name="driver_carUsage_typeEn1">ویژه سازی معلولین</string>
+    <string name="driver_carUsage_typeEn2">تشریفات</string>
+    <string name="driver_carUsage_typeEn3">کتابخانه</string>
+    <string name="driver_carUsage_typeEn4">مبله</string>
+    <string name="driver_carUsage_typeEn5">ویژه</string>
+
+    <string name="driver_OrganizationDriverJobTypeEn_DriverBus">اتوبوسران</string>
+    <string name="driver_OrganizationDriverJobTypeEn_DriverMotor">موتور سوار</string>
+    <string name="driver_OrganizationDriverJobTypeEn_RescuerSOS">امدادگر</string>
+    <string name="driver_OrganizationDriverJobTypeEn_AssistantRescuerSOS">کمک امدادگر</string>
+    <string name="driver_OrganizationDriverJobTypeEn_OfficialWork">کار سبک</string>
+    <string name="driver_OrganizationDriverJobTypeEn_DriverMiniBus">مینی بوسران</string>
+    <string name="driver_OrganizationDriverJobTypeEn_DriverVeterans">راننده سرویس معلولین</string>
+
+    <string name="driver_DriverLicenceTypeEn_BusDriverOrganization">اتوبوسران دولتی</string>
+    <string name="driver_DriverLicenceTypeEn_BusDriverPrivateCo">اتوبوسران بخش خصوصی</string>
+    <string name="driver_DriverLicenceTypeEn_MiniBousDriverPrivateCo">مینی بوسران بخش خصوصی</string>
+
+    <string name="driver_driverJobTypeEn_DetermineCarForDriver">راننده با خودرو مشخص</string>
+    <string name="driver_driverJobTypeEn_RotatoryDriverInLine">راننده گردشی درخط</string>
+    <string name="driver_driverJobTypeEn_DriverInParking">راننده مستقر در توقفگاه</string>
+    <string name="driver_driverJobTypeEn_RescuerSOS">راننده امداد</string>
+    <string name="driver_driverJobTypeEn_AssistantRescuerSOS">کمک راننده امداد</string>
+    <string name="driver_driverJobTypeEn_WorkOnContract">اشتغال براساس قرارداد</string>
+
+    <string name="enumType_ShiftType_Morning">صبح</string>
+    <string name="enumType_ShiftType_Afternoon">عصر</string>
+    <string name="enumType_ShiftType_Night">شب</string>
+    <string name="enumType_ShiftType_Other">سایر</string>
+    <string name="enumType_ShiftType_General">کلی</string>
+    <string name="enumType_ShiftType_MidDay">میان روزی</string>
+
+    <string name="enumType_CarOptionDriverOfficialLic_jobType1">سازمانی</string>
+    <string name="enumType_CarOptionDriverOfficialLic_jobType2">قراردادی</string>
+    <string name="enumType_CarOptionDriverOfficialLic_jobType3">قرارداد موقت کارگری</string>
+
+    <string name="enumType_ProcessStatus_Complaint1">منتظر بررسی</string>
+    <string name="enumType_ProcessStatus_Complaint2">در حال بررسی</string>
+    <string name="enumType_ProcessStatus_Complaint3">بررسی شده</string>
+
+    <string name="enumType_LineProfitCompanyType_Organization">دولتی</string>
+    <string name="enumType_LineProfitCompanyType_PrivateCo">خصوصی</string>
+    <string name="enumType_LineProfitCompanyType_BothItem">عمومی-خصوصی</string>
+
+    <string name="enumType_FuelType_GasCNG">گاز CNG</string>
+    <string name="enumType_FuelType_GasOil">دیزل</string>
+    <string name="enumType_FuelType_Electrical">برقی</string>
+    <string name="enumType_FuelType_Gasoline">بنزین</string>
+    <string name="enumType_FuelType_GasLPG">گاز LPG</string>
+    <string name="enumType_FuelType_Hybrid">هیبریدی</string>
+    <string name="enumType_FuelType_DualFuel">دوگانه سوز</string>
+
+
+    <string name="Invalid_Device_Date_Time">تاریخ و ساعت دستگاه نا معتبر است </string>
+    <string name="send_code_activation_Toast">کد اعتبار سنجی برای شما ارسال شد </string>
+    <string name="success_login_Toast">شما با موفقیت وارد شدید </string>
+    <string name="result_update_Toast">بروز رسانی جدید وجود ندارد </string>
+    <string name="enter_domain_hint">دامنه مورد نظر را وارد کنید </string>
+
+    <string name="enter_domain_url">دامنه مورد نظر را وارد کنید </string>
+    <string name="enter_domain_NoNumber">شماره خود را وارد کنید</string>
+    <string name="enter_domain_code">کد مورد نظر را وارد کنید </string>
+    <string name="progressDialogGetLocation">در حال یافتن موقعیت مکانی</string>
+    <string name="successGetLocation">موقعیت یافت شد</string>
+
+
+    <string name="driverDailyActivity_companyName"> شعبه بهره بردار: </string>
+    <string name="driverDailyActivity_companyNameChanged">جایگزین: </string>
+    <string name="driverDailyActivity_status">  وضعیت تعرفه: </string>
+    <string name="driverDailyActivity_driverShift"> برنامه کاری:  </string>
+    <string name="driverDailyActivity_driverShiftChanged"> برنامه کاری جایگزین: </string>
+    <string name="driverDailyActivity_car">  اتوبوس: </string>
+    <string name="driverDailyActivity_carChanged">جایگزین: </string>
+    <string name="driverDailyActivity_line">  خط: </string>
+    <string name="driverDailyActivity_lineChanged">جایگزین: </string>
+    <string name="driverDailyActivity_events">  رخداد ها: </string>
+    <string name="driverDailyActivity_eventName"> نام رخداد:  </string>
+    <string name="driverDailyActivity_eventTime"> زمان:  </string>
+    <string name="driverDailyActivity_userCreation"> ثبت کننده:  </string>
+    <string name="driverDailyActivity_dateCreate"> زمان ثبت:  </string>
+    <string name="driverDailyActivity_hamShift"> هم شیفت  </string>
+
+
+    <string name="carDailyActivity_propertyCode">کد خودرو: </string>
+    <string name="carDailyActivity_platText">پلاک: </string>
+    <string name="carDailyActivity_companyName">شعبه بهره بردار: </string>
+    <string name="carDailyActivity_companyController">شعبه ناظر: </string>
+    <string name="carDailyActivity_carUsage">کاربری: </string>
+    <string name="carDailyActivity_activityStatus">وضعیت اشتغال: </string>
+    <string name="carDailyActivity_carStatusInPark">وضعیت حضور در توقفگاه: </string>
+
+    <string name="processStatus_State1"> منتظر ورود   </string>
+    <string name="processStatus_State4"> مرخصی  </string>
+    <string name="processStatus_State5"> شاغل  </string>
+    <string name="processStatus_State6"> عدم مراجعه  </string>
+    <string name="processStatus_State7"> فاقد برنامه  </string>
+    <string name="processStatus_State8"> پایان کار زود هنگام  </string>
+    <string name="processStatus_State9"> پایان کار  </string>
+    <string name="processStatus_State11"> عدم حضور- روز تعطیل  </string>
+    <string name="processStatus_State12"> عدم ثبت تعرفه  </string>
+    <string name="processStatus_State50"> غیبت  </string>
+    <string name="processStatus_employeeDuty"> ماموریت  </string>
+    <string name="processStatus_State2"> منتظر تخصیص اتوبوس  </string>
+    <string name="processStatus_State3"> منتظر خروج از توقفگاه  </string>
+    <string name="processStatus_State10"> برگشت به توقفگاه  </string>
+    <string name="processStatus_State1_car"> عدم تعریف اتوبوس  </string>
+    <string name="processStatus_State2_car"> منتظر تخصیص اتوبوس  </string>
+    <string name="processStatus_State3_car"> اتوبوس تخصیص یافته  </string>
+
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/yekan_bakh_bold</item>
+    </style>
+
+
+    <string name="long_text_test">با سلام دوباره به شما عزیزان، در قسمت های گذشته در مورد پروفایل کاربر و اختیاراتی که باید به کاربر بدهیم تا بتواند رابطه خوبی با سایت برقرار کند، توضیحات مفصلی داده شد. اما در این قسمت با همدیگر به ایجاد پنل مدیریت سایت (Admin panel) خواهیم پرداخت.
+
+پنل مدیریت سایت (Admin panel)، مانند میزفرمان سایت است و فقط باید در اختیار صاحب سایت قرار بگیرد و او را از خیلی از جزییات کدنویسی دور کند. همچنین این پنل به راحتی امکانات فراوانی در اختیار او قرار دهد.
+دقیقا در وردپرس نیز همین رویکرد در نظر گرفته  شده است، به گونه ایی که اگر مدیر سایت یک برنامه نویس نباشد، باز هم می تواند به راحتی، سایت خودش را مدیریت کند. ما هم از این قسمت به بعد،به صورت مشابه ای همین رویکرد را در مورد سایتی که ایجاد کرده ایم، در نظر خواهیم گرفت.
+
+من در ادامه تصویری برای شما عزیزان قرار می دهم که انشاالله در ادامه قصد داریم که آن را با هم بسازیم.</string>
+    <string name="driver_name_search">جستجو بر اساس نام</string>
+    <string name="driver_code_search">جستجو بر اساس کد</string>
+    <string name="enter_driver_code">کد راننده را وارد کنید</string>
+    <string name="enter_driver_name">نام راننده را وارد کنید</string>
+
+    <string name="ok_btn">تائید</string>
+    <string name="cancel_btn">انصراف</string>
+    <string name="today">امروز</string>
+    <string name="date_placeholder">"%s، %d %s"</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+
+    <!-- com.gap.bus.web.enumtype.CompanyType.Parent = شعبه اصلی
+    com.gap.bus.web.enumtype.CompanyType.BusRegion = سامانه ها
+    com.gap.bus.web.enumtype.CompanyType.CityRegion = مناطق و نواحی
+    com.gap.bus.web.enumtype.CompanyType.PrivateCo =  شرکت های خصوصی
+    com.gap.bus.web.enumtype.CompanyType.CompanyRelated = شرکت ها و سازمان های مرتبط
+    com.gap.bus.web.enumtype.CompanyType.School = مدارس
+    com.gap.bus.web.enumtype.CompanyType.EducationRegion = مناطق آموزش پرورش
+    com.gap.bus.web.enumtype.CompanyType.TrainingCenter = مراکز آموزشی
+    com.gap.bus.web.enumtype.CompanyType.Zone = نواحی
+    com.gap.bus.web.enumtype.CompanyType.CityEServicesOffice = دفاتر خدمات الکترونیک
+    com.gap.bus.web.enumtype.CompanyType.AdvertisingCompany = شرکت های تبلیغاتی-->
+
+    <!--    com.gap.bus.web.enumtype.GeneralEnum.Val1.ComplaintRequestType = شکایت
+    com.gap.bus.web.enumtype.GeneralEnum.Val2.ComplaintRequestType = پیشنهاد
+    com.gap.bus.web.enumtype.GeneralEnum.Val3.ComplaintRequestType = تقدیر و تشکر
+    com.gap.bus.web.enumtype.GeneralEnum.Val4.ComplaintRequestType = انتقاد-->
+
+
+</resources>

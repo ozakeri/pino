@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/desc_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="18sp"
+            android:text="برای پیکربندی مجدد برنامه لطفا گذرواژه خود در سامانه BIS را وارد نمایید:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/username1_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/desc_TV"
+            android:layout_margin="18sp"
+            android:text="@string/username"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/username2_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc_TV"
+            android:layout_margin="15dp"
+            android:layout_toLeftOf="@+id/username1_TV"
+            android:text="@string/username"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/password1_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/username1_TV"
+            android:layout_margin="15dp"
+            android:text="@string/password1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password2_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/username1_TV"
+            android:layout_margin="15dp"
+            android:layout_toLeftOf="@+id/password1_TV"
+            android:gravity="right"
+            android:hint="@string/password1"
+            android:inputType="textPassword"
+            android:textColorHint="@color/mdtp_date_picker_month_day_dark_theme"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/password1_TV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@mipmap/btn_settingt"
+            android:text="تایید"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <RelativeLayout
+        android:id="@+id/container_toolbar"
+        android:background="@color/toolbarLine"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:id="@+id/img_driverIcon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/iconline"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/lineCodeTitle_TV"
+            android:layout_toLeftOf="@+id/img_driverIcon"
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/backIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:background="@mipmap/arrow_back"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="5dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container_toolbar">
+
+        <LinearLayout
+            android:id="@+id/rel_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:text="---"
+                    android:id="@+id/year_TV"
+                    android:textSize="15sp"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:text="@string/line_year_label"
+                    android:textSize="15sp"
+                    android:layout_margin="10dp"
+                    android:layout_width="110dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:text="---"
+                    android:id="@+id/priceCoFind_TV"
+                    android:textSize="15sp"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:text="@string/line_priceCoFind_label"
+                    android:textSize="15sp"
+                    android:layout_margin="10dp"
+                    android:layout_width="110dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:text="---"
+                    android:id="@+id/eCardPrice_TV"
+                    android:textSize="15sp"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:text="@string/line_eCardPrice_label"
+                    android:textSize="15sp"
+                    android:layout_margin="10dp"
+                    android:layout_width="110dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

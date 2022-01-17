@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#faf3f3"
+    tools:context="com.gap.bis_transport.activity.AboutActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarNotification"
+        android:background="@color/toolbarNotification"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <RelativeLayout
+            android:id="@+id/backIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:background="@mipmap/arrow_back"
+                android:layout_width="18dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="5dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarNotification">
+
+        <RelativeLayout
+            android:id="@+id/container_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/logo_about"
+                android:layout_marginTop="10dp"/>
+
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/statistical_VT"
+                android:text="درباره ما"
+                android:textColor="#041f59"
+                android:textSize="18sp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_logo"/>
+
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_two"
+                android:layout_below="@+id/statistical_VT"
+                android:text=" تاریخچه شرکت:"
+                android:textColor="#041f59"
+                android:textSize="18sp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_three"
+                android:layout_below="@+id/txt_two"
+                android:text="@string/about"
+                android:textColor="#041f59"
+                android:textSize="14sp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_four"
+                android:layout_below="@+id/txt_three"
+                android:text="حوزه فعالیت:"
+                android:textColor="#041f59"
+                android:textSize="18sp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_five"
+                android:layout_below="@+id/txt_four"
+                android:text="@string/about1"
+                android:textColor="#041f59"
+                android:textSize="14sp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_six"
+                android:layout_below="@+id/txt_five"
+                android:text="تماس با ما:"
+                android:textColor="#041f59"
+                android:textSize="18sp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_seven"
+                android:layout_below="@+id/txt_six"
+                android:text="پل های ارتباطی شرکت عبارتند از: "
+                android:textColor="#041f59"
+                android:textSize="14sp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_eight"
+                android:layout_below="@+id/txt_seven"
+                android:text="تلفن:"
+                android:textColor="#0f58e9"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/call_TV"
+                android:layout_below="@+id/txt_seven"
+                android:layout_toLeftOf="@+id/txt_eight"
+                android:text="021-22909206"
+                android:textColor="#b32816"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_ten"
+                android:layout_below="@+id/txt_eight"
+                android:text="پست الکترونیک:"
+                android:textColor="#0f58e9"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/email_TV"
+                android:layout_below="@+id/txt_eight"
+                android:layout_toLeftOf="@+id/txt_ten"
+                android:text="info@gapcom.ir "
+                android:textColor="#b32816"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_web"
+                android:layout_below="@+id/txt_ten"
+                android:text="وب سایت:"
+                android:textColor="#0f58e9"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/website_TV"
+                android:layout_below="@+id/txt_ten"
+                android:layout_toLeftOf="@+id/txt_web"
+                android:text="www.gapcom.ir"
+                android:textColor="#b32816"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

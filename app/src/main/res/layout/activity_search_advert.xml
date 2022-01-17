@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.advert.AdvertActivity"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/txt_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/fav">
+
+        <RelativeLayout
+            android:id="@+id/closeIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:background="@mipmap/arrow_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="5dp" />
+        </RelativeLayout>
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="5dp"
+            android:text="مدیریت اجرای تبلیغات "
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_toolbar"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.gap.bis_inspection.util.CustomTextViewTitle
+            android:id="@+id/txt_carTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="خودرو : " />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/txt_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/txt_carTitle"
+            android:text="-" />
+
+        <com.gap.bis_inspection.util.CustomTextViewTitle
+            android:id="@+id/txt_advertNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_carTitle"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text=" نام آگهی : " />
+
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/txt_advertName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_carTitle"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="37dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@+id/txt_carTitle"
+            android:text=" - " />
+
+        <com.gap.bis_inspection.util.CustomTextViewTitle
+            android:id="@+id/txt_titleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_advertNameTitle"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="خط : " />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/txt_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_advertNameTitle"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toLeftOf="@+id/txt_carTitle"
+            android:text="-" />
+
+
+        <com.gap.bis_inspection.util.CustomTextViewTitle
+            android:id="@+id/txt_statusTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_titleTitle"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="وضعیت فرایند : " />
+
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/txt_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_titleTitle"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@+id/txt_carTitle"
+            android:text="-"
+            android:textColor="@color/fav" />
+
+
+        <com.gap.bis_inspection.util.CustomTextViewTitle
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_advertNameTitle"
+           android:layout_toRightOf="@+id/txt_advert_date"
+            android:layout_margin="10dp"
+            android:text="تاریخ درخواست : " />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/txt_advert_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_advertNameTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="-" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/black"
+        android:layout_below="@+id/layout_title"
+        android:layout_marginBottom="2dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_below="@+id/layout_title"
+        android:orientation="horizontal">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/txt_date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/mdtp_date_picker_text_disabled_dark_theme"
+            android:text="تاریخ انجام"
+            tools:ignore="MissingConstraints" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/txt_userCreation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/mdtp_date_picker_text_disabled_dark_theme"
+            android:text="انجام دهنده"
+            tools:ignore="MissingConstraints" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/txt_process"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/mdtp_date_picker_text_disabled_dark_theme"
+            android:text="نام فرایند"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonRecyclerView"
+        android:layout_below="@+id/linearLayout_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/buttonRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

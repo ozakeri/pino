@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    tools:context=".activity.driver.DriverTabActivity">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/toolbarDriver"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_driverIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/icondriver" />
+
+            <TextView
+                android:id="@+id/driverName_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/img_driverIcon"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/textFontSize_home" />
+
+            <ImageView
+                android:id="@+id/backIcon"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/arrow_back" />
+            <RelativeLayout
+                android:id="@+id/addIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/backIcon">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/pluss" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+
+    <ImageView
+        android:id="@+id/image_User"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/container_toolbar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_User">
+
+        <LinearLayout
+            android:id="@+id/rel_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/name_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="---"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_person_name"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+           <!-- <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/family_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="-&#45;&#45;"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_person_family"
+                    android:textSize="14sp"/>
+            </LinearLayout>-->
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/code_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="-&#45;&#45;"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/driverCode_TV"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_driverCode_val1"
+                    android:textSize="14sp" />
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/ageFV_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="---"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_person_ageFV"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/licenceNo_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="---"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:id="@+id/txtnumlicence"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_drivingLicence_licenceNo"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/licGroupEn_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="-&#45;&#45;"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/txtdatelicence"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_drivingLicence_licGroupEn"
+                    android:textSize="14sp" />
+
+            </LinearLayout>-->
+
+           <!-- <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/remainingCredit_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="-&#45;&#45;"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/expireDate_TV"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_drivingLicence_expireDate"
+                    android:textSize="14sp" />
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/mobileNo_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="---"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_address_mobileNo"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/company_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="---"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="@string/label_address_company"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/usageTypeEn_TV"
+                    android:layout_width="200dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="---"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:id="@+id/usageTypeEnTitle_TV"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text=""
+                    android:gravity="left"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

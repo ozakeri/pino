@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout_chat_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+
+    <com.gap.bis_inspection.util.CustomTextView
+        android:id="@+id/name_VT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="3dp"
+        android:background="@mipmap/membericon"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="2dp"
+        android:textColor="#000"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/layout_touch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:gravity="left">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/triangle_msg_from"
+            android:paddingLeft="15dp"
+            android:paddingRight="8dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_msg_from"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            android:layout_marginRight="5dp">
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/time_VT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_progress1"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/date_VT"
+                android:text="Sample"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/date_VT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/layout_progress1"
+                android:text="Sample"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/img_deliver"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/msgr"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/time_VT"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/layout_progress1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/msgr">
+
+                <ImageView
+                    android:id="@+id/img_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/circularProgressbar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/msgr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_toRightOf="@id/date_VT"
+                android:text="simple"
+                android:textColor="#000"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/img_SendFile"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/msgr"
+                android:layout_toRightOf="@+id/time_VT"
+                android:background="@mipmap/sendfile"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

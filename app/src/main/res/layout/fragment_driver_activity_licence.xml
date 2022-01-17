@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/toolbarDriver"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_driverIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/icondriver" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/driverName_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/img_driverIcon"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/backIcon"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/arrow_back" />
+            
+            <RelativeLayout
+                android:id="@+id/addIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/backIcon">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/pluss" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/liceNumber_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:visibility="gone">
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/licenceNo_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:text="---"
+                android:textSize="14sp" />
+
+            <com.gap.bis_inspection.util.CustomTextViewTitle
+                android:id="@+id/statistical_TV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:gravity="left"
+                android:text="@string/label_licence_licenceNo"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/liceType_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:visibility="gone">
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/driveLicenceTypeEn_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:text="---"
+                android:textSize="14sp" />
+
+            <com.gap.bis_inspection.util.CustomTextViewTitle
+                android:id="@+id/txt_two"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:gravity="left"
+                android:text="@string/label_licence_driveLicenceTypeEn"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    <!--    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/hejriStartDate_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:text="-&#45;&#45;"
+                android:textSize="14sp" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_three"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:gravity="left"
+                android:text="@string/label_licence_hejriStartDate"
+                android:textSize="14sp" />
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/liceExp_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:visibility="gone">
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/hejriExpireDate_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:text="---"
+                android:textSize="14sp" />
+
+            <com.gap.bis_inspection.util.CustomTextViewTitle
+                android:id="@+id/txt_four"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:gravity="left"
+                android:text="@string/label_drivingLicence_expireDate"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+</RelativeLayout>

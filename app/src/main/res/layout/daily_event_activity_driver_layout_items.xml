@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".fragment.driver.DriverDailyActivityFragment">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/img_driver"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/img_driver"
+                android:layout_centerVertical="true">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/txt_driverCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="50000"/>
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:id="@+id/txt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hello Hello Hello"/>
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+</RelativeLayout>

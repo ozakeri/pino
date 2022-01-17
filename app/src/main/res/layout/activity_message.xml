@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.message.ChatActivity"
+    android:background="@color/bgColor">
+
+    <RelativeLayout
+        android:id="@+id/toolbarMessage"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/toolbarMessage">
+
+        <LinearLayout
+            android:id="@+id/LinearLayout_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/countMember_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/groupName_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/back_Icon"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/arrow_back" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+            <ProgressBar
+                android:id="@+id/processBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/messages_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/input_barLayout"
+        android:layout_below="@+id/toolbarMessage"
+        android:layout_marginBottom="3dp"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
+
+    <com.gap.bis_inspection.util.CustomTextViewTitle
+        android:id="@+id/txt_newMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/input_barLayout"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:background="@drawable/circle_background"
+        android:text="fdgdsf"/>
+
+    <RelativeLayout
+        android:id="@+id/input_barLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/textview_style"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/attach_Icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="27dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/attach" />
+
+        </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/message_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/send_Button"
+            android:background="#00000000"
+            android:gravity="right"
+            android:hint="@string/label_menu_ETnotification"
+            android:inputType="textMultiLine"
+            android:paddingTop="10dp"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:maxLength="1000"
+            android:ellipsize="end"/>
+
+        <ImageView
+            android:id="@+id/send_Button"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/sendingicon"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/attach_Icon"
+            android:layout_marginLeft="10dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

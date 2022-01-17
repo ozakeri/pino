@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bgColor">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/toolbarCar"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_carIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/iconbus" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/carName_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/img_carIcon"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:background="@mipmap/arrow_back"
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp" />
+
+        <RelativeLayout
+            android:id="@+id/addIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/backIcon">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/pluss" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar">
+
+            <LinearLayout
+                android:id="@+id/rel_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/plateText_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp"
+                        android:textDirection="firstStrong"/>
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:id="@+id/txt_plateText"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/plateText_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/nameFv_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp"
+                        android:textDirection="firstStrong" />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/nameFv_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/productionYear_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/name_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/engineFuelType_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/name_engineFuelType"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/color_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp"
+                        />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/color_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/nameFv1_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp"
+                        />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/Owner_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/company_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/autoCompleteLabel_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/usageTypeEn_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/usageTypeEn_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/carOptionInsuranceFP_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/carOptionInsuranceFP_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/carOptionTechnicalCheckFP_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/carOptionTechnicalCheckFP_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/advertisement_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.gap.bis_inspection.util.CustomTextView
+                        android:id="@+id/advertisementDetailFP_TV"
+                        android:layout_width="200dp"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="---"
+                        android:textSize="14sp" />
+
+                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                        android:id="@+id/txt_autoCompleteLabel"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/advertisementDetail_label"
+                        android:gravity="left"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/getFuelCar_Button"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="left"
+                    android:layout_margin="20dp"
+                    android:background="@mipmap/bus_fuel_icon"/>
+
+                <!--      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="right"
+                          android:orientation="horizontal">
+
+                          <com.gap.bis_inspection.util.CustomTextView
+                              android:id="@+id/advertisementSubject_TV"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_margin="10dp"
+                              android:text="-&#45;&#45;"
+                                    android:textSize="14sp" />
+
+                          <com.gap.bis_inspection.util.CustomTextView
+                              android:id="@+id/txt_autoCompleteLabel"
+                              android:layout_width="80dp"
+                              android:layout_height="wrap_content"
+                              android:layout_margin="10dp"
+                              android:text="@string/advertisementDetail_label"
+                              android:gravity="left"
+                              android:textSize="14sp" />
+                      </LinearLayout>-->
+
+            </LinearLayout>
+        </ScrollView>
+
+</RelativeLayout>

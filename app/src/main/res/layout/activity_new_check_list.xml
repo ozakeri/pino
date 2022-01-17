@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/bgColor"
+    tools:context="com.gap.bis_inspection.activity.checklist.NewCheckListActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/layoutToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbarCheckList">
+
+        <ImageView
+            android:id="@+id/img_driverIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/iconchecklist" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/title_VT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@+id/img_driverIcon"
+            android:layout_toRightOf="@+id/back_Icon"
+            android:text="@string/label_newCheckListActivity_Title"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:singleLine="true"/>
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/dateAndTime_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_toLeftOf="@+id/img_driverIcon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/title_VT" />
+
+        <RelativeLayout
+            android:id="@+id/back_Icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/close_icon"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/close" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutToolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="10sp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/plateTextP1_ET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/textview_report_style"
+                android:gravity="center"
+                android:hint=" _ _ _ _ _ "
+                android:inputType="number"
+                android:padding="3dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/mdtp_done_disabled_dark"
+                android:textCursorDrawable="@null"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/plateTextP2_ET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/textview_report_style"
+                android:gravity="center"
+                android:hint=" _ _ "
+                android:inputType="number"
+                android:padding="3dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/mdtp_done_disabled_dark"
+                android:textCursorDrawable="@null"
+                android:textSize="15sp" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="پلاک خودرو را وارد کنید :"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="10sp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/lineCode_ET"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/textview_report_style"
+                android:gravity="center"
+                android:inputType="number"
+                android:padding="3dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/mdtp_done_disabled_dark"
+                android:textCursorDrawable="@null"
+                android:textSize="15sp"
+                android:hint=" _ _ _ "/>
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="کد خط را وارد کنید :"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/action_Button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@mipmap/btn_checklist"
+            android:text="تایید" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

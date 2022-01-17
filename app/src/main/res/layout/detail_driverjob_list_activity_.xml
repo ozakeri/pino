@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bgColor"
+    tools:context=".activity.car.CarDriverDetailActivity">
+    <RelativeLayout
+        android:id="@+id/container_toolbar"
+        android:background="@color/toolbarDriver"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:text="@string/label_dialog_detail"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/close"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container_toolbar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/type_TV"
+                    android:layout_width="150dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:singleLine="false"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="@string/car_driver_list_type"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/typeEn_TV"
+                    android:layout_width="150dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="@string/car_driver_list_typeEn"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/driverNameFv_TV"
+                    android:layout_width="150dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="@string/car_driver_list_driverNameFv"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/mobileNo_TV"
+                    android:layout_width="150dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="@string/car_driver_list_mobileNo"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/carNameFv_TV"
+                    android:layout_width="150dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp"/>
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="@string/car_driver_list_carPlateText"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/lineNameFv_TV"
+                    android:layout_width="150dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="@string/car_driver_list_lineNameFv"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal"
+                >
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/providerCompany_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:gravity="right"/>
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:textColor="#000000"
+                    android:text="@string/car_driver_list_providerCompany"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rel_shift"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal"
+                >
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/shiftTypeEn_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:gravity="right"/>
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="@string/car_driver_list_shiftTypeEn"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/startDate_TV"
+                    android:layout_width="150dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:text="@string/car_driver_list_startDate"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/finishDate_TV"
+                    android:layout_width="150dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/car_driver_list_endDate"
+                    android:gravity="left"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

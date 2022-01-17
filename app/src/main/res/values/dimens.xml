@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="textFontSize_title">12sp</dimen>
+    <dimen name="textFontSize_home">24sp</dimen>
+    <dimen name="textFontSize_titleTable">14sp</dimen>
+    <dimen name="textFontSize_rowTable">12sp</dimen>
+    <dimen name="image_dialog_image_margin">50dp</dimen>
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="day_padding">2dp</dimen>
+    <dimen name="year_padding">5dp</dimen>
+    <dimen name="year_width">80dp</dimen>
+    <dimen name="text_x_large">19sp</dimen>
+    <dimen name="title_padding">12dp</dimen>
+    <dimen name="list_padding">12dp</dimen>
+    <dimen name="dialog_padding">16dp</dimen>
+    <dimen name="dialog_width">260dp</dimen>
+    <dimen name="dialog_height">430dp</dimen>
+    <dimen name="month_padding_left">16dp</dimen>
+    <dimen name="month_padding_right">16dp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_huge">24sp</dimen>
+    <dimen name="text_big">20sp</dimen>
+    <dimen name="text_normal">18sp</dimen>
+    <dimen name="text_small2">14sp</dimen>
+    <dimen name="text_small3">10sp</dimen>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activity.form.SurveyActivity">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/txt_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="textMultiLine"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="dhfhdfhdhf"/>
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/txt_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="textMultiLine"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:text="dhfhdfhdhf"/>
+
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:id="@+id/txt_shift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="textMultiLine"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="dhfhdfhdhf"/>
+
+            </LinearLayout>
+
+</RelativeLayout>

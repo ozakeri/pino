@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gap.bis_inspection.activity.SettingActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarNotification"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/toolbarNotification">
+
+        <RelativeLayout
+            android:id="@+id/backIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/arrow_back" />
+        </RelativeLayout>
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@+id/title_Icon"
+            android:text="@string/title_setting"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/title_Icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/setting_title"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarNotification"
+        android:layout_margin="20sp">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/switchPassword_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="18sp"
+            android:text="غیر فعال کردن گذرواژه محلی"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="15dp"
+            android:theme="@style/MySwitch" />
+
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/changeLocalPassword_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/switchPassword_TV"
+            android:layout_margin="15dp"
+            android:gravity="center_vertical"
+            android:text="تغییر گذرواژه محلی"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/changeLocalPassword1_TV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/switchPassword_TV"
+            android:background="@mipmap/edit_password"
+            android:layout_margin="15dp">
+        </RelativeLayout>
+
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/updateApplication_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/changeLocalPassword_TV"
+            android:layout_margin="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/check_update_application_newVersion"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/updateApplication_Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/changeLocalPassword1_TV"
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_update"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/downloading"
+                android:visibility="gone"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUpdateLocal"
+                android:text="نصب"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="@mipmap/btn_settingt"
+                android:textColor="@android:color/white"
+                android:visibility="gone"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnDownloadAndUpdate"
+                android:text="دانلود"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="@mipmap/btn_settingt"
+                android:textColor="@android:color/white"
+                android:visibility="visible"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_open"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/open_file"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/StateLabel"
+                android:textAlignment="center"
+                android:text=""
+                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/updateApplication_Layout"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progress="0"
+                android:id="@+id/horizonProgressBar"
+                android:layout_below="@+id/StateLabel"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/changeBisPassword_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/updateApplication_TV"
+            android:layout_margin="15dp"
+            android:gravity="center_vertical"
+            android:text="تغییر گذرواژه BIS"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/changeBisPassword1_TV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/updateApplication_Layout"
+            android:layout_margin="15dp"
+            android:visibility="gone">
+        </RelativeLayout>
+
+
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/deleteAccount_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/updateApplication_Layout"
+            android:layout_margin="15dp"
+            android:gravity="center_vertical"
+            android:text="پیکربندی مجدد"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_deleteAccount"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/updateApplication_Layout"
+            android:background="@drawable/delete_account"
+            android:layout_margin="15dp">
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

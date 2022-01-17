@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:background="@color/toolbarCar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/img_carIcon"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/iconbus"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/titleName_TV"
+                android:layout_toLeftOf="@+id/img_carIcon"
+                android:text="@string/b1"
+                android:textColor="#ffffff"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/backIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true">
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/arrow_back"
+                    android:layout_width="18dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="5dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rel_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container_toolbar"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/getCarInfoParamType_OP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/r_btn_day"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/codeType_OP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="@string/getCarInfo_type2_search"
+                android:checked="true"
+                android:theme="@style/MyRadioButtonCar" />
+
+            <RadioButton
+                android:id="@+id/plateTextType_OP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="@string/getCarInfo_type1_search"
+                android:theme="@style/MyRadioButtonCar" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <com.gap.bis_inspection.widget.CustomEditText
+        android:layout_below="@+id/container_toolbar"
+        android:id="@+id/search_ET"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:imeOptions="actionSearch"
+        android:inputType="number"
+        android:hint="@string/car_plateText_Search_label"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:background="@drawable/border"
+        android:textCursorDrawable="@null"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/container_toolbar"
+        android:layout_toLeftOf="@+id/search_ET"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/btn_search"
+            android:layout_width="36dp"
+            android:layout_height="35dp"
+            android:background="@drawable/search_car"
+            android:textColor="#0c0551"
+            android:textSize="20sp"
+            android:layout_margin="2dp"
+            android:layout_gravity="center"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_ET"
+        android:background="@drawable/textview_report_style"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:layout_marginTop="50dp"
+        android:visibility="gone">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="@string/label_get_car_fuel_textTitle" />
+
+        <Button
+            android:id="@+id/getFuelCar_Button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@mipmap/bus_fuel_icon"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_Qrcode"
+        android:onClick="mScan"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/qrscanner"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/icon_logo"
+                android:layout_width="35dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/iconlogo"/>
+
+            <com.gap.bis_inspection.util.CustomTextView
+                android:id="@+id/webSite_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_webSite"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/toolbarNotification"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

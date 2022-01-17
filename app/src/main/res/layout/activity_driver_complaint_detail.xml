@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bgColor"
+    tools:context=".activity.driver.DriverViolationDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:background="@color/toolbarDriver"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:text="@string/label_dialog_detail"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/close"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/requestType_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="right"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <!--<com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:gravity="left"
+                    android:text="@string/complaint_requestType"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/complaintBaseSubject_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="right"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <!-- <com.gap.bis_inspection.util.CustomTextView
+                     android:layout_width="120dp"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="3dp"
+                     android:gravity="left"
+                     android:text="@string/complaint_complaintBase_subject"
+                     android:textColor="#000000"
+                     android:textSize="14sp" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/requestDate_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="right"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <!--   <com.gap.bis_inspection.util.CustomTextView
+                       android:layout_width="120dp"
+                       android:layout_height="wrap_content"
+                       android:layout_margin="3dp"
+                       android:gravity="left"
+                       android:text="@string/complaint_requestDate"
+                       android:textColor="#000000"
+                       android:textSize="14sp" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/requestNo_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="right"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <!--<com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:gravity="left"
+                    android:text="@string/complaint_requestNo"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/requestDescription_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="right"
+                    android:textColor="#000000"
+                    android:textSize="14sp"  />
+
+                <!--<com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:gravity="left"
+                    android:text="@string/complaint_requestDescription"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />-->
+
+            </LinearLayout>
+
+
+            <!-- <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="right"
+                 android:orientation="horizontal">
+
+                 <com.gap.bis_inspection.util.CustomTextView
+                     android:id="@+id/requesterName_TV"
+                     android:layout_width="150dp"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="3dp"
+                     android:gravity="right"
+                     android:textColor="#000000"
+                     android:textSize="14sp" />
+
+                 <com.gap.bis_inspection.util.CustomTextView
+                     android:layout_width="120dp"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="3dp"
+                     android:gravity="left"
+                     android:text="@string/complaint_requesterName"
+                     android:textColor="#000000"
+                     android:textSize="14sp" />
+             </LinearLayout>-->
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/processStatus_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:gravity="right"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:gravity="left"
+                    android:text="@string/complaint_processStatus"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </LinearLayout>-->
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

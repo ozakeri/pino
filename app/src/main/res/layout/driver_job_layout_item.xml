@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:id="@id/rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="right"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/car_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:visibility="gone">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/plateText_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="aadfafafafa"/>
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/car_driver_list_carPlateText"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:visibility="gone">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/lineNameFvTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/car_driver_list_lineNameFv"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:visibility="gone">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/driverJobTypeEn_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/car_driver_list_typeEn"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/typeDriver_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:visibility="gone">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/type_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/car_driver_list_type"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/job_shift_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:visibility="gone">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/shift_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/car_driver_list_shiftTypeEn"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

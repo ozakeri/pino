@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.message.ChatGroupDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarMessage"
+        android:background="@color/toolbarMessage"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+
+        <RelativeLayout
+            android:id="@+id/backIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:background="@mipmap/arrow_back"
+                android:layout_width="18dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="5dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_below="@+id/toolbarMessage"
+        android:id="@+id/memberListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

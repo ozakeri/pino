@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bgColor"
+    tools:context=".activity.car.CarDriverDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/toolbarLine">
+
+        <ImageView
+            android:id="@+id/back_Icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/close" />
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:text="@string/label_dialog_detail"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container_toolbar"
+        android:layout_marginLeft="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/StartTime_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:text="@string/line.timeLine.detailList.StartTime"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/endTime_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:text="@string/line.timeLine.detailList.endTime"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/moveDistanceOnSec_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:text="@string/line_timeLine_detailList_moveDistance1"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/halfPathTimeAvrOnMin_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:text="@string/line.timeLine.detailList.halfPathTimeAvrOnMin"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/pasNoInHalfPathMax_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:text="@string/line.timeLine.detailList.pasNoInHalfPathMax"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/pasNoInHalfPathMin_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:text="@string/line.timeLine.detailList.pasNoInHalfPathMin"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/pasNoInHalfPathAvr_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:text="@string/line.timeLine.detailList.pasNoInHalfPathAvr"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/halfPathSum_TV"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:text="---"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:text="@string/line_timeLine_detailList_halfPathSum1"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/bgColor"
+    tools:context=".activity.car.CarDriverDetailActivity">
+    <RelativeLayout
+        android:id="@+id/container_toolbar"
+        android:background="@color/toolbarLine"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <com.gap.bis_inspection.util.CustomTextView
+            android:text="@string/label_dialog_detail"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/back_Icon"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/close"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container_toolbar"
+        android:layout_marginLeft="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/pathType_TV"
+                    android:layout_width="180dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="105dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:text="@string/pathTypeDetail_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/pathText_TV"
+                    android:layout_width="180dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="105dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pathTextDetail_label"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/pathKm_TV"
+                    android:layout_width="180dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="105dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pathKmDetail_label"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/stationNo_TV"
+                    android:layout_width="180dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="105dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:text="@string/stationNoDetail_label"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/convertNo_TV"
+                    android:layout_width="180dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:layout_width="105dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"                     android:layout_marginBottom="10dp"
+                    android:textColor="#000000"
+                    android:text="@string/convertNoDetail_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

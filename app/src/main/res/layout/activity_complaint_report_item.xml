@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="horizontal">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white">
+
+
+        <LinearLayout
+            android:id="@id/rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.gap.bis_inspection.util.CustomTextViewTitle
+                android:id="@+id/name_VT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="name"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:layout_margin="5dp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right">
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/reportDate_VT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sdfasdfsdfdsf"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"/>
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تاریخ ثبت : "
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.gap.bis_inspection.util.CustomTextViewTitle
+                    android:id="@+id/report_VT1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="تاریخ ارسال : "
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"/>
+
+                <com.gap.bis_inspection.util.CustomTextView
+                    android:id="@+id/report_VT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="sdfasdfsdfdsf"
+                    android:textColor="@color/black"
+                    android:layout_toLeftOf="@+id/report_VT1"
+                    android:textSize="12sp"
+                    android:layout_margin="5dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_status"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="10dp"
+                    android:background="@mipmap/ic_launcher"
+                    android:text="sdfasdfsdfdsf" />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
