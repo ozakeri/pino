@@ -16,8 +16,8 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/pino_three</item>
+        <item name="colorPrimaryDark">@color/pino_four</item>
         <item name="android:popupMenuStyle">@style/AndroidSRC.PopupMenu</item>
         <item name="android:itemTextAppearance">@style/AndroidSRC.TextAppearance</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>

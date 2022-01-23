@@ -40,7 +40,7 @@
                     android:id="@+id/layout_top"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:background="@color/pino_three">
+                    android:background="@color/pino_four">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/userPicture_imageView"
@@ -64,7 +64,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/lastLoginDate_label"
-                            android:textColor="@color/white"
+                            android:textColor="@color/mdtp_transparent_black"
                             android:textSize="15sp" />
 
                         <LinearLayout
@@ -79,7 +79,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:textColor="@color/white"
+                                android:textColor="@color/mdtp_transparent_black"
                                 android:textSize="15sp" />
 
                             <com.gap.bis_inspection.util.CustomTextView
@@ -87,7 +87,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:textColor="@color/white"
+                                android:textColor="@color/mdtp_transparent_black"
                                 android:textSize="15sp" />
 
                         </LinearLayout>
@@ -111,8 +111,8 @@
                         android:id="@+id/recyclerViewPermission"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:reverseLayout="true"
-                        android:layout_gravity="center_horizontal|center_vertical" />
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        app:reverseLayout="true" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -322,7 +322,7 @@
                                                 android:paddingLeft="2dp"
                                                 android:paddingRight="5dp"
                                                 android:text="1"
-                                                android:textColor="@color/white"
+                                                android:textColor="@color/mdtp_transparent_black"
                                                 android:textSize="15sp" />
 
                                         </RelativeLayout>

@@ -17,22 +17,21 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="200dp"
-        android:layout_height="180dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/bis_logo"
+        android:layout_height="170dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bis_logo" />
 
     <TextView
         android:id="@+id/txt_site"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="www.gapcom.ir"
-        android:textColor="@color/white"
         android:layout_above="@+id/waitProgress"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="www.gapcom.ir"
+        android:textColor="@color/mdtp_transparent_black"
+        android:textSize="18sp" />
 
     <com.github.rahatarmanahmed.cpv.CircularProgressView
         android:id="@+id/waitProgress"

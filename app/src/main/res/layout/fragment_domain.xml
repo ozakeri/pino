@@ -14,13 +14,13 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/toolbar_home"/>
+            android:background="@color/pino_four" />
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
 
             android:src="@drawable/login" />
@@ -42,7 +42,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:text="@string/enter_domain_hint"
-                android:textColor="#398adc"
+                android:textColor="@color/mdtp_transparent_black"
                 android:textSize="18sp" />
 
             <AutoCompleteTextView
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/toolbar_home"
+                android:textColor="@color/mdtp_transparent_black"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
                 android:textSize="14sp"/>
@@ -73,7 +73,7 @@
                 android:padding="12dp"
                 android:text="تایید"
                 android:gravity="center"
-                android:textColor="@color/white"
+                android:textColor="@color/mdtp_transparent_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -92,12 +92,12 @@
             android:id="@+id/txt_site"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
             android:text="www.gapcom.ir"
-            android:textColor="@color/toolbar_home"
+            android:textColor="@color/mdtp_transparent_black"
             android:textSize="18sp" />
 
     </RelativeLayout>
