@@ -88,4 +88,6 @@ dependencies {
     implementation("androidx.appcompat:appcompat-resources:1.4.0")
     implementation("androidx.core:core:1.7.0")
 
+    implementation 'com.google.firebase:firebase-messaging-directboot:20.2.0'
+
 }

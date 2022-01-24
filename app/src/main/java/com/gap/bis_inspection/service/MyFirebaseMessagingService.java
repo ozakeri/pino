@@ -14,16 +14,20 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import com.gap.bis_inspection.R;
 import com.gap.bis_inspection.activity.MainActivity;
+import com.gap.bis_inspection.activity.SplashActivity;
 import com.gap.bis_inspection.app.AppController;
 import com.gap.bis_inspection.exception.WebServiceException;
+import com.gap.bis_inspection.util.EventBusModel;
 import com.gap.bis_inspection.webservice.MyPostJsonService;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import org.greenrobot.eventbus.EventBus;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -40,6 +44,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         super.onNewToken(s);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
@@ -49,16 +54,32 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Map<String, String> data = remoteMessage.getData();
         String body = remoteMessage.getNotification().getTitle();
         String title = remoteMessage.getNotification().getBody();
+        String action = String.valueOf(remoteMessage.getData().get("action"));
+        String groupId = String.valueOf(remoteMessage.getData().get("groupId"));
 
-        Services services = new Services(getApplicationContext());
-        services.getChatMessageList();
+        System.out.println("action====" + action);
+        System.out.println("title====" + title);
+        System.out.println("body====" + body);
+        System.out.println("groupId====" + groupId);
 
-        SharedPreferences.Editor editor = AppController.getInstance().getSharedPreferences().edit();
-        editor.putString("action", null);
-        editor.putString("groupId", null);
-        editor.apply();
+        if (action != null && action.equals("newChatMessage")) {
 
-       // sendNotification(this, title, body);
+            SharedPreferences.Editor editor = AppController.getInstance().getSharedPreferences().edit();
+            editor.putString("action", action);
+            editor.putString("groupId", groupId);
+            editor.apply();
+
+            if (AppController.appIsRunning(this)) {
+                Services services = new Services(this);
+                services.getChatMessageList();
+                EventBus.getDefault().post(new EventBusModel(true));
+            } else {
+                intent = new Intent(this, SplashActivity.class);
+            }
+            sendNotification(this, title, body);
+        }else {
+            sendNotification(this, title, body);
+        }
     }
 
     public void sendNotification(Context context, String title, String body) {
@@ -72,7 +93,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(context, channelId)
-                        .setSmallIcon(R.mipmap.bazresi_app)
+                        .setSmallIcon(R.drawable.ic_notify)
                         .setContentTitle(title)
                         .setContentText(body)
                         .setAutoCancel(true)
@@ -94,7 +115,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     public void showNotification(Context context, String title, String body) {
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (notificationManager != null) {
             int notificationId = 1;
@@ -107,11 +128,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         channelId, channelName, importance);
                 notificationManager.createNotificationChannel(mChannel);
             }
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, channelId)
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, channelId)
                     .setContentTitle(title)
                     .setContentText(body);
 
-            TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+            TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
             stackBuilder.addNextIntent(intent);
             PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
                     0,

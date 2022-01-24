@@ -36,12 +36,19 @@ public class FirebaseDataReceiver extends BroadcastReceiver {
 
 
         if (intent.getExtras() != null) {
-            System.out.println("getData====" + intent.getData());
+
             String action = String.valueOf(intent.getExtras().get("action"));
             String title = String.valueOf(intent.getExtras().get("gcm.notification.title"));
             String body = String.valueOf(intent.getExtras().get("gcm.notification.body"));
             String groupId = String.valueOf(intent.getExtras().get("groupId"));
             EventBus.getDefault().post(new EventBusModel(title));
+
+
+            System.out.println("intent====" + intent.getDataString());
+            System.out.println("action====" + action);
+            System.out.println("title====" + title);
+            System.out.println("body====" + body);
+            System.out.println("groupId====" + groupId);
 
             Set<String> keys = intent.getExtras().keySet();
             for (String key : keys) {
@@ -69,7 +76,7 @@ public class FirebaseDataReceiver extends BroadcastReceiver {
             }
 
         }
-        abortBroadcast();
+        //abortBroadcast();
 
         /*Bundle bundle = intent.getExtras();
         if (bundle != null) {
@@ -133,7 +140,7 @@ public class FirebaseDataReceiver extends BroadcastReceiver {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(context, channelId)
-                        .setSmallIcon(R.drawable.ic_notify)
+                        .setSmallIcon(R.drawable.ad_icon)
                         .setColor(ContextCompat.getColor(context, R.color.toolbarNotification))
                         .setContentTitle(title)
                         .setContentText(body)

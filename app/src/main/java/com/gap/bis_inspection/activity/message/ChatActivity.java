@@ -397,10 +397,10 @@ public class ChatActivity extends AppCompatActivity {
                     }
 
                     //
-                    handler.postDelayed(this, 5000);
+                    handler.postDelayed(this, 3000);
                 }
             }
-        }, 5000);
+        }, 3000);
     }
 
 

@@ -90,16 +90,26 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
-
+<!--
         <service
             android:name=".service.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
+        </service>-->
+
+        <service
+            android:name=".service.MyFirebaseMessagingService"
+            android:exported="false"
+            android:directBootAware="true"
+            tools:targetApi="n">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
         </service>
 
-        <receiver
+        <!--<receiver
             android:name=".service.FirebaseDataReceiver"
             android:exported="false"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -107,10 +117,11 @@
                 <action android:name="gap.com.driver" />
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </receiver>
+        </receiver>-->
 
         <activity
             android:name=".activity.SplashActivity"
