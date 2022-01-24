@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -106,6 +107,7 @@ public class HomeActivity extends AppCompatActivity {
     private Services services;
     private Bitmap bitmap;
     private List<Permission> permissionList;
+    private HomeItemsAdapter adapter;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -458,8 +460,9 @@ public class HomeActivity extends AppCompatActivity {
                 }
             };
 
+            adapter = new HomeItemsAdapter(permissionList, application, coreService);
             recyclerViewPermission.setLayoutManager(mLayoutManager);
-            recyclerViewPermission.setAdapter(new HomeItemsAdapter(permissionList));
+            recyclerViewPermission.setAdapter(adapter);
 
             recyclerViewPermission.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
                 @Override
@@ -839,8 +842,14 @@ public class HomeActivity extends AppCompatActivity {
         return deviceSetting;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Subscribe
     public void customEventReceived(EventBusModel event) {
+
+        if (event.isNewMessage()) {
+            adapter.notifyDataSetChanged();
+            //recyclerViewPermission.setAdapter(adapter);
+        }
 
         if (event.getIntegerList() != null) {
             for (long l : event.getIntegerList()) {
@@ -918,8 +927,9 @@ public class HomeActivity extends AppCompatActivity {
         Dialog dialog = new Dialog(HomeActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.profile_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-        RelativeLayout closeIcon = dialog.findViewById(R.id.closeIcon);
+        TextView closeIcon = dialog.findViewById(R.id.closeIcon);
         ImageView img_user = dialog.findViewById(R.id.img_user);
         TextView txtUsername = dialog.findViewById(R.id.txt_username);
         TextView txtCompany = dialog.findViewById(R.id.txt_company);

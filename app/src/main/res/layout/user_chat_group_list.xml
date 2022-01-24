@@ -29,16 +29,16 @@
 
             <com.gap.bis_inspection.util.CustomTextView
                 android:id="@+id/counter_VT"
-                android:textSize="12sp"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="20dp"
-                android:text="0"
-                android:layout_alignParentLeft="true"
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/circle_background"
-                android:layout_marginTop="5dp"/>
+                android:gravity="center_vertical|center_horizontal"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="12sp" />
 
             <com.gap.bis_inspection.util.CustomTextView
                 android:id="@+id/date_VT"

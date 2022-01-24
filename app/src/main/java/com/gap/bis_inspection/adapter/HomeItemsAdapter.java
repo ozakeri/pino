@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,15 +14,21 @@ import com.gap.bis_inspection.R;
 import com.gap.bis_inspection.app.AppController;
 import com.gap.bis_inspection.common.Constants;
 import com.gap.bis_inspection.entitiy.Permission;
+import com.gap.bis_inspection.service.CoreService;
 
 import java.util.List;
 
 public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.CustomView> {
 
     private List<Permission> permissionList;
+    private AppController application;
+    private CoreService coreService;
+    private int counter = 0;
 
-    public HomeItemsAdapter(List<Permission> permissionList) {
+    public HomeItemsAdapter(List<Permission> permissionList,AppController application,CoreService coreService) {
         this.permissionList = permissionList;
+        this.application = application;
+        this.coreService = coreService;
     }
 
     @NonNull
@@ -35,6 +42,7 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Cust
 
         Permission permissionName = permissionList.get(position);
 
+        holder.relativeLayoutCounter.setVisibility(View.GONE);
         if (permissionName.getName().equals("ROLE_APP_INSPECTION_DRIVER_VIEW_LIST")) {
 
             if (AppController.getInstance().getSharedPreferences().getBoolean(Constants.ON_PROPERTY_CODE, false)) {
@@ -75,6 +83,15 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Cust
         } else if (permissionName.getName().equals("ROLE_APP_INSPECTION_WRITE_NOTIFICATION_MESSAGE")) {
             holder.txt_permissionTitle.setText("پیام ها");
             holder.img_permissionPic.setBackgroundResource(R.drawable.main_icon_message);
+            if (application.getCurrentUser().getServerUserId() != null) {
+                counter = coreService.getCountOfUnreadMessage(application.getCurrentUser().getServerUserId());
+                if (counter > 0){
+                    holder.txt_counter.setText(String.valueOf(counter));
+                    holder.relativeLayoutCounter.setVisibility(View.VISIBLE);
+                }else {
+                    holder.relativeLayoutCounter.setVisibility(View.GONE);
+                }
+            }
         }
 
     }
@@ -86,12 +103,15 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Cust
 
     class CustomView extends RecyclerView.ViewHolder {
         ImageView img_permissionPic;
-        TextView txt_permissionTitle;
+        TextView txt_permissionTitle,txt_counter;
+        RelativeLayout relativeLayoutCounter;
 
         public CustomView(@NonNull View itemView) {
             super(itemView);
             img_permissionPic = itemView.findViewById(R.id.img_permissionPic);
             txt_permissionTitle = itemView.findViewById(R.id.txt_permissionTitle);
+            txt_counter = itemView.findViewById(R.id.txt_counter);
+            relativeLayoutCounter = itemView.findViewById(R.id.relativeLayoutCounter);
         }
     }
 }

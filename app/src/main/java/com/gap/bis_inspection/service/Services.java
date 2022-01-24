@@ -944,7 +944,7 @@ public class Services {
                                             if (tmpChatMessageList.isEmpty()) {
                                                 chatMessage = coreService.insertChatMessage(chatMessage);
                                                 if (chatMessage != null) {
-                                                    EventBus.getDefault().post(new EventBusModel(true));
+                                                    //EventBus.getDefault().post(new EventBusModel(true));
                                                     /*if (title!= null || body != null){
                                                         sendNotification(context,title,body);
                                                     }*/
