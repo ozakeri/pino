@@ -7,17 +7,18 @@
 
     <RelativeLayout
         android:id="@+id/layoutToolbar"
-        android:background="@color/toolbarForm"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="50dp"
+        android:background="@color/toolbarForm">
 
         <RelativeLayout
             android:id="@+id/menu_Icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:layout_centerVertical="true">
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
             <ImageView
                 android:layout_width="4dp"
                 android:layout_height="15dp"
@@ -28,35 +29,36 @@
 
         <ImageView
             android:id="@+id/img_driverIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="7dp"
             android:layout_toLeftOf="@+id/menu_Icon"
-            android:background="@mipmap/iconform"
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:background="@mipmap/iconform" />
 
         <com.gap.bis_inspection.util.CustomTextView
             android:id="@+id/code_VT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/img_driverIcon"
             android:text="@string/label_surveyListActivity_Title"
             android:textColor="#ffffff"
-            android:layout_marginRight="10dp"
-            android:textSize="15sp"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="15sp" />
 
         <RelativeLayout
             android:id="@+id/back_Icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentLeft="true">
+
             <ImageView
-                android:layout_centerInParent="true"
-                android:background="@mipmap/arrow_back"
                 android:layout_width="18dp"
                 android:layout_height="15dp"
-                android:layout_marginLeft="5dp" />
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/arrow_back" />
         </RelativeLayout>
 
     </RelativeLayout>
@@ -74,11 +76,10 @@
 
             <ListView
                 android:id="@+id/survey_listView"
-                android:layout_below="@+id/rel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="2dp"
-                android:layout_above="@+id/layout_logo"/>
+                android:layout_above="@+id/layout_logo"
+                android:layout_marginTop="2dp" />
 
             <RelativeLayout
                 android:id="@+id/layout_logo"

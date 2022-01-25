@@ -13,7 +13,8 @@
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@drawable/logo_bus_tehran" />
+        android:background="@drawable/logo_bus_tehran"
+        android:visibility="gone"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="200dp"
@@ -31,18 +32,19 @@
         android:layout_marginTop="20dp"
         android:text="www.gapcom.ir"
         android:textColor="@color/mdtp_transparent_black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone"/>
 
     <com.github.rahatarmanahmed.cpv.CircularProgressView
         android:id="@+id/waitProgress"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
         app:cpv_animAutostart="true"
-        app:cpv_color="@color/white"
+        app:cpv_color="@color/mdtp_accent_color_dark"
         app:cpv_indeterminate="true" />
 
 

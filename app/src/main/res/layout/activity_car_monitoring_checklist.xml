@@ -11,9 +11,9 @@
         android:id="@+id/layoutToolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/toolbarCheckList"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:background="@color/toolbarCheckList">
 
 
         <RelativeLayout
@@ -21,8 +21,9 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:layout_centerVertical="true">
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
             <ImageView
                 android:layout_width="4dp"
                 android:layout_height="15dp"
@@ -55,12 +56,13 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentLeft="true">
+
             <ImageView
-                android:layout_centerInParent="true"
-                android:background="@mipmap/arrow_back"
                 android:layout_width="18dp"
                 android:layout_height="15dp"
-                android:layout_marginLeft="5dp" />
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/arrow_back" />
         </RelativeLayout>
 
     </RelativeLayout>

@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import com.gap.bis_inspection.R;
+import com.gap.bis_inspection.common.CommonUtil;
 import com.gap.bis_inspection.widget.persiandatepicker.util.PersianCalendar;
 import com.gap.bis_inspection.widget.persiandatepicker.util.PersianCalendarConstants;
 import com.gap.bis_inspection.widget.persiandatepicker.util.PersianCalendarUtils;
@@ -325,6 +326,35 @@ public class PersianDatePicker extends LinearLayout {
             public void onClick(DialogInterface dialog, int which) {
                 String selectedDate = dpStartDate.getDisplayPersianDate().getPersianShortDate();
                 editText.setText(selectedDate);
+
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton(R.string.label_close, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.create().show();
+    }
+
+
+    public static void showDatePickerCopy(Context context,LayoutInflater inflater, final TextView editText) {
+        View customView = inflater.inflate(R.layout.custom, null);
+        final PersianDatePicker dpStartDate = (PersianDatePicker) customView.findViewById(R.id.dpStartDate);
+
+        if (editText.getText() != null && !editText.getText().toString().isEmpty()) {
+            dpStartDate.setDisplayDate(HejriUtil.hejriToChris(editText.getText().toString()));
+        }
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(context, R.style.MyAlertDialogTheme);
+        builder.setView(customView);
+        builder.setPositiveButton(R.string.label_surveyActivity_complete, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String selectedDate = dpStartDate.getDisplayPersianDate().getPersianShortDate();
+                editText.setText(CommonUtil.farsiNumberReplacement(selectedDate));
 
                 dialog.dismiss();
             }

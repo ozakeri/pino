@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "266915874718-3da858gl6hc68p77o4dop9mqvntp3jlv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gap.bis_inspection",
+            "certificate_hash": "e992b2aa62b47528e00c1d8814f16c684504beab"
+          }
+        },
+        {
           "client_id": "266915874718-c7dql1prnvjqqej88tvdfqrhf9nmhen5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

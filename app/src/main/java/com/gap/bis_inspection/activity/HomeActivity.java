@@ -411,7 +411,7 @@ public class HomeActivity extends AppCompatActivity {
         if (application.getPermissionMap() != null) {
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_DRIVER_VIEW_LIST")) {
-                permissionList.add(new Permission("ROLE_APP_INSPECTION_DRIVER_VIEW_LIST"));
+                //permissionList.add(new Permission("ROLE_APP_INSPECTION_DRIVER_VIEW_LIST"));
                 layoutDriver.setVisibility(View.VISIBLE);
                 if (AppController.getInstance().getSharedPreferences().getBoolean(Constants.ON_PROPERTY_CODE, false)) {
                     driverTV.setText("راهبر");
@@ -421,19 +421,19 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_CAR_VIEW_LIST")) {
-                permissionList.add(new Permission("ROLE_APP_INSPECTION_CAR_VIEW_LIST"));
+                //permissionList.add(new Permission("ROLE_APP_INSPECTION_CAR_VIEW_LIST"));
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_LINE_VIEW_LIST")) {
-                permissionList.add(new Permission("ROLE_APP_INSPECTION_LINE_VIEW_LIST"));
+               // permissionList.add(new Permission("ROLE_APP_INSPECTION_LINE_VIEW_LIST"));
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_GET_ADVERTISEMENT_VIEW")) {
-                permissionList.add(new Permission("ROLE_APP_GET_ADVERTISEMENT_VIEW"));
+               // permissionList.add(new Permission("ROLE_APP_GET_ADVERTISEMENT_VIEW"));
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_GET_MNG_FLEET_VIEW")) {
-                permissionList.add(new Permission("ROLE_APP_GET_MNG_FLEET_VIEW"));
+               // permissionList.add(new Permission("ROLE_APP_GET_MNG_FLEET_VIEW"));
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST")) {
@@ -453,7 +453,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             // RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 3);
-            GridLayoutManager mLayoutManager = new GridLayoutManager(this, 3) {
+            GridLayoutManager mLayoutManager = new GridLayoutManager(this, 2) {
                 @Override
                 protected boolean isLayoutRTL() {
                     return true;

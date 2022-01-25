@@ -11,7 +11,7 @@
     <RelativeLayout
         android:id="@+id/toolbarReportList"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="@color/toolbarReport">
 
         <ImageView
@@ -19,8 +19,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:background="@mipmap/reporticon"
-            android:layout_toLeftOf="@+id/menu_Icon"/>
+            android:layout_toLeftOf="@+id/menu_Icon"
+            android:background="@mipmap/reporticon" />
 
         <com.gap.bis_inspection.util.CustomTextView
             android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
                 android:layout_height="15dp"
                 android:layout_centerInParent="true"
                 android:background="@mipmap/pluss"
-                android:visibility="gone"/>
+                android:visibility="gone" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -108,14 +108,14 @@
                         android:background="@mipmap/reportarrowleft" />
                 </RelativeLayout>
 
-                <EditText
+                <com.gap.bis_inspection.util.CustomTextView
                     android:id="@+id/currentDate_VT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:editable="false"
-                    android:textSize="12sp"
-                    android:text="0000000" />
+                    android:text="........"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp" />
 
                 <RelativeLayout
                     android:id="@+id/next_Icon"
@@ -143,7 +143,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
                     android:text="@string/label_driverJobList_counter"
                     android:textSize="14sp" />
 
@@ -213,8 +216,8 @@
                 android:id="@+id/pullToRefresh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/rel"
-                android:layout_above="@+id/layout_logo">
+                android:layout_above="@+id/layout_logo"
+                android:layout_below="@+id/rel">
 
                 <ListView
                     android:id="@+id/reportListView"
@@ -238,8 +241,8 @@
                 android:id="@+id/floatingActionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
                 fab:menu_animationDelayPerItem="55"
                 fab:menu_backgroundColor="@android:color/transparent"
                 fab:menu_buttonSpacing="0dp"
@@ -249,8 +252,8 @@
                 fab:menu_fab_label="@string/label_menu_floatingActionButton"
                 fab:menu_fab_size="normal"
                 fab:menu_icon="@drawable/fab_add"
-                fab:menu_labels_colorNormal="#333"
-                fab:menu_labels_colorPressed="#444"
+                fab:menu_labels_colorNormal="@color/toolbarReport"
+                fab:menu_labels_colorPressed="@color/toolbarReport"
                 fab:menu_labels_colorRipple="#66efecec"
                 fab:menu_labels_ellipsize="none"
                 fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
@@ -263,26 +266,24 @@
                 fab:menu_labels_textSize="15sp"
                 fab:menu_openDirection="up"
                 fab:menu_shadowColor="#66aff198"
-                fab:menu_shadowRadius="4dp"
                 fab:menu_shadowXOffset="1dp"
-                fab:menu_shadowYOffset="4dp"
                 fab:menu_showShadow="true"
                 tools:ignore="RelativeOverlap">
 
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/floatingActionButtonMap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/floating_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@android:drawable/ic_dialog_map"
                     fab:fab_label="@string/label_menu_floatingActionButtonMap"
                     fab:fab_size="mini" />
 
 
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/floatingActionButtonAdd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/floating_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_add"
                     fab:fab_label="@string/label_menu_floatingActionButtonAdd"
                     fab:fab_size="mini" />
             </com.github.clans.fab.FloatingActionMenu>

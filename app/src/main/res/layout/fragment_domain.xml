@@ -14,7 +14,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/pino_four" />
+            android:background="@color/pino_one" />
 
         <ImageView
             android:layout_width="100dp"
@@ -86,6 +86,7 @@
             android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/bis_logo_dark"
+            android:layout_alignParentBottom="true"
             android:layout_above = "@+id/txt_site"/>
 
         <com.gap.bis_inspection.util.CustomTextView
@@ -98,7 +99,8 @@
             android:layout_marginBottom="24dp"
             android:text="www.gapcom.ir"
             android:textColor="@color/mdtp_transparent_black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone"/>
 
     </RelativeLayout>
 

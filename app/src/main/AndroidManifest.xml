@@ -62,7 +62,18 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCgU0Wl4bngzkuXAj-COUeFlweeBaqFz8E" />
 
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
         <activity
             android:name=".activity.graph.GraphListActivity"
             android:exported="false" />
@@ -90,26 +101,26 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
-<!--
+        <!--
         <service
             android:name=".service.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </service>-->
-
+        </service>
+        -->
         <service
             android:name=".service.MyFirebaseMessagingService"
-            android:exported="false"
             android:directBootAware="true"
+            android:exported="false"
             tools:targetApi="n">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <!--<receiver
+        <!--
+<receiver
             android:name=".service.FirebaseDataReceiver"
             android:exported="false"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -121,8 +132,8 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </receiver>-->
-
+        </receiver>
+        -->
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true"
@@ -134,11 +145,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--<meta-data
+        <!--
+<meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDx1lorCO-c3UFjQI83cNniRQiY5bdtQTI" />-->
-
+            android:value="AIzaSyDx1lorCO-c3UFjQI83cNniRQiY5bdtQTI" />
+        -->
         <activity
             android:name=".activity.HomeActivity"
             android:label=""

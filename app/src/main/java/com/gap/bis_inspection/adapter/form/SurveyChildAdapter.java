@@ -99,7 +99,7 @@ public class SurveyChildAdapter extends RecyclerView.Adapter<SurveyChildAdapter.
                 holder.answer.setText(surveyFormQuestion.getAnswerStr());
 
 
-            } else if (surveyFormQuestion.getAnswerTypeEn().equals(GeneralEnum.Val3.ordinal())) {
+            } else if (surveyFormQuestion.getAnswerTypeEn().equals(GeneralEnum.Val4.ordinal())) {
                 linearLayout.setVisibility(View.VISIBLE);
                 holder.linearLayout.setVisibility(View.VISIBLE);
                 holder.leftLayoutRadioButton.setVisibility(View.VISIBLE);
@@ -328,8 +328,10 @@ public class SurveyChildAdapter extends RecyclerView.Adapter<SurveyChildAdapter.
     public ArrayList<String> initSpinnerArrayList() {
         spinnerDataList = new ArrayList<String>();
         spinnerDataList.add("");
-        for (int i = surveyForm.getMinScore(); i <= surveyForm.getMaxScore(); i++) {
-            spinnerDataList.add(Integer.valueOf(i).toString());
+        if (surveyForm.getMinScore() != null && surveyForm.getMaxScore()!= null){
+            for (int i = surveyForm.getMinScore(); i <= surveyForm.getMaxScore(); i++) {
+                spinnerDataList.add(Integer.valueOf(i).toString());
+            }
         }
         return spinnerDataList;
     }

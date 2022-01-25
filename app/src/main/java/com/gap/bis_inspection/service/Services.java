@@ -1662,6 +1662,8 @@ public class Services {
                             //resumeAttachFile(context, coreService, attachFile, user);
                             System.out.println("attachFile====" + attachFile);
                         }
+
+                        resumeAttachFileList("");
                     }
                 } else {
                     complaintReport.setSendingStatusEn(SendingStatusEn.Fail.ordinal());

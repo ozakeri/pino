@@ -20,10 +20,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.downloader.utils.Utils;
 import com.gap.bis_inspection.R;
 import com.gap.bis_inspection.activity.HomeActivity;
 import com.gap.bis_inspection.adapter.ComplaintReportAdapter;
 import com.gap.bis_inspection.app.AppController;
+import com.gap.bis_inspection.common.CommonUtil;
 import com.gap.bis_inspection.common.HejriUtil;
 import com.gap.bis_inspection.db.manager.DatabaseManager;
 import com.gap.bis_inspection.db.objectmodel.ComplaintReport;
@@ -47,11 +49,10 @@ public class ComplaintReportActivity extends AppCompatActivity {
     Date reportDate;
     ComplaintReport complaintReport;
     RelativeLayout layout_counter, relDrawer, backIcon, addIcon;
-    TextView counterTV, webSiteTV;
+    TextView counterTV, webSiteTV, currentDateET;
     DrawerLayout drawerlayout;
     DatabaseManager databaseManager;
     RelativeLayout menuIcon, prevIcon, nextIcon;
-    EditText currentDateET;
     private FloatingActionButton floatingActionButtonMap, floatingActionButtonAdd;
     private ArrayList<ComplaintReport> complaintReports;
     private ArrayList<String> dateReports = null;
@@ -76,13 +77,13 @@ public class ComplaintReportActivity extends AppCompatActivity {
         getItemReportList(reportDate);
 
         String reportHejriStrDate = HejriUtil.chrisToHejri(reportDate);
-        currentDateET.setText(reportHejriStrDate);
+        currentDateET.setText(CommonUtil.farsiNumberReplacement(reportHejriStrDate));
 
         currentDateET.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("NewApi")
             @Override
             public void onClick(View view) {
-                PersianDatePicker.showDatePicker(context, (LayoutInflater) Objects.requireNonNull(context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)), currentDateET);
+                PersianDatePicker.showDatePickerCopy(context, (LayoutInflater) Objects.requireNonNull(context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)), currentDateET);
             }
         });
         currentDateET.addTextChangedListener(new TextWatcher() {
@@ -96,7 +97,7 @@ public class ComplaintReportActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                reportDate = getDateFromField(currentDateET);
+                reportDate = getDateFromField(currentDateET.getText().toString());
                 getItemReportList(reportDate);
                 if (isMustNextDisable(reportDate)) {
                     nextIcon.setEnabled(false);
@@ -114,7 +115,7 @@ public class ComplaintReportActivity extends AppCompatActivity {
             public void onClick(View view) {
                 reportDate = HejriUtil.add(reportDate, Calendar.DAY_OF_MONTH, 1);
                 String reportHejriStrDate = HejriUtil.chrisToHejri(reportDate);
-                currentDateET.setText(reportHejriStrDate);
+                currentDateET.setText(CommonUtil.farsiNumberReplacement(reportHejriStrDate));
 
                 if (isMustNextDisable(reportDate)) {
                     nextIcon.setEnabled(false);
@@ -129,7 +130,7 @@ public class ComplaintReportActivity extends AppCompatActivity {
             public void onClick(View view) {
                 reportDate = HejriUtil.add(reportDate, Calendar.DAY_OF_MONTH, -1);
                 String reportHejriStrDate = HejriUtil.chrisToHejri(reportDate);
-                currentDateET.setText(reportHejriStrDate);
+                currentDateET.setText(CommonUtil.farsiNumberReplacement(reportHejriStrDate));
 
                 if (!isMustNextDisable(reportDate)) {
                     nextIcon.setEnabled(true);
@@ -232,7 +233,7 @@ public class ComplaintReportActivity extends AppCompatActivity {
         layout_counter = (RelativeLayout) findViewById(R.id.layout_counter);
         counterTV = (TextView) findViewById(R.id.counter_TV);
         webSiteTV = (TextView) findViewById(R.id.webSite_TV);
-        currentDateET = (EditText) findViewById(R.id.currentDate_VT);
+        currentDateET = findViewById(R.id.currentDate_VT);
         recyclerView = (RecyclerView) findViewById(R.id.listView_drawer);
         relDrawer = (RelativeLayout) findViewById(R.id.relDrawer);
         drawerlayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -261,7 +262,7 @@ public class ComplaintReportActivity extends AppCompatActivity {
         complaintReports = (ArrayList<ComplaintReport>) coreService.getComplaintReportListByDate(application.getCurrentUser().getServerUserId(), reportDate);
         ComplaintReportAdapter reportListAdapter = new ComplaintReportAdapter(getApplicationContext(), R.layout.activity_complaint_report_item, complaintReports);
         reportListView.setAdapter(reportListAdapter);
-        counterTV.setText(String.valueOf(reportListView.getCount()));
+        counterTV.setText(CommonUtil.farsiNumberReplacement(String.valueOf(reportListView.getCount())));
     }
 
 
@@ -282,10 +283,10 @@ public class ComplaintReportActivity extends AppCompatActivity {
         return reportCalendar.getTime().compareTo(currentCalendar.getTime()) >= 0;
     }
 
-    private Date getDateFromField(EditText dateEditText) {
+    private Date getDateFromField(String s) {
         Date date = null;
-        if (dateEditText.getText() != null) {
-            date = HejriUtil.hejriToChris(dateEditText.getText().toString());
+        if (s != null) {
+            date = HejriUtil.hejriToChris(s);
         }
         return date;
     }
