@@ -66,7 +66,7 @@ public class SurveyChildAdapter extends RecyclerView.Adapter<SurveyChildAdapter.
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-        final SurveyFormQuestionTemp surveyFormQuestionTemp = surveyFormQuestionTemps.get(position);
+        final SurveyFormQuestionTemp surveyFormQuestionTemp = surveyFormQuestionTemps.get(holder.getAdapterPosition());
 
         databaseManager = new DatabaseManager(m_context);
         coreService = new CoreService(databaseManager);

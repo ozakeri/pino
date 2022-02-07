@@ -66,13 +66,13 @@ public class ListDrawer {
         dataList.add(new DrawerItem(R.string.label_menu_setting, R.drawable.setting));
         dataList.add(new DrawerItem(R.string.label_menu_home, R.drawable.home));
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_DRIVER_VIEW_LIST")) {
-            dataList.add(new DrawerItem(R.string.label_menu_driver, R.drawable.driver));
+            //dataList.add(new DrawerItem(R.string.label_menu_driver, R.drawable.driver));
         }
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_CAR_VIEW_LIST")) {
-            dataList.add(new DrawerItem(R.string.label_menu_car, R.drawable.bus));
+            //dataList.add(new DrawerItem(R.string.label_menu_car, R.drawable.bus));
         }
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_LINE_VIEW_LIST")) {
-            dataList.add(new DrawerItem(R.string.label_menu_line, R.drawable.line));
+            //dataList.add(new DrawerItem(R.string.label_menu_line, R.drawable.line));
         }
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST")) {
             dataList.add(new DrawerItem(R.string.label_menu_form, R.drawable.forms));

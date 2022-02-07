@@ -153,6 +153,8 @@ public class HomeActivity extends AppCompatActivity {
         ////****** get user image *******////
 
         if (application.getCurrentUser().getPicturePathUrl() != null && !application.getCurrentUser().getPicturePathUrl().isEmpty()) {
+
+            System.out.println("=========!= null===============");
             bitmap = BitmapFactory.decodeFile(application.getCurrentUser().getPicturePathUrl());
 
             if (bitmap != null) {
@@ -171,6 +173,9 @@ public class HomeActivity extends AppCompatActivity {
             } else {
                 String pictureByte = AppController.getInstance().getSharedPreferences().getString(Constants.JSON_PICTURE_BYTE, "");
                 logLargeString(pictureByte);
+
+                System.out.println("=========pictureByte===============");
+
                 try {
                     JSONArray array = new JSONArray(pictureByte);
                     byte[] bytes = new byte[0];

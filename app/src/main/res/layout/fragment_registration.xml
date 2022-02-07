@@ -14,7 +14,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/pino_four" />
+            android:background="@color/pino_one" />
 
         <ImageView
             android:layout_width="100dp"
@@ -83,14 +83,14 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="130dp"
-            android:layout_height="90dp"
-            android:layout_marginBottom="24dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/txt_site"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/bis_logo_dark"
-            android:layout_above = "@+id/txt_site"
-            android:layout_alignParentBottom="true"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/app_logo_two" />
 
         <com.gap.bis_inspection.util.CustomTextView
             android:id="@+id/txt_site"
