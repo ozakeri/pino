@@ -2,6 +2,9 @@
 
 package com.gap.bis_inspection.activity.message;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -51,7 +54,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.gap.bis_inspection.R;
-import com.gap.bis_inspection.activity.SplashActivity;
 import com.gap.bis_inspection.activity.checklist.FullScreenActivity;
 import com.gap.bis_inspection.adapter.message.ChatMessageArrayAdapter;
 import com.gap.bis_inspection.app.AppController;
@@ -78,9 +80,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-
 public class ChatActivity extends AppCompatActivity {
     private Context context = this;
     private CoreService coreService;
@@ -103,6 +102,9 @@ public class ChatActivity extends AppCompatActivity {
     private ActivityManager am;
     private boolean checkCurrentActivity = true;
     private Bundle bundle;
+
+    private boolean isPrivateChat = false;
+    private Long receiverUserId = null;
 
 
     @SuppressLint("SetTextI18n")
@@ -189,7 +191,7 @@ public class ChatActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(getApplicationContext(), ChatGroupDetailActivity.class);
                     intent.putExtra("chatGroupId", chatGroupId);
-                    startActivity(intent);
+                    startActivityForResult(intent, 111);
                 }
             });
         }
@@ -314,7 +316,7 @@ public class ChatActivity extends AppCompatActivity {
                     //ImageView downloadProgressBarImage = (ImageView) view.findViewById(R.id.circularProgressbarImg);
                     img_SendFile.setVisibility(View.INVISIBLE);
                     downloadProgressBar.setVisibility(View.VISIBLE);
-                   // downloadProgressBarTV.setVisibility(View.VISIBLE);
+                    // downloadProgressBarTV.setVisibility(View.VISIBLE);
                     //downloadProgressBarImage.setVisibility(View.VISIBLE);
 
                     new Thread(new DownloadAttachFile()).start();
@@ -512,7 +514,7 @@ public class ChatActivity extends AppCompatActivity {
         chatMessage.setReadIs(Boolean.FALSE);
         chatMessage = coreService.insertChatMessage(chatMessage);
 
-        if (file != null){
+        if (file != null) {
             String userFileName = file.getName();
             System.out.println("userFileName=====" + filePath);
             String filePostfix = userFileName.substring(userFileName.indexOf("."), userFileName.length());
@@ -597,7 +599,24 @@ public class ChatActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_OK) {
+
+        if (resultCode == Activity.RESULT_FIRST_USER) {
+            if (requestCode == 111) {
+
+                System.out.println("resultCode====" + resultCode);
+                System.out.println("requestCode====" + requestCode);
+
+                if (data != null) {
+                    isPrivateChat = data.getBooleanExtra("isPrivateChat", false);
+                    receiverUserId = data.getLongExtra("receiverUserId", 0);
+
+                    System.out.println("isPrivateChat====" + isPrivateChat);
+                    System.out.println("receiverUserId====" + receiverUserId);
+                }
+
+            }
+        } else if (resultCode == Activity.RESULT_OK) {
+
             Uri outputFileUri;
             if (requestCode == SELECT_FILE) {
                 outputFileUri = data.getData();
@@ -614,6 +633,7 @@ public class ChatActivity extends AppCompatActivity {
                 sendChatMessageAttachFile(capturedImageFilePath);
 
             }
+
         }
     }
 
@@ -667,7 +687,7 @@ public class ChatActivity extends AppCompatActivity {
             ChatMessage chatMessage = coreService.getChatMessageById(selectedChatMessageId);
             if (chatMessage != null) {
                 try {
-                    services.downloadAttachFile(ChatActivity.this,coreService, chatMessage);
+                    services.downloadAttachFile(ChatActivity.this, coreService, chatMessage);
                 } catch (Exception e) {
                     e.getMessage();
                 }
@@ -749,7 +769,7 @@ public class ChatActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void checkNewMessage(EventBusModel event) {
         if (event.isNewMessage() || event.isMessage() || event.isDownloadAttachFile()) {
-            refreshChatMessageList(false,false);
+            refreshChatMessageList(false, false);
         }
 
         System.out.println("===invalidateViews==");
@@ -787,7 +807,7 @@ public class ChatActivity extends AppCompatActivity {
             application.setCurrentActivity(null);
     }
 
-    public File saveBitmapToFile(File file){
+    public File saveBitmapToFile(File file) {
         try {
 
             // BitmapFactory options to downsize the image
@@ -802,11 +822,11 @@ public class ChatActivity extends AppCompatActivity {
             inputStream.close();
 
             // The new size we want to scale to
-            final int REQUIRED_SIZE=50;
+            final int REQUIRED_SIZE = 50;
 
             // Find the correct scale value. It should be the power of 2.
             int scale = 1;
-            while(o.outWidth / scale / 2 >= REQUIRED_SIZE &&
+            while (o.outWidth / scale / 2 >= REQUIRED_SIZE &&
                     o.outHeight / scale / 2 >= REQUIRED_SIZE) {
                 scale *= 2;
             }
@@ -822,12 +842,13 @@ public class ChatActivity extends AppCompatActivity {
             file.createNewFile();
             FileOutputStream outputStream = new FileOutputStream(file);
 
-            selectedBitmap.compress(Bitmap.CompressFormat.JPEG, 70 , outputStream);
+            selectedBitmap.compress(Bitmap.CompressFormat.JPEG, 70, outputStream);
 
             return file;
         } catch (Exception e) {
             return null;
         }
     }
+
 }
 

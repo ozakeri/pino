@@ -28,9 +28,9 @@
     </RelativeLayout>
 
     <ListView
-        android:layout_below="@+id/toolbarMessage"
         android:id="@+id/memberListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarMessage" />
 
 </RelativeLayout>

@@ -73,7 +73,7 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Cust
             holder.img_permissionPic.setBackgroundResource(R.drawable.main_icon_checklist);
 
         } else if (permissionName.getName().equals("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST1")) {
-            holder.txt_permissionTitle.setText("فرم ها");
+            holder.txt_permissionTitle.setText("فرم نظرسنجی");
             holder.img_permissionPic.setBackgroundResource(R.drawable.main_icon_form);
 
         } else if (permissionName.getName().equals("ROLE_APP_INSPECTION_CREATE_COMPLAINT_REPORT")) {

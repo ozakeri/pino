@@ -446,7 +446,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST")) {
-                permissionList.add(new Permission("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST2"));
+               // permissionList.add(new Permission("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST2"));
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_CREATE_COMPLAINT_REPORT")) {
@@ -458,7 +458,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             // RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 3);
-            GridLayoutManager mLayoutManager = new GridLayoutManager(this, 2) {
+            GridLayoutManager mLayoutManager = new GridLayoutManager(this, 1) {
                 @Override
                 protected boolean isLayoutRTL() {
                     return true;
