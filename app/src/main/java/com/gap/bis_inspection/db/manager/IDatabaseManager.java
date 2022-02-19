@@ -123,6 +123,8 @@ public interface IDatabaseManager {
 
     List<ChatMessage> getChatMessageListByParamLimit(ChatMessage chatMessageFS, Integer limitSize);
 
+    List<ChatMessage> getChatMessageListPrivate(ChatMessage chatMessageFS, Integer limitSize);
+
     List<ChatMessage> getUnSentChatMessageList(ChatMessage tmpChatMessageFS);
 
     List<ChatMessage> getAttachmentResumingChatMessageList(ChatMessage tmpChatMessageFS);

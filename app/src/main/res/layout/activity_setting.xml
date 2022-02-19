@@ -9,7 +9,7 @@
         android:id="@+id/toolbarNotification"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/toolbarNotification">
+        android:background="@color/pino_two">
 
         <RelativeLayout
             android:id="@+id/backIcon"
@@ -18,11 +18,11 @@
             android:layout_alignParentLeft="true">
 
             <ImageView
-                android:layout_width="18dp"
-                android:layout_height="15dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="5dp"
-                android:background="@mipmap/arrow_back" />
+                android:background="@drawable/ic_baseline_arrow_back_24" />
         </RelativeLayout>
 
         <com.gap.bis_inspection.util.CustomTextView
@@ -40,9 +40,12 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_alignParentRight="true"
-            android:background="@mipmap/setting_title"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_settings_24" />
 
     </RelativeLayout>
 
@@ -90,11 +93,13 @@
             android:id="@+id/changeLocalPassword1_TV"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
             android:layout_below="@+id/switchPassword_TV"
-            android:background="@mipmap/edit_password"
-            android:layout_margin="15dp">
-        </RelativeLayout>
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@mipmap/edit_password" />
 
 
         <com.gap.bis_inspection.util.CustomTextView
@@ -143,8 +148,8 @@
                 android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:gravity="center_horizontal|center_vertical"
-                android:background="@mipmap/btn_settingt"
-                android:textColor="@android:color/white"
+                android:background="@drawable/bg_button"
+                android:textColor="@color/mdtp_transparent_black"
                 android:visibility="visible"/>
 
             <androidx.appcompat.widget.AppCompatImageView

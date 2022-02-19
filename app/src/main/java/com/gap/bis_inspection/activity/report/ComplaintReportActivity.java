@@ -53,10 +53,10 @@ public class ComplaintReportActivity extends AppCompatActivity {
     DrawerLayout drawerlayout;
     DatabaseManager databaseManager;
     RelativeLayout menuIcon, prevIcon, nextIcon;
-    private FloatingActionButton floatingActionButtonMap, floatingActionButtonAdd;
     private ArrayList<ComplaintReport> complaintReports;
     private ArrayList<String> dateReports = null;
     private SwipeRefreshLayout pullToRefresh;
+    private FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,7 +189,7 @@ public class ComplaintReportActivity extends AppCompatActivity {
 
 
         ////******add report icon*******////
-        floatingActionButtonAdd.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ReportNoneEntityActivity.class);
@@ -198,7 +198,7 @@ public class ComplaintReportActivity extends AppCompatActivity {
         });
 
         ////******go to show map*******////
-        floatingActionButtonMap.setOnClickListener(new View.OnClickListener() {
+        /*floatingActionButtonMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // complaintReports = (ArrayList<ComplaintReport>) coreService.getComplaintReportListByDate(application.getCurrentUser().getServerUserId(), reportDate);
@@ -216,7 +216,7 @@ public class ComplaintReportActivity extends AppCompatActivity {
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
     private void init() {
@@ -237,8 +237,8 @@ public class ComplaintReportActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.listView_drawer);
         relDrawer = (RelativeLayout) findViewById(R.id.relDrawer);
         drawerlayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        floatingActionButtonMap = (FloatingActionButton) findViewById(R.id.floatingActionButtonMap);
-        floatingActionButtonAdd = (FloatingActionButton) findViewById(R.id.floatingActionButtonAdd);
+        floatingActionButton =  findViewById(R.id.floatingActionButton);
+       // floatingActionButtonAdd = (FloatingActionButton) findViewById(R.id.floatingActionButtonAdd);
         pullToRefresh = (SwipeRefreshLayout) findViewById(R.id.pullToRefresh);
     }
 

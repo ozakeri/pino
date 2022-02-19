@@ -224,7 +224,7 @@
     <string name="label_form_textHeader_formDate">تاریخ فرم:</string>
     <string name="label_form_textHeader_completeDate">تاریخ تکمیل:</string>
     <string name="label_form_textHeader_creditDate">تاریخ اعتبار:</string>
-    <string name="label_form_textHeader_sendDate">تاریخ ارسال:</string>
+    <string name="label_form_textHeader_sendDate">تاریخ ارسال :  </string>
 
     <string name="label_form_list_statusNew">جدید </string>
     <string name="label_form_list_statusDoing">در حال انجام </string>

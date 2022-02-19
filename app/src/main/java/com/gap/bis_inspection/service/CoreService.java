@@ -239,6 +239,10 @@ public class CoreService {
         return databaseManager.getChatMessageListByParamLimit(chatMessageFS, limitSize);
     }
 
+    public List<ChatMessage> getChatMessageListPrivate(ChatMessage chatMessageFS, Integer limitSize) {
+        return databaseManager.getChatMessageListPrivate(chatMessageFS, limitSize);
+    }
+
     public List<ChatMessage> getUnSentChatMessageList(ChatMessage chatMessageFS) {
         return databaseManager.getUnSentChatMessageList(chatMessageFS);
     }

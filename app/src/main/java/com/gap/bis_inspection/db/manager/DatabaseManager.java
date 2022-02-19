@@ -946,40 +946,101 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
             openReadableDb();
             ChatMessageDao chatMessageDao = daoSession.getChatMessageDao();
             QueryBuilder<ChatMessage> queryBuilder = chatMessageDao.queryBuilder();
-            if (chatMessageFS.getId() != null) {
-                queryBuilder.where(ChatMessageDao.Properties.Id.eq(chatMessageFS.getId()));
+            if (chatMessageFS.getCreateNewPvChatGroup() != null) {
+                System.out.println("getCreateNewPvChatGroup====" + chatMessageFS.getCreateNewPvChatGroup());
             }
-            if (chatMessageFS.getChatGroupId() != null) {
-                queryBuilder.where(ChatMessageDao.Properties.ChatGroupId.eq(chatMessageFS.getChatGroupId()));
+
+
+           // if (chatMessageFS.getCreateNewPvChatGroup() != null) {
+               // if (!chatMessageFS.getCreateNewPvChatGroup()){
+                    if (chatMessageFS.getId() != null) {
+                        queryBuilder.where(ChatMessageDao.Properties.Id.eq(chatMessageFS.getId()));
+                    }
+                    if (chatMessageFS.getChatGroupId() != null) {
+                        queryBuilder.where(ChatMessageDao.Properties.ChatGroupId.eq(chatMessageFS.getChatGroupId()));
+                    }
+                    if (chatMessageFS.getSenderAppUserId() != null) {
+                        queryBuilder.where(ChatMessageDao.Properties.SenderAppUserId.eq(chatMessageFS.getSenderAppUserId()));
+                    }
+                    if (chatMessageFS.getSenderAppUserIdNot() != null) {
+                        queryBuilder.where(ChatMessageDao.Properties.SenderAppUserId.notEq(chatMessageFS.getSenderAppUserIdNot()));
+                    }
+                    if (chatMessageFS.getDeliverIs() != null) {
+                        queryBuilder.where(ChatMessageDao.Properties.DeliverIs.eq(chatMessageFS.getDeliverIs()));
+                    }
+                    if (chatMessageFS.getReadIs() != null) {
+                        queryBuilder.where(ChatMessageDao.Properties.ReadIs.eq(chatMessageFS.getReadIs()));
+                    }
+                    if (chatMessageFS.getReadDateFrom() != null) {
+                        queryBuilder.where(ChatMessageDao.Properties.ReadDate.ge(chatMessageFS.getReadDateFrom()));
+                    }
+                    if (chatMessageFS.getSendingStatusEn() != null) {
+                        queryBuilder.where(ChatMessageDao.Properties.SendingStatusEn.eq(chatMessageFS.getSendingStatusEn()));
+                    }
+                    Integer totalCount = Long.valueOf(queryBuilder.count()).intValue();
+                    //System.out.println("totalCount111====" + totalCount);
+                    //System.out.println("totalCount222====" + limitSize);
+                    // System.out.println("totalCount333====" + totalCount.compareTo(limitSize));
+                    if (totalCount.compareTo(limitSize) > 0) {
+                        queryBuilder.offset(totalCount - limitSize);
+                        queryBuilder.limit(limitSize);
+                    }
+                    chatMessages = queryBuilder.list();
+                    daoSession.clear();
+               // }
+           // }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return chatMessages;
+    }
+
+    public synchronized List<ChatMessage> getChatMessageListPrivate(ChatMessage chatMessageFS, Integer limitSize) {
+        List<ChatMessage> chatMessages = null;
+        try {
+            openReadableDb();
+            ChatMessageDao chatMessageDao = daoSession.getChatMessageDao();
+            QueryBuilder<ChatMessage> queryBuilder = chatMessageDao.queryBuilder();
+
+            if (chatMessageFS.getCreateNewPvChatGroup()){
+                if (chatMessageFS.getId() != null) {
+                    queryBuilder.where(ChatMessageDao.Properties.Id.eq(chatMessageFS.getId()));
+                }
+                if (chatMessageFS.getChatGroupId() != null) {
+                    queryBuilder.where(ChatMessageDao.Properties.ChatGroupId.eq(chatMessageFS.getChatGroupId()));
+                }
+                if (chatMessageFS.getSenderAppUserId() != null) {
+                    queryBuilder.where(ChatMessageDao.Properties.SenderAppUserId.eq(chatMessageFS.getSenderAppUserId()));
+                }
+                if (chatMessageFS.getSenderAppUserIdNot() != null) {
+                    queryBuilder.where(ChatMessageDao.Properties.SenderAppUserId.notEq(chatMessageFS.getSenderAppUserIdNot()));
+                }
+                if (chatMessageFS.getDeliverIs() != null) {
+                    queryBuilder.where(ChatMessageDao.Properties.DeliverIs.eq(chatMessageFS.getDeliverIs()));
+                }
+                if (chatMessageFS.getReadIs() != null) {
+                    queryBuilder.where(ChatMessageDao.Properties.ReadIs.eq(chatMessageFS.getReadIs()));
+                }
+                if (chatMessageFS.getReadDateFrom() != null) {
+                    queryBuilder.where(ChatMessageDao.Properties.ReadDate.ge(chatMessageFS.getReadDateFrom()));
+                }
+                if (chatMessageFS.getSendingStatusEn() != null) {
+                    queryBuilder.where(ChatMessageDao.Properties.SendingStatusEn.eq(chatMessageFS.getSendingStatusEn()));
+                }
+                Integer totalCount = Long.valueOf(queryBuilder.count()).intValue();
+                //System.out.println("totalCount111====" + totalCount);
+                //System.out.println("totalCount222====" + limitSize);
+                // System.out.println("totalCount333====" + totalCount.compareTo(limitSize));
+                if (totalCount.compareTo(limitSize) > 0) {
+                    queryBuilder.offset(totalCount - limitSize);
+                    queryBuilder.limit(limitSize);
+                }
+                chatMessages = queryBuilder.list();
+                daoSession.clear();
             }
-            if (chatMessageFS.getSenderAppUserId() != null) {
-                queryBuilder.where(ChatMessageDao.Properties.SenderAppUserId.eq(chatMessageFS.getSenderAppUserId()));
-            }
-            if (chatMessageFS.getSenderAppUserIdNot() != null) {
-                queryBuilder.where(ChatMessageDao.Properties.SenderAppUserId.notEq(chatMessageFS.getSenderAppUserIdNot()));
-            }
-            if (chatMessageFS.getDeliverIs() != null) {
-                queryBuilder.where(ChatMessageDao.Properties.DeliverIs.eq(chatMessageFS.getDeliverIs()));
-            }
-            if (chatMessageFS.getReadIs() != null) {
-                queryBuilder.where(ChatMessageDao.Properties.ReadIs.eq(chatMessageFS.getReadIs()));
-            }
-            if (chatMessageFS.getReadDateFrom() != null) {
-                queryBuilder.where(ChatMessageDao.Properties.ReadDate.ge(chatMessageFS.getReadDateFrom()));
-            }
-            if (chatMessageFS.getSendingStatusEn() != null) {
-                queryBuilder.where(ChatMessageDao.Properties.SendingStatusEn.eq(chatMessageFS.getSendingStatusEn()));
-            }
-            Integer totalCount = Long.valueOf(queryBuilder.count()).intValue();
-            //System.out.println("totalCount111====" + totalCount);
-            //System.out.println("totalCount222====" + limitSize);
-           // System.out.println("totalCount333====" + totalCount.compareTo(limitSize));
-            if (totalCount.compareTo(limitSize) > 0) {
-                queryBuilder.offset(totalCount - limitSize);
-                queryBuilder.limit(limitSize);
-            }
-            chatMessages = queryBuilder.list();
-            daoSession.clear();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -85,7 +85,7 @@ public class ListDrawer {
         }
 
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST")) {
-            dataList.add(new DrawerItem(R.string.checkList, R.drawable.checklist));
+            //dataList.add(new DrawerItem(R.string.checkList, R.drawable.checklist));
         }
 
         dataList.add(new DrawerItem(R.string.label_menu_about, R.drawable.about));

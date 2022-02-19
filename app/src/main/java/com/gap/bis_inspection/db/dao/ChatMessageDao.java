@@ -38,15 +38,16 @@ public class ChatMessageDao extends AbstractDao<ChatMessage, Long> {
         public final static Property DeliverIs = new Property(9, Boolean.class, "deliverIs", false, "DELIVER_IS");
         public final static Property DeliverDate = new Property(10, java.util.Date.class, "deliverDate", false, "DELIVER_DATE");
         public final static Property ReadIs = new Property(11, Boolean.class, "readIs", false, "READ_IS");
-        public final static Property ReadDate = new Property(12, java.util.Date.class, "readDate", false, "READ_DATE");
-        public final static Property SendingStatusEn = new Property(13, Integer.class, "sendingStatusEn", false, "SENDING_STATUS_EN");
-        public final static Property SendingStatusDate = new Property(14, java.util.Date.class, "sendingStatusDate", false, "SENDING_STATUS_DATE");
-        public final static Property AttachFileSize = new Property(15, Integer.class, "attachFileSize", false, "ATTACH_FILE_SIZE");
-        public final static Property AttachFileSentSize = new Property(16, Integer.class, "attachFileSentSize", false, "ATTACH_FILE_SENT_SIZE");
-        public final static Property AttachFileReceivedSize = new Property(17, Integer.class, "attachFileReceivedSize", false, "ATTACH_FILE_RECEIVED_SIZE");
-        public final static Property SenderAppUserId = new Property(18, Long.class, "senderAppUserId", false, "SENDER_APP_USER_ID");
-        public final static Property ReceiverAppUserId = new Property(19, Long.class, "receiverAppUserId", false, "RECEIVER_APP_USER_ID");
-        public final static Property ChatGroupId = new Property(20, Long.class, "chatGroupId", false, "CHAT_GROUP_ID");
+        public final static Property IsCreateNewPvChatGroup = new Property(12, Boolean.class, "isCreateNewPvChatGroup", false, "isCreateNewPvChatGroup");
+        public final static Property ReadDate = new Property(13, java.util.Date.class, "readDate", false, "READ_DATE");
+        public final static Property SendingStatusEn = new Property(14, Integer.class, "sendingStatusEn", false, "SENDING_STATUS_EN");
+        public final static Property SendingStatusDate = new Property(15, java.util.Date.class, "sendingStatusDate", false, "SENDING_STATUS_DATE");
+        public final static Property AttachFileSize = new Property(16, Integer.class, "attachFileSize", false, "ATTACH_FILE_SIZE");
+        public final static Property AttachFileSentSize = new Property(17, Integer.class, "attachFileSentSize", false, "ATTACH_FILE_SENT_SIZE");
+        public final static Property AttachFileReceivedSize = new Property(18, Integer.class, "attachFileReceivedSize", false, "ATTACH_FILE_RECEIVED_SIZE");
+        public final static Property SenderAppUserId = new Property(19, Long.class, "senderAppUserId", false, "SENDER_APP_USER_ID");
+        public final static Property ReceiverAppUserId = new Property(20, Long.class, "receiverAppUserId", false, "RECEIVER_APP_USER_ID");
+        public final static Property ChatGroupId = new Property(21, Long.class, "chatGroupId", false, "CHAT_GROUP_ID");
     }
 
     private Query<ChatMessage> appUser_SendChatMessageListQuery;
@@ -77,6 +78,7 @@ public class ChatMessageDao extends AbstractDao<ChatMessage, Long> {
                 "\"DELIVER_IS\" INTEGER," + // 9: deliverIs
                 "\"DELIVER_DATE\" INTEGER," + // 10: deliverDate
                 "\"READ_IS\" INTEGER," + // 11: readIs
+                "\"IsCreateNewPvChatGroup\" INTEGER," + // 11: isCreateNewPvChatGroup
                 "\"READ_DATE\" INTEGER," + // 12: readDate
                 "\"SENDING_STATUS_EN\" INTEGER," + // 13: sendingStatusEn
                 "\"SENDING_STATUS_DATE\" INTEGER," + // 14: sendingStatusDate
@@ -158,50 +160,55 @@ public class ChatMessageDao extends AbstractDao<ChatMessage, Long> {
         if (readIs != null) {
             stmt.bindLong(12, readIs ? 1L: 0L);
         }
+
+        Boolean isCreateNewPvChatGroup = entity.getCreateNewPvChatGroup();
+        if (isCreateNewPvChatGroup != null) {
+            stmt.bindLong(13, isCreateNewPvChatGroup ? 1L: 0L);
+        }
  
         java.util.Date readDate = entity.getReadDate();
         if (readDate != null) {
-            stmt.bindLong(13, readDate.getTime());
+            stmt.bindLong(14, readDate.getTime());
         }
  
         Integer sendingStatusEn = entity.getSendingStatusEn();
         if (sendingStatusEn != null) {
-            stmt.bindLong(14, sendingStatusEn);
+            stmt.bindLong(15, sendingStatusEn);
         }
  
         java.util.Date sendingStatusDate = entity.getSendingStatusDate();
         if (sendingStatusDate != null) {
-            stmt.bindLong(15, sendingStatusDate.getTime());
+            stmt.bindLong(16, sendingStatusDate.getTime());
         }
  
         Integer attachFileSize = entity.getAttachFileSize();
         if (attachFileSize != null) {
-            stmt.bindLong(16, attachFileSize);
+            stmt.bindLong(17, attachFileSize);
         }
 
         Integer attachFileSentSize = entity.getAttachFileSentSize();
         if (attachFileSentSize != null) {
-            stmt.bindLong(17, attachFileSentSize);
+            stmt.bindLong(18, attachFileSentSize);
         }
 
         Integer attachFileReceivedSize = entity.getAttachFileReceivedSize();
         if (attachFileReceivedSize != null) {
-            stmt.bindLong(18, attachFileReceivedSize);
+            stmt.bindLong(19, attachFileReceivedSize);
         }
 
         Long senderAppUserId = entity.getSenderAppUserId();
         if (senderAppUserId != null) {
-            stmt.bindLong(19, senderAppUserId);
+            stmt.bindLong(20, senderAppUserId);
         }
  
         Long receiverAppUserId = entity.getReceiverAppUserId();
         if (receiverAppUserId != null) {
-            stmt.bindLong(20, receiverAppUserId);
+            stmt.bindLong(21, receiverAppUserId);
         }
  
         Long chatGroupId = entity.getChatGroupId();
         if (chatGroupId != null) {
-            stmt.bindLong(21, chatGroupId);
+            stmt.bindLong(22, chatGroupId);
         }
     }
 
@@ -227,15 +234,16 @@ public class ChatMessageDao extends AbstractDao<ChatMessage, Long> {
             cursor.isNull(offset + 9) ? null : cursor.getShort(offset + 9) != 0, // deliverIs
             cursor.isNull(offset + 10) ? null : new java.util.Date(cursor.getLong(offset + 10)), // deliverDate
             cursor.isNull(offset + 11) ? null : cursor.getShort(offset + 11) != 0, // readIs
-            cursor.isNull(offset + 12) ? null : new java.util.Date(cursor.getLong(offset + 12)), // readDate
-            cursor.isNull(offset + 13) ? null : cursor.getInt(offset + 13), // sendingStatusEn
-            cursor.isNull(offset + 14) ? null : new java.util.Date(cursor.getLong(offset + 14)), // sendingStatusDate
-            cursor.isNull(offset + 15) ? null : cursor.getInt(offset + 15), // attachFileSize
-            cursor.isNull(offset + 16) ? null : cursor.getInt(offset + 16), // attachFileSentSize
-            cursor.isNull(offset + 17) ? null : cursor.getInt(offset + 17), // attachFileReceivedSize
-            cursor.isNull(offset + 18) ? null : cursor.getLong(offset + 18), // senderAppUserId
-            cursor.isNull(offset + 19) ? null : cursor.getLong(offset + 19), // receiverAppUserId
-            cursor.isNull(offset + 20) ? null : cursor.getLong(offset + 20) // chatGroupId
+            cursor.isNull(offset + 12) ? null : cursor.getShort(offset + 12) != 0, // isCreateNewPvChatGroup
+            cursor.isNull(offset + 13) ? null : new java.util.Date(cursor.getLong(offset + 13)), // readDate
+            cursor.isNull(offset + 14) ? null : cursor.getInt(offset + 14), // sendingStatusEn
+            cursor.isNull(offset + 15) ? null : new java.util.Date(cursor.getLong(offset + 15)), // sendingStatusDate
+            cursor.isNull(offset + 16) ? null : cursor.getInt(offset + 16), // attachFileSize
+            cursor.isNull(offset + 17) ? null : cursor.getInt(offset + 17), // attachFileSentSize
+            cursor.isNull(offset + 18) ? null : cursor.getInt(offset + 18), // attachFileReceivedSize
+            cursor.isNull(offset + 19) ? null : cursor.getLong(offset + 19), // senderAppUserId
+            cursor.isNull(offset + 20) ? null : cursor.getLong(offset + 20), // receiverAppUserId
+            cursor.isNull(offset + 21) ? null : cursor.getLong(offset + 21) // chatGroupId
         );
         return entity;
     }
@@ -255,15 +263,16 @@ public class ChatMessageDao extends AbstractDao<ChatMessage, Long> {
         entity.setDeliverIs(cursor.isNull(offset + 9) ? null : cursor.getShort(offset + 9) != 0);
         entity.setDeliverDate(cursor.isNull(offset + 10) ? null : new java.util.Date(cursor.getLong(offset + 10)));
         entity.setReadIs(cursor.isNull(offset + 11) ? null : cursor.getShort(offset + 11) != 0);
-        entity.setReadDate(cursor.isNull(offset + 12) ? null : new java.util.Date(cursor.getLong(offset + 12)));
-        entity.setSendingStatusEn(cursor.isNull(offset + 13) ? null : cursor.getInt(offset + 13));
-        entity.setSendingStatusDate(cursor.isNull(offset + 14) ? null : new java.util.Date(cursor.getLong(offset + 14)));
-        entity.setAttachFileSize(cursor.isNull(offset + 15) ? null : cursor.getInt(offset + 15));
-        entity.setAttachFileSentSize(cursor.isNull(offset + 16) ? null : cursor.getInt(offset + 16));
-        entity.setAttachFileReceivedSize(cursor.isNull(offset + 17) ? null : cursor.getInt(offset + 17));
-        entity.setSenderAppUserId(cursor.isNull(offset + 18) ? null : cursor.getLong(offset + 18));
-        entity.setReceiverAppUserId(cursor.isNull(offset + 19) ? null : cursor.getLong(offset + 19));
-        entity.setChatGroupId(cursor.isNull(offset + 20) ? null : cursor.getLong(offset + 20));
+        entity.setCreateNewPvChatGroup(cursor.isNull(offset + 12) ? null : cursor.getShort(offset + 11) != 0);
+        entity.setReadDate(cursor.isNull(offset + 13) ? null : new java.util.Date(cursor.getLong(offset + 12)));
+        entity.setSendingStatusEn(cursor.isNull(offset + 14) ? null : cursor.getInt(offset + 13));
+        entity.setSendingStatusDate(cursor.isNull(offset + 15) ? null : new java.util.Date(cursor.getLong(offset + 14)));
+        entity.setAttachFileSize(cursor.isNull(offset + 16) ? null : cursor.getInt(offset + 15));
+        entity.setAttachFileSentSize(cursor.isNull(offset + 17) ? null : cursor.getInt(offset + 16));
+        entity.setAttachFileReceivedSize(cursor.isNull(offset + 18) ? null : cursor.getInt(offset + 17));
+        entity.setSenderAppUserId(cursor.isNull(offset + 19) ? null : cursor.getLong(offset + 18));
+        entity.setReceiverAppUserId(cursor.isNull(offset + 20) ? null : cursor.getLong(offset + 19));
+        entity.setChatGroupId(cursor.isNull(offset + 21) ? null : cursor.getLong(offset + 20));
      }
     
     /** @inheritdoc */

@@ -90,7 +90,7 @@
                     android:text="@string/label_form_textHeader_formName"
                     android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -130,7 +130,7 @@
                             android:text="@string/label_form_textHeader_creditDate"
                             android:textColor="@color/black"
                             android:layout_margin="5dp"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
@@ -192,7 +192,7 @@
                             android:text="@string/label_form_textHeader_formDate"
                             android:textColor="@color/black"
                             android:layout_margin="5dp"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
@@ -202,7 +202,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:orientation="horizontal"
-                        android:visibility="gone">
+                        android:visibility="visible">
 
                         <com.gap.bis_inspection.util.CustomTextView
                             android:id="@+id/sendDate_TV"
@@ -217,7 +217,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/label_form_textHeader_sendDate"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 

@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:hint="توضیحات ..."
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:backgroundTint="@color/mdtp_line_background"/>
 
         </LinearLayout>

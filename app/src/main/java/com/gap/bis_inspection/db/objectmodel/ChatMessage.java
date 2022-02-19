@@ -22,6 +22,7 @@ public class ChatMessage {
     private Boolean deliverIs;
     private java.util.Date deliverDate;
     private Boolean readIs;
+    private Boolean isCreateNewPvChatGroup;
     private java.util.Date readDate;
     private Integer sendingStatusEn;
     private java.util.Date sendingStatusDate;
@@ -43,7 +44,7 @@ public class ChatMessage {
         this.id = id;
     }
 
-    public ChatMessage(Long id, Long serverMessageId, java.util.Date validUntilDate, String message, String attachFileLocalPath, String attachFileUserFileName, String attachFileRemoteUrl, java.util.Date sendDate, java.util.Date dateCreation, Boolean deliverIs, java.util.Date deliverDate, Boolean readIs, java.util.Date readDate, Integer sendingStatusEn, java.util.Date sendingStatusDate, Integer attachFileSize, Integer attachFileSentSize, Integer attachFileReceivedSize, Long senderAppUserId, Long receiverAppUserId, Long chatGroupId) {
+    public ChatMessage(Long id, Long serverMessageId, java.util.Date validUntilDate, String message, String attachFileLocalPath, String attachFileUserFileName, String attachFileRemoteUrl, java.util.Date sendDate, java.util.Date dateCreation, Boolean deliverIs, java.util.Date deliverDate, Boolean readIs,Boolean isCreateNewPvChatGroup, java.util.Date readDate, Integer sendingStatusEn, java.util.Date sendingStatusDate, Integer attachFileSize, Integer attachFileSentSize, Integer attachFileReceivedSize, Long senderAppUserId, Long receiverAppUserId, Long chatGroupId) {
         this.id = id;
         this.serverMessageId = serverMessageId;
         this.validUntilDate = validUntilDate;
@@ -56,6 +57,7 @@ public class ChatMessage {
         this.deliverIs = deliverIs;
         this.deliverDate = deliverDate;
         this.readIs = readIs;
+        this.isCreateNewPvChatGroup = isCreateNewPvChatGroup;
         this.readDate = readDate;
         this.sendingStatusEn = sendingStatusEn;
         this.sendingStatusDate = sendingStatusDate;
@@ -270,5 +272,13 @@ public class ChatMessage {
 
     public void setLocalAttachFileExist(boolean localAttachFileExist) {
         this.localAttachFileExist = localAttachFileExist;
+    }
+
+    public Boolean getCreateNewPvChatGroup() {
+        return isCreateNewPvChatGroup;
+    }
+
+    public void setCreateNewPvChatGroup(Boolean createNewPvChatGroup) {
+        isCreateNewPvChatGroup = createNewPvChatGroup;
     }
 }

@@ -1448,6 +1448,21 @@ public class Services {
             if (chatMessage.getChatGroupId() != null) {
                 chatMessageJsonObject.put("chatGroupId", coreService.getChatGroupById(chatMessage.getChatGroupId()).getServerGroupId());
             }
+
+            System.out.println("getCreateNewPvChatGroup====" + chatMessage.getCreateNewPvChatGroup());
+
+            if (chatMessage.getCreateNewPvChatGroup()) {
+                chatMessageJsonObject.put("chatGroupId", "null");
+            }
+
+            if (chatMessage.getReceiverAppUserId() != null) {
+                chatMessageJsonObject.put("receiverUserId", chatMessage.getReceiverAppUserId());
+            }
+
+            if (chatMessage.getReceiverAppUserId() != null) {
+                chatMessageJsonObject.put("isCreateNewPvChatGroup", chatMessage.getCreateNewPvChatGroup());
+            }
+
             jsonObject.put("chatMessage", chatMessageJsonObject);
 
 

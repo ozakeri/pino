@@ -435,18 +435,21 @@ public class ChatActivity extends AppCompatActivity {
         }
 
 
-        for (ChatMessage chatMessage : chatMessageList) {
-            chatMessage.setSenderAppUser(coreService.getAppUserById(chatMessage.getSenderAppUserId()));
-            if (!chatMessage.getReadIs()) {
-                integerList.add(chatMessage.getReadIs());
+        if (chatMessageList != null){
+            for (ChatMessage chatMessage : chatMessageList) {
+                chatMessage.setSenderAppUser(coreService.getAppUserById(chatMessage.getSenderAppUserId()));
+                if (!chatMessage.getReadIs()) {
+                    integerList.add(chatMessage.getReadIs());
+                }
             }
         }
 
+
         if (firstVisiblePosition == null || scrollToEnd || scrollToEndForNewMessage) {
-            firstVisiblePosition = chatMessageList.size() - 1;
+           // firstVisiblePosition = chatMessageList.size() - 1;
         }
 
-        if (listView.getAdapter() == null) {
+        if (listView.getAdapter() == null && chatMessageList != null) {
             chatArrayAdapter = new ChatMessageArrayAdapter(getApplicationContext(), R.layout.right_message, chatMessageList, application.getCurrentUser());
             listView.setAdapter(chatArrayAdapter);
             listView.requestFocusFromTouch();
@@ -454,7 +457,9 @@ public class ChatActivity extends AppCompatActivity {
             System.out.println("=====333");
 
         } else {
-            ((ChatMessageArrayAdapter) listView.getAdapter()).refill(chatMessageList);
+            if (chatMessageList != null){
+                ((ChatMessageArrayAdapter) listView.getAdapter()).refill(chatMessageList);
+            }
         }
 
         listView.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
@@ -487,6 +492,17 @@ public class ChatActivity extends AppCompatActivity {
             chatMessage.setSendingStatusDate(new Date());
             chatMessage.setDeliverIs(Boolean.FALSE);
             chatMessage.setReadIs(Boolean.FALSE);
+            chatMessage.setReceiverAppUserId(null);
+            chatMessage.setCreateNewPvChatGroup(false);
+
+            System.out.println("isPrivateChatMessage=====" + isPrivateChatMessage);
+            System.out.println("receiverUserId=====" + receiverUserId);
+
+            if (isPrivateChatMessage){
+                chatMessage.setReceiverAppUserId(receiverUserId);
+                chatMessage.setCreateNewPvChatGroup(true);
+            }
+
             chatMessage = coreService.insertChatMessage(chatMessage);
             new Thread(new SaveChatMessageTask()).start();
             refreshChatMessageList(true, true);
@@ -512,6 +528,19 @@ public class ChatActivity extends AppCompatActivity {
         chatMessage.setSendingStatusDate(new Date());
         chatMessage.setDeliverIs(Boolean.FALSE);
         chatMessage.setReadIs(Boolean.FALSE);
+        chatMessage.setReceiverAppUserId(null);
+        chatMessage.setCreateNewPvChatGroup(false);
+
+
+        System.out.println("isPrivateChatMessage=====" + isPrivateChatMessage);
+        System.out.println("receiverUserId=====" + receiverUserId);
+
+        if (isPrivateChatMessage){
+            chatMessage.setReceiverAppUserId(receiverUserId);
+            chatMessage.setChatGroupId(null);
+            chatMessage.setCreateNewPvChatGroup(true);
+        }
+
         chatMessage = coreService.insertChatMessage(chatMessage);
 
         if (file != null) {
