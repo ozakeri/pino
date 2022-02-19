@@ -1,13 +1,15 @@
 package com.gap.bis_inspection.adapter.form;
 
 import android.content.Context;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.gap.bis_inspection.R;
 import com.gap.bis_inspection.db.manager.DatabaseManager;
@@ -68,11 +70,12 @@ public class SurveyAdapter extends RecyclerView.Adapter<SurveyAdapter.MyViewHold
                 surveyFormQuestionList = coreService.getSurveyFormQuestionListByGroupId(formQuestionGroup.getGroupId(), surveyForm.getId());
                 formTempList = coreService.getSurveyFormQuestionTempListByGroupId(formQuestionGroup.getGroupId());
             }
-                LinearLayoutManager layoutManager = new LinearLayoutManager(m_context, LinearLayoutManager.VERTICAL, false);
-                holder.recyclerView.setHasFixedSize(true);
-                holder.recyclerView.setLayoutManager(layoutManager);
-                SurveyChildAdapter adapter = new SurveyChildAdapter(m_context, surveyFormQuestionList, formTempList, surveyForm, linearLayout);
-                holder.recyclerView.setAdapter(adapter);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(m_context, LinearLayoutManager.VERTICAL, false);
+            holder.recyclerView.setHasFixedSize(true);
+            holder.recyclerView.addItemDecoration(new DividerItemDecoration(m_context, 0));
+            holder.recyclerView.setLayoutManager(layoutManager);
+            SurveyChildAdapter adapter = new SurveyChildAdapter(m_context, surveyFormQuestionList, formTempList, surveyForm, linearLayout);
+            holder.recyclerView.setAdapter(adapter);
 
             operations.put(position, true);
         }

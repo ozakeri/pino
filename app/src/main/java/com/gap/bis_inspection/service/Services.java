@@ -1661,9 +1661,11 @@ public class Services {
                             coreService.updateAttachFile(attachFile);
                             //resumeAttachFile(context, coreService, attachFile, user);
                             System.out.println("attachFile====" + attachFile);
+                            resumeAttachFileList(String.valueOf(attachFile.getServerAttachFileSettingId()));
                         }
 
-                        resumeAttachFileList("");
+
+                        //resumeAttachFileList("");
                     }
                 } else {
                     complaintReport.setSendingStatusEn(SendingStatusEn.Fail.ordinal());
@@ -1761,7 +1763,7 @@ public class Services {
                                     attachFile.setServerEntityId(surveyForm.getServerAnswerInfoId());
                                     attachFile.setSendingStatusEn(SendingStatusEn.InProgress.ordinal());
                                     coreService.updateAttachFile(attachFile);
-                                    //resumeAttachFile(context, coreService, attachFile, user);
+                                    resumeAttachFileList(String.valueOf(attachFile.getServerAttachFileSettingId()));
                                 }
                             }
                         }
@@ -1905,18 +1907,6 @@ public class Services {
             jsonObject.put("username", user.getUsername());
             jsonObject.put("tokenPass", user.getBisPassword());
             JSONObject attachFileJsonObject = new JSONObject();
-
-
-            System.out.println("entityId=====" + attachFile.getServerEntityId());
-            System.out.println("serverId=====" + attachFile.getServerAttachFileId());
-
-            System.out.println("username=====" + user.getUsername());
-            System.out.println("tokenPass=====" + user.getBisPassword());
-            System.out.println("id=====" + attachFile.getId());
-            System.out.println("entityNameEn=====" + attachFile.getEntityNameEn());
-            System.out.println("attachFileSettingId=====" + attachFile.getServerAttachFileSettingId());
-            System.out.println("attachFileUserFileName=====" + attachFile.getAttachFileUserFileName());
-
 
             attachFileJsonObject.put("id", attachFile.getId());
             attachFileJsonObject.put("serverId", attachFile.getServerAttachFileId());

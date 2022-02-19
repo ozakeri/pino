@@ -1268,8 +1268,6 @@ public class EditAdvertActivity extends AppCompatActivity {
             System.out.println("attachFile.getId====" + attachFile.getId());
 
             String newFilePath = path + "/" + attachFile.getId() + filePostfix;
-
-
             InputStream inputStream = new FileInputStream(file);
             OutputStream outputStream = new FileOutputStream(newFilePath);
             BitmapFactory.Options options = new BitmapFactory.Options();

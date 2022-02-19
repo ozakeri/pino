@@ -82,7 +82,7 @@
                     android:text="null"
                     android:textColor="@color/mdtp_line_dark"
                     android:layout_margin="5dp"
-                    android:textSize="12sp" />
+                    android:textSize="15sp" />
 
                 <com.gap.bis_inspection.util.CustomTextView
                     android:layout_width="wrap_content"
@@ -90,7 +90,7 @@
                     android:text="@string/label_form_textHeader_formName"
                     android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -122,7 +122,7 @@
                             android:text="null"
                             android:textColor="@color/mdtp_line_dark"
                             android:layout_margin="5dp"
-                            android:textSize="12sp" />
+                            android:textSize="15sp" />
 
                         <com.gap.bis_inspection.util.CustomTextView
                             android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
                             android:text="@string/label_form_textHeader_creditDate"
                             android:textColor="@color/black"
                             android:layout_margin="5dp"
-                            android:textSize="14sp" />
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -184,7 +184,7 @@
                             android:text="null"
                             android:textColor="@color/mdtp_line_dark"
                             android:layout_margin="5dp"
-                            android:textSize="12sp" />
+                            android:textSize="15sp" />
 
                         <com.gap.bis_inspection.util.CustomTextView
                             android:layout_width="wrap_content"
@@ -192,7 +192,7 @@
                             android:text="@string/label_form_textHeader_formDate"
                             android:textColor="@color/black"
                             android:layout_margin="5dp"
-                            android:textSize="14sp" />
+                            android:textSize="18sp" />
 
                     </LinearLayout>
 
@@ -317,14 +317,14 @@
             android:id="@+id/complete_Button"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toLeftOf="@+id/record_Button"
-            android:text="@string/label_surveyActivity_complete"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/record_Button"
             android:background="@mipmap/btn_form"
-            android:textColor="@color/white"/>
+            android:text="@string/label_surveyActivity_complete"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/record_Button"

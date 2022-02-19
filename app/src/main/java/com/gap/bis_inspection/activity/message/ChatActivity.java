@@ -103,7 +103,7 @@ public class ChatActivity extends AppCompatActivity {
     private boolean checkCurrentActivity = true;
     private Bundle bundle;
 
-    private boolean isPrivateChat = false;
+    private boolean isPrivateChatMessage = false;
     private Long receiverUserId = null;
 
 
@@ -607,10 +607,10 @@ public class ChatActivity extends AppCompatActivity {
                 System.out.println("requestCode====" + requestCode);
 
                 if (data != null) {
-                    isPrivateChat = data.getBooleanExtra("isPrivateChat", false);
+                    isPrivateChatMessage = data.getBooleanExtra("isPrivateChatMessage", false);
                     receiverUserId = data.getLongExtra("receiverUserId", 0);
 
-                    System.out.println("isPrivateChat====" + isPrivateChat);
+                    System.out.println("isPrivateChat====" + isPrivateChatMessage);
                     System.out.println("receiverUserId====" + receiverUserId);
                 }
 
