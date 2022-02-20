@@ -139,8 +139,7 @@ public class CoreService {
     }
 
     public List<ChatGroup> getActiveChatGroupList() {
-        List<ChatGroup> chatGroups = databaseManager.getActiveChatGroupList();
-        return chatGroups;
+        return databaseManager.getActiveChatGroupList();
     }
 
 
@@ -235,8 +234,8 @@ public class CoreService {
         return databaseManager.getChatMessageListByParam(chatMessageFS);
     }
 
-    public List<ChatMessage> getChatMessageListByParamLimit(ChatMessage chatMessageFS, Integer limitSize) {
-        return databaseManager.getChatMessageListByParamLimit(chatMessageFS, limitSize);
+    public List<ChatMessage> getChatMessageListByParamLimit(ChatMessage chatMessageFS, Integer limitSize,Boolean isPrivateChatMessage) {
+        return databaseManager.getChatMessageListByParamLimit(chatMessageFS, limitSize,isPrivateChatMessage);
     }
 
     public List<ChatMessage> getChatMessageListPrivate(ChatMessage chatMessageFS, Integer limitSize) {

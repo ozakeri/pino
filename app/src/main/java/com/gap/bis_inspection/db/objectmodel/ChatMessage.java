@@ -281,4 +281,6 @@ public class ChatMessage {
     public void setCreateNewPvChatGroup(Boolean createNewPvChatGroup) {
         isCreateNewPvChatGroup = createNewPvChatGroup;
     }
+
+
 }

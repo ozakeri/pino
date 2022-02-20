@@ -102,9 +102,11 @@ public class ChatActivity extends AppCompatActivity {
     private ActivityManager am;
     private boolean checkCurrentActivity = true;
     private Bundle bundle;
+    private TextView groupNameTV,countMemberTV;
 
     private boolean isPrivateChatMessage = false;
     private Long receiverUserId = null;
+    private String receiverUserIdStr = "";
 
 
     @SuppressLint("SetTextI18n")
@@ -122,9 +124,9 @@ public class ChatActivity extends AppCompatActivity {
         listView = findViewById(R.id.messages_view);
         ImageView sendButton = findViewById(R.id.send_Button);
         messageET = findViewById(R.id.message_ET);
-        TextView groupNameTV = findViewById(R.id.groupName_TV);
+        groupNameTV = findViewById(R.id.groupName_TV);
 
-        TextView countMemberTV = findViewById(R.id.countMember_TV);
+        countMemberTV = findViewById(R.id.countMember_TV);
         LinearLayout LinearLayout_group = findViewById(R.id.LinearLayout_group);
         RelativeLayout backIcon = findViewById(R.id.back_Icon);
         final RelativeLayout attachIcon = findViewById(R.id.attach_Icon);
@@ -134,9 +136,10 @@ public class ChatActivity extends AppCompatActivity {
         messageET.setVerticalScrollBarEnabled(true);
         messageET.setScrollBarStyle(View.SCROLLBARS_INSIDE_INSET);
         services = new Services(getApplicationContext());
-        services.sendChatMessageList();
-        services.getChatMessageList();
-        services.getChatMessageStatusList();
+        //services.sendChatMessageList();
+        //services.getChatMessageList();
+        //services.getChatMessageStatusList();
+        handler = new Handler();
 
         messageET.addTextChangedListener(new TextWatcher() {
             @Override
@@ -174,12 +177,11 @@ public class ChatActivity extends AppCompatActivity {
             List<ChatGroupMember> chatGroupMemberList = coreService.getChatGroupMemberListByParam(tmpChatGroupMember);
 
             if (chatGroupMemberList != null) {
-                if (chatGroupMemberList.size() == 0) {
-                    // progress.setVisibility(View.VISIBLE);
-                    //groupNameTV.setVisibility(View.GONE);
-                    //countMemberTV.setVisibility(View.GONE);
+                if (isPrivateChatMessage) {
+
+                    groupNameTV.setText(chatGroupName);
+                    countMemberTV.setText("");
                 } else {
-                    // progress.setVisibility(View.GONE);
                     groupNameTV.setText(chatGroupName);
                     countMemberTV.setText("(" + chatGroupMemberList.size() + ")");
                 }
@@ -371,44 +373,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
     ////******update chat List*******////
-    private void updateList() {
-        handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            //@RequiresApi(api = Build.VERSION_CODES.Q)
-            @Override
-            public void run() {
-                packageManager = getPackageManager();
-                am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-                if (checkCurrentActivity) {
-                    try {
-                        ActivityInfo info = packageManager.getActivityInfo(getComponentName(), 0);
-                        ComponentName cn = am.getRunningTasks(1).get(0).topActivity;
-
-                        String s1 = info.name;
-                        String s2 = cn.getClassName();
-
-                        if (s1.equals(s2)) {
-                            refreshChatMessageList(false, false);
-                            System.out.println("s1====" + s1);
-                        } else {
-                            checkCurrentActivity = false;
-                            System.out.println("s1====" + s2);
-                        }
-                    } catch (PackageManager.NameNotFoundException e) {
-                        e.printStackTrace();
-                    }
-
-                    //
-                    handler.postDelayed(this, 3000);
-                }
-            }
-        }, 3000);
-    }
-
-
-    ////******update chat List*******////
     private void refreshChatMessageList(boolean scrollToEnd, boolean isSend) {
-        System.out.println("=====111");
         Integer firstVisiblePosition = null;
         Integer lastVisiblePosition = null;
         boolean scrollToEndForNewMessage = false;
@@ -422,8 +387,17 @@ public class ChatActivity extends AppCompatActivity {
         }
         ChatMessage tmpChatMessageFS = new ChatMessage();
         tmpChatMessageFS.setChatGroupId(chatGroupId);
+        tmpChatMessageFS.setCreateNewPvChatGroup(false);
         Integer loadMessageCount = 80;
-        List<ChatMessage> chatMessageList = coreService.getChatMessageListByParamLimit(tmpChatMessageFS, loadMessageCount);
+
+        if (isPrivateChatMessage){
+            tmpChatMessageFS.setCreateNewPvChatGroup(true);
+            tmpChatMessageFS.setChatGroupId(null);
+        }
+
+        List<ChatMessage> chatMessageList = coreService.getChatMessageListByParamLimit(tmpChatMessageFS, loadMessageCount,isPrivateChatMessage);
+
+        System.out.println("chatMessageList====" + chatMessageList.size());
 
         if (isSend) {
             System.out.println("isSend====" + isSend);
@@ -435,7 +409,7 @@ public class ChatActivity extends AppCompatActivity {
         }
 
 
-        if (chatMessageList != null){
+        if (chatMessageList != null) {
             for (ChatMessage chatMessage : chatMessageList) {
                 chatMessage.setSenderAppUser(coreService.getAppUserById(chatMessage.getSenderAppUserId()));
                 if (!chatMessage.getReadIs()) {
@@ -446,7 +420,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
         if (firstVisiblePosition == null || scrollToEnd || scrollToEndForNewMessage) {
-           // firstVisiblePosition = chatMessageList.size() - 1;
+            // firstVisiblePosition = chatMessageList.size() - 1;
         }
 
         if (listView.getAdapter() == null && chatMessageList != null) {
@@ -457,7 +431,7 @@ public class ChatActivity extends AppCompatActivity {
             System.out.println("=====333");
 
         } else {
-            if (chatMessageList != null){
+            if (chatMessageList != null) {
                 ((ChatMessageArrayAdapter) listView.getAdapter()).refill(chatMessageList);
             }
         }
@@ -471,6 +445,14 @@ public class ChatActivity extends AppCompatActivity {
 
         NotificationManager notifManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notifManager.cancelAll();
+
+        if (isPrivateChatMessage) {
+
+
+        } else {
+            //groupNameTV.setText();
+            //countMemberTV.setText("1");
+        }
     }
 
 
@@ -498,7 +480,7 @@ public class ChatActivity extends AppCompatActivity {
             System.out.println("isPrivateChatMessage=====" + isPrivateChatMessage);
             System.out.println("receiverUserId=====" + receiverUserId);
 
-            if (isPrivateChatMessage){
+            if (isPrivateChatMessage) {
                 chatMessage.setReceiverAppUserId(receiverUserId);
                 chatMessage.setCreateNewPvChatGroup(true);
             }
@@ -535,7 +517,7 @@ public class ChatActivity extends AppCompatActivity {
         System.out.println("isPrivateChatMessage=====" + isPrivateChatMessage);
         System.out.println("receiverUserId=====" + receiverUserId);
 
-        if (isPrivateChatMessage){
+        if (isPrivateChatMessage) {
             chatMessage.setReceiverAppUserId(receiverUserId);
             chatMessage.setChatGroupId(null);
             chatMessage.setCreateNewPvChatGroup(true);
@@ -643,6 +625,16 @@ public class ChatActivity extends AppCompatActivity {
                     System.out.println("receiverUserId====" + receiverUserId);
                 }
 
+
+               /* handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshChatMessageList(true, true);
+                        handler.postDelayed(this, 300);
+                    }
+                }, 300);
+
+                refreshChatMessageList(false, false);*/
             }
         } else if (resultCode == Activity.RESULT_OK) {
 
@@ -797,6 +789,12 @@ public class ChatActivity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void checkNewMessage(EventBusModel event) {
+
+        if (event.getResult() != null) {
+            System.out.println("=======chatGroupId======" + event.getResult());
+            chatGroupId = Long.parseLong(event.getResult());
+        }
+
         if (event.isNewMessage() || event.isMessage() || event.isDownloadAttachFile()) {
             refreshChatMessageList(false, false);
         }

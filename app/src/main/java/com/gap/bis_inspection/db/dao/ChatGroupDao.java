@@ -28,7 +28,8 @@ public class ChatGroupDao extends AbstractDao<ChatGroup, Long> {
         public final static Property Name = new Property(2, String.class, "name", false, "NAME");
         public final static Property MaxMember = new Property(3, Integer.class, "maxMember", false, "MAX_MEMBER");
         public final static Property NotifyAct = new Property(4, Boolean.class, "notifyAct", false, "NOTIFY_ACT");
-        public final static Property StatusEn = new Property(5, Integer.class, "statusEn", false, "STATUS_EN");
+        public final static Property PrivateIs = new Property(5, Boolean.class, "privateIs", false, "PRIVATE_IS");
+        public final static Property StatusEn = new Property(6, Integer.class, "statusEn", false, "STATUS_EN");
     }
 
     private DaoSession daoSession;
@@ -52,6 +53,7 @@ public class ChatGroupDao extends AbstractDao<ChatGroup, Long> {
                 "\"NAME\" TEXT," + // 2: name
                 "\"MAX_MEMBER\" INTEGER," + // 3: maxMember
                 "\"NOTIFY_ACT\" INTEGER," + // 4: notifyAct
+                "\"PRIVATE_IS\" INTEGER," + // 4: PrivateIs
                 "\"STATUS_EN\" INTEGER);"); // 5: statusEn
     }
 
@@ -90,10 +92,15 @@ public class ChatGroupDao extends AbstractDao<ChatGroup, Long> {
         if (notifyAct != null) {
             stmt.bindLong(5, notifyAct ? 1L: 0L);
         }
+
+        Boolean privateIs = entity.getPrivateIs();
+        if (privateIs != null) {
+            stmt.bindLong(6, privateIs ? 1L: 0L);
+        }
  
         Integer statusEn = entity.getStatusEn();
         if (statusEn != null) {
-            stmt.bindLong(6, statusEn);
+            stmt.bindLong(7, statusEn);
         }
     }
 
@@ -118,7 +125,8 @@ public class ChatGroupDao extends AbstractDao<ChatGroup, Long> {
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // name
             cursor.isNull(offset + 3) ? null : cursor.getInt(offset + 3), // maxMember
             cursor.isNull(offset + 4) ? null : cursor.getShort(offset + 4) != 0, // notifyAct
-            cursor.isNull(offset + 5) ? null : cursor.getInt(offset + 5) // statusEn
+            cursor.isNull(offset + 5) ? null : cursor.getShort(offset + 5) != 0, // PrivateIs
+            cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6) // statusEn
         );
         return entity;
     }
@@ -131,7 +139,8 @@ public class ChatGroupDao extends AbstractDao<ChatGroup, Long> {
         entity.setName(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setMaxMember(cursor.isNull(offset + 3) ? null : cursor.getInt(offset + 3));
         entity.setNotifyAct(cursor.isNull(offset + 4) ? null : cursor.getShort(offset + 4) != 0);
-        entity.setStatusEn(cursor.isNull(offset + 5) ? null : cursor.getInt(offset + 5));
+        entity.setPrivateIs(cursor.isNull(offset + 5) ? null : cursor.getShort(offset + 5) != 0);
+        entity.setStatusEn(cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6));
      }
     
     /** @inheritdoc */

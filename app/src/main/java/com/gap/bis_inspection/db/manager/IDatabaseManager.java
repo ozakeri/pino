@@ -121,7 +121,7 @@ public interface IDatabaseManager {
 
     List<ChatMessage> getChatMessageListByParam(ChatMessage chatMessageFS);
 
-    List<ChatMessage> getChatMessageListByParamLimit(ChatMessage chatMessageFS, Integer limitSize);
+    List<ChatMessage> getChatMessageListByParamLimit(ChatMessage chatMessageFS, Integer limitSize,Boolean isPrivateChatMessage);
 
     List<ChatMessage> getChatMessageListPrivate(ChatMessage chatMessageFS, Integer limitSize);
 

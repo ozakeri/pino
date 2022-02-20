@@ -20,6 +20,7 @@ public class ChatGroup {
     private String name;
     private Integer maxMember;
     private Boolean notifyAct;
+    private Boolean privateIs;
     private Integer statusEn;
     /** Used to resolve relations */
     private transient DaoSession daoSession;
@@ -40,12 +41,13 @@ public class ChatGroup {
         this.id = id;
     }
 
-    public ChatGroup(Long id, Long serverGroupId, String name, Integer maxMember, Boolean notifyAct, Integer statusEn) {
+    public ChatGroup(Long id, Long serverGroupId, String name, Integer maxMember, Boolean notifyAct,Boolean privateIs, Integer statusEn) {
         this.id = id;
         this.serverGroupId = serverGroupId;
         this.name = name;
         this.maxMember = maxMember;
         this.notifyAct = notifyAct;
+        this.privateIs = privateIs;
         this.statusEn = statusEn;
     }
 
@@ -201,5 +203,13 @@ public class ChatGroup {
 
     public void setCountOfMembers(Integer countOfMembers) {
         this.countOfMembers = countOfMembers;
+    }
+
+    public Boolean getPrivateIs() {
+        return privateIs;
+    }
+
+    public void setPrivateIs(Boolean privateIs) {
+        this.privateIs = privateIs;
     }
 }

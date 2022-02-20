@@ -1489,6 +1489,41 @@ public class Services {
                             }
                         }
 
+                        if (!resultJsonObject.isNull("chatGroupNew")) {
+                            ChatGroup tmpChatGroupFS = new ChatGroup();
+                            JSONObject chatGroupNewJsonObject = resultJsonObject.getJSONObject("chatGroupNew");
+
+                            if (!chatGroupNewJsonObject.isNull("privateIs")) {
+                                chatMessage.setCreateNewPvChatGroup(chatGroupNewJsonObject.getBoolean("privateIs"));
+                                tmpChatGroupFS.setPrivateIs(chatGroupNewJsonObject.getBoolean("privateIs"));
+                            }
+
+                            if (!chatGroupNewJsonObject.isNull("name")) {
+                                tmpChatGroupFS.setName(chatGroupNewJsonObject.getString("name"));
+                            }
+
+                            if (!chatGroupNewJsonObject.isNull("maxMember")) {
+                                tmpChatGroupFS.setMaxMember(chatGroupNewJsonObject.getInt("maxMember"));
+                            }
+
+                            if (!chatGroupNewJsonObject.isNull("notifyAct")) {
+                                tmpChatGroupFS.setNotifyAct(chatGroupNewJsonObject.getBoolean("notifyAct"));
+                            }
+
+                            if (!chatGroupNewJsonObject.isNull("status")) {
+                                tmpChatGroupFS.setStatusEn(chatGroupNewJsonObject.getInt("status"));
+                            }
+
+                            if (!chatGroupNewJsonObject.isNull("id")) {
+                                EventBus.getDefault().post(new EventBusModel(String.valueOf(chatGroupNewJsonObject.getLong("id"))));
+                                tmpChatGroupFS.setServerGroupId(chatGroupNewJsonObject.getLong("id"));
+                            }
+
+                            coreService.saveChatGroup(tmpChatGroupFS);
+
+                            chatMessage.setChatGroupId(tmpChatGroupFS.getId());
+                        }
+
 
                         if (chatMessage.getAttachFileSize() == null || chatMessage.getAttachFileSentSize() == null || chatMessage.getAttachFileSize().equals(chatMessage.getAttachFileSentSize())) {
                             chatMessage.setSendingStatusEn(SendingStatusEn.Sent.ordinal());
