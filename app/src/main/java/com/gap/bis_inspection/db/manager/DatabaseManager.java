@@ -940,17 +940,16 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public synchronized List<ChatMessage> getChatMessageListByParamLimit(ChatMessage chatMessageFS, Integer limitSize, Boolean isPrivateChatMessage) {
+    public synchronized List<ChatMessage> getChatMessageListByParamLimit(ChatMessage chatMessageFS, Integer limitSize) {
         List<ChatMessage> chatMessages = null;
         try {
             openReadableDb();
             ChatMessageDao chatMessageDao = daoSession.getChatMessageDao();
             QueryBuilder<ChatMessage> queryBuilder = chatMessageDao.queryBuilder();
 
-            if (isPrivateChatMessage) {
-                if (chatMessageFS.getCreateNewPvChatGroup() != null) {
-                    queryBuilder.where(ChatMessageDao.Properties.IsCreateNewPvChatGroup.eq(chatMessageFS.getCreateNewPvChatGroup()));
-                }
+
+            if (chatMessageFS.getReceiverAppUserId() != null) {
+                queryBuilder.where(ChatMessageDao.Properties.ReceiverAppUserId.eq(chatMessageFS.getReceiverAppUserId()));
             }
 
             if (chatMessageFS.getId() != null) {

@@ -12,12 +12,10 @@ import android.app.ActivityManager;
 import android.app.Dialog;
 import android.app.NotificationManager;
 import android.content.ClipData;
-import android.content.ComponentName;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -60,6 +58,7 @@ import com.gap.bis_inspection.app.AppController;
 import com.gap.bis_inspection.common.Constants;
 import com.gap.bis_inspection.db.enumtype.SendingStatusEn;
 import com.gap.bis_inspection.db.manager.DatabaseManager;
+import com.gap.bis_inspection.db.objectmodel.ChatGroup;
 import com.gap.bis_inspection.db.objectmodel.ChatGroupMember;
 import com.gap.bis_inspection.db.objectmodel.ChatMessage;
 import com.gap.bis_inspection.service.CoreService;
@@ -86,7 +85,7 @@ public class ChatActivity extends AppCompatActivity {
     private ListView listView;
     private EditText messageET;
     private ChatMessageArrayAdapter chatArrayAdapter;
-    private long chatGroupId;
+    private long chatGroupId = 0;
     private AppController application;
     private ChatMessage chatMessage;
     private Long selectedChatMessageId;
@@ -102,11 +101,15 @@ public class ChatActivity extends AppCompatActivity {
     private ActivityManager am;
     private boolean checkCurrentActivity = true;
     private Bundle bundle;
-    private TextView groupNameTV,countMemberTV;
+    private TextView groupNameTV, countMemberTV;
 
     private boolean isPrivateChatMessage = false;
     private Long receiverUserId = null;
     private String receiverUserIdStr = "";
+    private String memberName = "";
+    private List<ChatMessage> listByParam = null;
+    private LinearLayout LinearLayout_group;
+    private Boolean groupIsPrivate = false;
 
 
     @SuppressLint("SetTextI18n")
@@ -127,7 +130,7 @@ public class ChatActivity extends AppCompatActivity {
         groupNameTV = findViewById(R.id.groupName_TV);
 
         countMemberTV = findViewById(R.id.countMember_TV);
-        LinearLayout LinearLayout_group = findViewById(R.id.LinearLayout_group);
+        LinearLayout_group = findViewById(R.id.LinearLayout_group);
         RelativeLayout backIcon = findViewById(R.id.back_Icon);
         final RelativeLayout attachIcon = findViewById(R.id.attach_Icon);
         //messageET.requestFocus();
@@ -172,21 +175,14 @@ public class ChatActivity extends AppCompatActivity {
         if (bundle != null) {
             chatGroupId = bundle.getLong("chatGroupId");
             String chatGroupName = bundle.getString("chatGroupName");
+            groupIsPrivate = bundle.getBoolean("groupIsPrivate");
             ChatGroupMember tmpChatGroupMember = new ChatGroupMember();
             tmpChatGroupMember.setChatGroupId(chatGroupId);
             List<ChatGroupMember> chatGroupMemberList = coreService.getChatGroupMemberListByParam(tmpChatGroupMember);
 
-            if (chatGroupMemberList != null) {
-                if (isPrivateChatMessage) {
+            groupNameTV.setText(String.valueOf(chatGroupName));
+            countMemberTV.setText(String.valueOf(chatGroupMemberList.size()));
 
-                    groupNameTV.setText(chatGroupName);
-                    countMemberTV.setText("");
-                } else {
-                    groupNameTV.setText(chatGroupName);
-                    countMemberTV.setText("(" + chatGroupMemberList.size() + ")");
-                }
-
-            }
 
             LinearLayout_group.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -377,6 +373,8 @@ public class ChatActivity extends AppCompatActivity {
         Integer firstVisiblePosition = null;
         Integer lastVisiblePosition = null;
         boolean scrollToEndForNewMessage = false;
+        listByParam = new ArrayList<>();
+
 
         if (listView.getAdapter() != null) {
             firstVisiblePosition = listView.getFirstVisiblePosition();
@@ -386,25 +384,58 @@ public class ChatActivity extends AppCompatActivity {
             }
         }
         ChatMessage tmpChatMessageFS = new ChatMessage();
-        tmpChatMessageFS.setChatGroupId(chatGroupId);
+
         tmpChatMessageFS.setCreateNewPvChatGroup(false);
+
         Integer loadMessageCount = 80;
 
-        if (isPrivateChatMessage){
-            tmpChatMessageFS.setCreateNewPvChatGroup(true);
-            tmpChatMessageFS.setChatGroupId(null);
+        tmpChatMessageFS.setChatGroupId(chatGroupId);
+        tmpChatMessageFS.setCreateNewPvChatGroup(isPrivateChatMessage);
+
+        if (receiverUserId != null) {
+
+            ChatMessage chatMessage = new ChatMessage();
+            System.out.println("receiverUserId==========" + receiverUserId);
+            chatMessage.setReceiverAppUserId(receiverUserId);
+            listByParam = coreService.getChatMessageListByParam(chatMessage);
+
+            System.out.println("listByParam==========" + listByParam.size());
+            if (groupIsPrivate || isPrivateChatMessage){
+                LinearLayout_group.setEnabled(false);
+            }
+
+            if (listByParam.size() > 1) {
+                for (ChatMessage m : listByParam) {
+                    if (m.getReceiverAppUserId() != null) {
+                        if (m.getReceiverAppUserId().equals(receiverUserId)) {
+                            if (m.getChatGroupId() != null) {
+                                ChatGroup chatGroup = coreService.getChatGroupById(m.getChatGroupId());
+                                if (chatGroup != null){
+                                    tmpChatMessageFS.setChatGroupId(chatGroup.getId());
+                                    groupNameTV.setText(String.valueOf(chatGroup.getName()));
+                                    countMemberTV.setText("");
+                                    LinearLayout_group.setEnabled(false);
+                                    //tmpChatMessageFS.setReceiverAppUserId(receiverUserId);
+                                }
+                            }
+                        }
+                    }else {
+                        tmpChatMessageFS.setReceiverAppUserId(receiverUserId);
+                        groupNameTV.setText(memberName);
+                        countMemberTV.setText("");
+                        LinearLayout_group.setEnabled(false);
+                    }
+                }
+            }
         }
 
-        List<ChatMessage> chatMessageList = coreService.getChatMessageListByParamLimit(tmpChatMessageFS, loadMessageCount,isPrivateChatMessage);
+        List<ChatMessage> chatMessageList = coreService.getChatMessageListByParamLimit(tmpChatMessageFS, loadMessageCount);
 
-        System.out.println("chatMessageList====" + chatMessageList.size());
 
         if (isSend) {
-            System.out.println("isSend====" + isSend);
             chatArrayAdapter = new ChatMessageArrayAdapter(getApplicationContext(), R.layout.right_message, chatMessageList, application.getCurrentUser());
             listView.setAdapter(chatArrayAdapter);
             listView.setSelection(listView.getAdapter().getCount());
-            System.out.println("=====222");
             return;
         }
 
@@ -428,7 +459,6 @@ public class ChatActivity extends AppCompatActivity {
             listView.setAdapter(chatArrayAdapter);
             listView.requestFocusFromTouch();
             listView.setSelection(listView.getCount() - integerList.size());
-            System.out.println("=====333");
 
         } else {
             if (chatMessageList != null) {
@@ -446,19 +476,13 @@ public class ChatActivity extends AppCompatActivity {
         NotificationManager notifManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notifManager.cancelAll();
 
-        if (isPrivateChatMessage) {
-
-
-        } else {
-            //groupNameTV.setText();
-            //countMemberTV.setText("1");
-        }
     }
 
 
     ////******send method chat message*******////
 
     private void sendChatMessage(String message_str) {
+
         String message = messageET.getText().toString();
         if (message.equals("")) {
             message = message_str;
@@ -475,19 +499,17 @@ public class ChatActivity extends AppCompatActivity {
             chatMessage.setDeliverIs(Boolean.FALSE);
             chatMessage.setReadIs(Boolean.FALSE);
             chatMessage.setReceiverAppUserId(null);
-            chatMessage.setCreateNewPvChatGroup(false);
-
-            System.out.println("isPrivateChatMessage=====" + isPrivateChatMessage);
-            System.out.println("receiverUserId=====" + receiverUserId);
-
-            if (isPrivateChatMessage) {
+            chatMessage.setCreateNewPvChatGroup(isPrivateChatMessage);
+            if (receiverUserId != null) {
                 chatMessage.setReceiverAppUserId(receiverUserId);
+            }
+            if (groupIsPrivate){
                 chatMessage.setCreateNewPvChatGroup(true);
             }
 
             chatMessage = coreService.insertChatMessage(chatMessage);
             new Thread(new SaveChatMessageTask()).start();
-            refreshChatMessageList(true, true);
+            refreshChatMessageList(false, false);
         }
         messageET.setText("");
     }
@@ -512,16 +534,8 @@ public class ChatActivity extends AppCompatActivity {
         chatMessage.setReadIs(Boolean.FALSE);
         chatMessage.setReceiverAppUserId(null);
         chatMessage.setCreateNewPvChatGroup(false);
-
-
-        System.out.println("isPrivateChatMessage=====" + isPrivateChatMessage);
-        System.out.println("receiverUserId=====" + receiverUserId);
-
-        if (isPrivateChatMessage) {
-            chatMessage.setReceiverAppUserId(receiverUserId);
-            chatMessage.setChatGroupId(null);
-            chatMessage.setCreateNewPvChatGroup(true);
-        }
+        chatMessage.setReceiverAppUserId(receiverUserId);
+        chatMessage.setCreateNewPvChatGroup(isPrivateChatMessage);
 
         chatMessage = coreService.insertChatMessage(chatMessage);
 
@@ -620,21 +634,27 @@ public class ChatActivity extends AppCompatActivity {
                 if (data != null) {
                     isPrivateChatMessage = data.getBooleanExtra("isPrivateChatMessage", false);
                     receiverUserId = data.getLongExtra("receiverUserId", 0);
-
+                    memberName = data.getStringExtra("memberName");
+                    refreshChatMessageList(true, true);
                     System.out.println("isPrivateChat====" + isPrivateChatMessage);
                     System.out.println("receiverUserId====" + receiverUserId);
+
+                    if (isPrivateChatMessage){
+                        groupNameTV.setText(memberName);
+                        countMemberTV.setText("");
+                        LinearLayout_group.setEnabled(false);
+                    }
                 }
 
-
-               /* handler.postDelayed(new Runnable() {
+                /*handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         refreshChatMessageList(true, true);
-                        handler.postDelayed(this, 300);
+                        handler.postDelayed(this, 1000);
                     }
-                }, 300);
+                }, 1000);
 
-                refreshChatMessageList(false, false);*/
+                refreshChatMessageList(true, true);*/
             }
         } else if (resultCode == Activity.RESULT_OK) {
 
@@ -792,7 +812,12 @@ public class ChatActivity extends AppCompatActivity {
 
         if (event.getResult() != null) {
             System.out.println("=======chatGroupId======" + event.getResult());
-            chatGroupId = Long.parseLong(event.getResult());
+            ChatGroup chatGroup = new ChatGroup();
+            chatGroup.setServerGroupId(Long.valueOf(event.getResult()));
+            chatGroup = coreService.getChatGroupByServerGroupId(chatGroup);
+            chatGroupId = chatGroup.getId();
+            services.getChatGroupList();
+            refreshChatMessageList(false, false);
         }
 
         if (event.isNewMessage() || event.isMessage() || event.isDownloadAttachFile()) {

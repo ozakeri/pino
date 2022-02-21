@@ -104,6 +104,7 @@ public class ChatGroupListActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
                 intent.putExtra("chatGroupId", chatGroup.getId());
                 intent.putExtra("chatGroupName", chatGroup.getName());
+                intent.putExtra("groupIsPrivate", chatGroup.getPrivateIs());
                 //System.out.println("chatGroupId=====" + chatGroup.getServerGroupId());
                 //System.out.println("chatGroupId=====" + chatGroup.getServerGroupId());
                 startActivity(intent);

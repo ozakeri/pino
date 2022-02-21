@@ -52,6 +52,7 @@ public class ChatGroupDetailActivity extends AppCompatActivity {
                 ChatGroupMember chatGroupMember = (ChatGroupMember) adapterView.getItemAtPosition(position);
                 Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
                 intent.putExtra("receiverUserId", chatGroupMember.getAppUserId());
+                intent.putExtra("memberName", chatGroupMember.getAppUser().getName() +" " + chatGroupMember.getAppUser().getFamily());
                 intent.putExtra("isPrivateChatMessage", true);
                 setResult(RESULT_FIRST_USER, intent);
                 finish();

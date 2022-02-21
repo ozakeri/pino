@@ -1192,6 +1192,9 @@ public class Services {
                                             if (!chatGroupJsonObject.isNull("name")) {
                                                 chatGroup.setName(chatGroupJsonObject.getString("name"));
                                             }
+                                            if (!chatGroupJsonObject.isNull("privateIs")) {
+                                                chatGroup.setPrivateIs(chatGroupJsonObject.getBoolean("privateIs"));
+                                            }
                                             if (!chatGroupJsonObject.isNull("maxMember")) {
                                                 chatGroup.setMaxMember(chatGroupJsonObject.getInt("maxMember"));
                                             }
@@ -1262,7 +1265,7 @@ public class Services {
         List<ChatMessage> chatMessageList = coreService.getUnSentChatMessageList(chatMessageFS);
         if (!chatMessageList.isEmpty()) {
             for (ChatMessage chatMessage : chatMessageList) {
-                sendChatMessage(coreService, chatMessage);
+                //sendChatMessage(coreService, chatMessage);
             }
 
         }
@@ -1445,23 +1448,21 @@ public class Services {
             if (chatMessage.getReceiverAppUserId() != null) {
                 chatMessageJsonObject.put("receiverUserId", chatMessage.getReceiverAppUserId());
             }
-            if (chatMessage.getChatGroupId() != null) {
-                chatMessageJsonObject.put("chatGroupId", coreService.getChatGroupById(chatMessage.getChatGroupId()).getServerGroupId());
-            }
-
-            System.out.println("getCreateNewPvChatGroup====" + chatMessage.getCreateNewPvChatGroup());
-
-            if (chatMessage.getCreateNewPvChatGroup()) {
-                chatMessageJsonObject.put("chatGroupId", "null");
-            }
 
             if (chatMessage.getReceiverAppUserId() != null) {
                 chatMessageJsonObject.put("receiverUserId", chatMessage.getReceiverAppUserId());
             }
 
-            if (chatMessage.getReceiverAppUserId() != null) {
-                chatMessageJsonObject.put("isCreateNewPvChatGroup", chatMessage.getCreateNewPvChatGroup());
+            if (chatMessage.getChatGroupId() != null) {
+                chatMessageJsonObject.put("chatGroupId", coreService.getChatGroupById(chatMessage.getChatGroupId()).getServerGroupId());
             }
+
+            if (chatMessage.getCreateNewPvChatGroup() != null) {
+                chatMessageJsonObject.put("isCreateNewPvChatGroup", chatMessage.getCreateNewPvChatGroup());
+               // chatMessageJsonObject.put("chatGroupId", "null");
+            }
+
+            System.out.println("===getCreateNewPvChatGroup===" + chatMessage.getCreateNewPvChatGroup());
 
             jsonObject.put("chatMessage", chatMessageJsonObject);
 
@@ -1490,38 +1491,70 @@ public class Services {
                         }
 
                         if (!resultJsonObject.isNull("chatGroupNew")) {
+
                             ChatGroup tmpChatGroupFS = new ChatGroup();
                             JSONObject chatGroupNewJsonObject = resultJsonObject.getJSONObject("chatGroupNew");
 
-                            if (!chatGroupNewJsonObject.isNull("privateIs")) {
-                                chatMessage.setCreateNewPvChatGroup(chatGroupNewJsonObject.getBoolean("privateIs"));
-                                tmpChatGroupFS.setPrivateIs(chatGroupNewJsonObject.getBoolean("privateIs"));
-                            }
-
-                            if (!chatGroupNewJsonObject.isNull("name")) {
-                                tmpChatGroupFS.setName(chatGroupNewJsonObject.getString("name"));
-                            }
-
-                            if (!chatGroupNewJsonObject.isNull("maxMember")) {
-                                tmpChatGroupFS.setMaxMember(chatGroupNewJsonObject.getInt("maxMember"));
-                            }
-
-                            if (!chatGroupNewJsonObject.isNull("notifyAct")) {
-                                tmpChatGroupFS.setNotifyAct(chatGroupNewJsonObject.getBoolean("notifyAct"));
-                            }
-
-                            if (!chatGroupNewJsonObject.isNull("status")) {
-                                tmpChatGroupFS.setStatusEn(chatGroupNewJsonObject.getInt("status"));
-                            }
-
                             if (!chatGroupNewJsonObject.isNull("id")) {
-                                EventBus.getDefault().post(new EventBusModel(String.valueOf(chatGroupNewJsonObject.getLong("id"))));
-                                tmpChatGroupFS.setServerGroupId(chatGroupNewJsonObject.getLong("id"));
+
+                                ChatGroup chatGroupSearch = new ChatGroup();
+                                chatGroupSearch.setServerGroupId(chatGroupNewJsonObject.getLong("id"));
+                                tmpChatGroupFS = coreService.getChatGroupByServerGroupId(chatGroupSearch);
+
+                                if (tmpChatGroupFS == null) {
+                                    tmpChatGroupFS = new ChatGroup();
+                                    tmpChatGroupFS.setServerGroupId(chatGroupSearch.getServerGroupId());
+                                }
+
+                                if (!chatGroupNewJsonObject.isNull("privateIs")) {
+                                    chatMessage.setCreateNewPvChatGroup(chatGroupNewJsonObject.getBoolean("privateIs"));
+                                    tmpChatGroupFS.setPrivateIs(chatGroupNewJsonObject.getBoolean("privateIs"));
+                                }
+
+                                if (!chatGroupNewJsonObject.isNull("name")) {
+                                    tmpChatGroupFS.setName(chatGroupNewJsonObject.getString("name"));
+                                }
+
+                                if (!chatGroupNewJsonObject.isNull("maxMember")) {
+                                    tmpChatGroupFS.setMaxMember(chatGroupNewJsonObject.getInt("maxMember"));
+                                }
+
+                                if (!chatGroupNewJsonObject.isNull("notifyAct")) {
+                                    tmpChatGroupFS.setNotifyAct(chatGroupNewJsonObject.getBoolean("notifyAct"));
+                                }
+
+                                if (!chatGroupNewJsonObject.isNull("status")) {
+                                    tmpChatGroupFS.setStatusEn(chatGroupNewJsonObject.getInt("status"));
+                                }
+
+                                if (tmpChatGroupFS.getId() == null) {
+                                    tmpChatGroupFS = coreService.saveChatGroup(tmpChatGroupFS);
+
+                                } else {
+                                    coreService.updateChatGroup(tmpChatGroupFS);
+                                }
+
+
+                                if (tmpChatGroupFS.getId() != null) {
+                                    chatMessage.setChatGroupId(tmpChatGroupFS.getId());
+                                }
+
+
+                                /*System.out.println("====chatGroupNew=====" + chatGroupNewJsonObject.getLong("id"));
+                                System.out.println("====chatGroupNew=====" + chatMessage.getChatGroupId());
+
+                                if (chatMessage.getChatGroupId() != null) {
+                                    if (chatGroupNewJsonObject.getLong("id") == chatMessage.getChatGroupId()) {
+                                        coreService.updateChatGroup(tmpChatGroupFS);
+                                    }
+                                } else {
+                                    EventBus.getDefault().post(new EventBusModel(String.valueOf(chatGroupNewJsonObject.getLong("id"))));
+                                    tmpChatGroupFS.setServerGroupId(chatGroupNewJsonObject.getLong("id"));
+                                    coreService.saveChatGroup(tmpChatGroupFS);
+                                }*/
+
                             }
 
-                            coreService.saveChatGroup(tmpChatGroupFS);
-
-                            chatMessage.setChatGroupId(tmpChatGroupFS.getId());
                         }
 
 
