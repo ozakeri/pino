@@ -139,9 +139,6 @@ public class ChatActivity extends AppCompatActivity {
         messageET.setVerticalScrollBarEnabled(true);
         messageET.setScrollBarStyle(View.SCROLLBARS_INSIDE_INSET);
         services = new Services(getApplicationContext());
-        //services.sendChatMessageList();
-        //services.getChatMessageList();
-        //services.getChatMessageStatusList();
         handler = new Handler();
 
         messageET.addTextChangedListener(new TextWatcher() {
@@ -413,7 +410,7 @@ public class ChatActivity extends AppCompatActivity {
                                 if (chatGroup != null){
                                     tmpChatMessageFS.setChatGroupId(chatGroup.getId());
                                     groupNameTV.setText(String.valueOf(chatGroup.getName()));
-                                    countMemberTV.setText("");
+                                    countMemberTV.setText("2");
                                     LinearLayout_group.setEnabled(false);
                                     //tmpChatMessageFS.setReceiverAppUserId(receiverUserId);
                                 }
@@ -422,7 +419,7 @@ public class ChatActivity extends AppCompatActivity {
                     }else {
                         tmpChatMessageFS.setReceiverAppUserId(receiverUserId);
                         groupNameTV.setText(memberName);
-                        countMemberTV.setText("");
+                        countMemberTV.setText("2");
                         LinearLayout_group.setEnabled(false);
                     }
                 }

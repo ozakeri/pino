@@ -685,7 +685,6 @@ public class HomeActivity extends AppCompatActivity {
                                                         chatGroupMember = new ChatGroupMember();
                                                         chatGroupMember.setAppUserId(userId);
                                                         chatGroupMember.setChatGroupId(chatGroup.getId());
-
                                                     }
                                                     if (!chatGroupMemberJsonObject.isNull("privilegeTypeEn")) {
                                                         chatGroupMember.setPrivilegeTypeEn(chatGroupMemberJsonObject.getInt("privilegeTypeEn"));

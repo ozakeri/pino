@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,15 +37,23 @@ public class ChatGroupAdapter extends ArrayAdapter<ChatGroup> {
         view = inflater.inflate(R.layout.user_chat_group_list, null);
 
         final TextView groupVT, counterVT, nameVT, messageVT, dateVT;
+        ImageView groupIcon;
         groupVT = (TextView) view.findViewById(R.id.group_VT);
         counterVT = (TextView) view.findViewById(R.id.counter_VT);
         nameVT = (TextView) view.findViewById(R.id.name_VT);
         messageVT = (TextView) view.findViewById(R.id.message_VT);
         dateVT = (TextView) view.findViewById(R.id.date_VT);
+        groupIcon = view.findViewById(R.id.groupIcon);
         final ChatGroup userChatGroup = getItem(position);
 
         if (userChatGroup != null) {
 
+            if (userChatGroup.getPrivateIs()){
+                groupIcon.setBackgroundResource(R.drawable.ic_avatar);
+            }
+            else {
+                groupIcon.setBackgroundResource(R.drawable.groupe_icon);
+            }
             groupVT.setText(userChatGroup.getName());
 
             if (userChatGroup.getCountOfUnreadMessage() == 0) {

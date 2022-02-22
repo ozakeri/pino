@@ -52,6 +52,9 @@ public class ChatGroupListActivity extends AppCompatActivity {
         services = new Services(getApplicationContext());
         //services.getChatMessageStatusList();
 
+        services.getChatMessageList();
+        services.getChatGroupList();
+
         application = (AppController) getApplication();
 
         application.setCurrentEntityName(AppController.ENTITY_NAME_NOTIFICATION);
@@ -64,6 +67,7 @@ public class ChatGroupListActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.listView_drawer);
         rel = (RelativeLayout) findViewById(R.id.rel);
         TextView webSite = (TextView) findViewById(R.id.webSite_TV);
+
         refreshChatGroupList();
 
         backIcon.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +97,8 @@ public class ChatGroupListActivity extends AppCompatActivity {
             }
         });
 
-        //updateList();
+        updateList();
+        updateChatGroupList();
         //getMessage();
 
 
@@ -127,9 +132,20 @@ public class ChatGroupListActivity extends AppCompatActivity {
             @Override
             public void run() {
                 refreshChatGroupList();
-                handler.postDelayed(this, 1000);
+                handler.postDelayed(this, 500);
             }
-        }, 1000);
+        }, 500);
+    }
+
+    private void updateChatGroupList() {
+        handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                services.getChatGroupList();
+                handler.postDelayed(this, 30000);
+            }
+        }, 30000);
     }
 
     private void refreshChatGroupList() {
@@ -143,6 +159,7 @@ public class ChatGroupListActivity extends AppCompatActivity {
             ChatGroupAdapter userChatGroupAdapter = new ChatGroupAdapter(getApplicationContext(), R.layout.user_chat_group_list, userChatGroupList);
             groupListView.setAdapter(userChatGroupAdapter);
         }
+
     }
 
     @Override
@@ -159,7 +176,7 @@ public class ChatGroupListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        refreshChatGroupList();
+       // refreshChatGroupList();
     }
 
     private void getMessage() {

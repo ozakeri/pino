@@ -1,14 +1,23 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_margin="5dp"
     android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_avatar"
+        android:layout_alignParentLeft="true"/>
+
 
     <LinearLayout
         android:id="@+id/layout_chat_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/img_avatar">
 
 
     <com.gap.bis_inspection.util.CustomTextView
@@ -147,4 +156,4 @@
     </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

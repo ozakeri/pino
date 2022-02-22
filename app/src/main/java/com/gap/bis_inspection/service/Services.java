@@ -83,6 +83,7 @@ public class Services {
     public static Integer MAX_ATTACH_FILE_PACKET_SIZE = 16384;
     private List<AttachFile> attachFileList;
     private int counter = 1;
+    List<ChatMessage> listByParam = null;
 
 
     public Services(Context context) {
@@ -1008,151 +1009,6 @@ public class Services {
         updateDeviceSettingByKey(deviceSetting);
     }
 
-    public void getChatGroupMemberList() {
-        DeviceSetting deviceSetting = getDeviceSettingByKey(Constants.DEVICE_SETTING_KEY_LAST_CHAT_GROUP_SYNC_DATE);
-        List<Long> longList = new ArrayList<>();
-        try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("username", user.getUsername());
-            jsonObject.put("tokenPass", user.getBisPassword());
-
-            MyPostJsonService postJsonService = new MyPostJsonService(databaseManager, context);
-            try {
-                String result = postJsonService.sendData("getUserChatGroupList", jsonObject, true);
-                System.out.println("====resultGetChatGroupList=" + result);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                if (result != null) {
-
-                    JSONObject resultJson = new JSONObject(result);
-                    if (!resultJson.isNull(Constants.SUCCESS_KEY)) {
-                        if (!resultJson.isNull(Constants.RESULT_KEY)) {
-                            JSONObject resultJsonObject = resultJson.getJSONObject(Constants.RESULT_KEY);
-                            List<Long> serverGroupIdList = new ArrayList<Long>();
-                            if (!resultJsonObject.isNull("ChatGroupMemberList")) {
-                                JSONArray chatGroupJsonArray = resultJsonObject.getJSONArray("ChatGroupMemberList");
-                                for (int i = 0; i < chatGroupJsonArray.length(); i++) {
-                                    JSONObject chatGroupJsonObject = chatGroupJsonArray.getJSONObject(i);
-                                    if (!chatGroupJsonObject.isNull("id")) {
-                                        Long serverGroupId = chatGroupJsonObject.getLong("id");
-                                        serverGroupIdList.add(serverGroupId);
-                                        ChatGroup tmpChatGroupFS = new ChatGroup();
-                                        tmpChatGroupFS.setServerGroupId(serverGroupId);
-                                        ChatGroup chatGroup = coreService.getChatGroupByServerGroupId(tmpChatGroupFS);
-                                        if (chatGroup == null) {
-                                            chatGroup = new ChatGroup();
-                                            chatGroup.setServerGroupId(serverGroupId);
-                                        }
-                                        if (!chatGroupJsonObject.isNull("name")) {
-                                            chatGroup.setName(chatGroupJsonObject.getString("name"));
-                                        }
-                                        if (!chatGroupJsonObject.isNull("maxMember")) {
-                                            chatGroup.setMaxMember(chatGroupJsonObject.getInt("maxMember"));
-                                        }
-                                        if (!chatGroupJsonObject.isNull("notifyAct")) {
-                                            if (chatGroup.getId() == null) {
-                                                chatGroup.setNotifyAct(chatGroupJsonObject.getBoolean("notifyAct"));
-                                            }
-                                        }
-                                        if (!chatGroupJsonObject.isNull("status")) {
-                                            chatGroup.setStatusEn(chatGroupJsonObject.getInt("status"));
-                                        }
-                                        if (chatGroup.getId() == null) {
-                                            chatGroup = coreService.saveChatGroup(chatGroup);
-
-                                        } else {
-                                            coreService.updateChatGroup(chatGroup);
-                                        }
-
-                                        List<Long> userIdList = new ArrayList<Long>();
-                                        if (!chatGroupJsonObject.isNull("chatGroupMembers")) {
-                                            JSONArray chatGroupMemberJsonArray = chatGroupJsonObject.getJSONArray("chatGroupMembers");
-                                            for (int j = 0; j < chatGroupMemberJsonArray.length(); j++) {
-                                                JSONObject chatGroupMemberJsonObject = chatGroupMemberJsonArray.getJSONObject(j);
-
-                                                System.out.println("userId======" + chatGroupMemberJsonObject.getLong("userId"));
-                                                if (!chatGroupMemberJsonObject.isNull("userId")) {
-                                                    Long userId = chatGroupMemberJsonObject.getLong("userId");
-                                                    userIdList.add(userId);
-                                                    ChatGroupMember tmpChatGroupMemberFS = new ChatGroupMember();
-                                                    tmpChatGroupMemberFS.setAppUserId(userId);
-                                                    tmpChatGroupMemberFS.setChatGroupId(chatGroup.getId());
-                                                    System.out.println("chatGroup.getId()11=====111=====" + chatGroup.getId());
-                                                    ChatGroupMember chatGroupMember = coreService.getChatGroupMemberByUserAndGroup(tmpChatGroupMemberFS);
-                                                    if (chatGroupMember == null) {
-                                                        chatGroupMember = new ChatGroupMember();
-                                                        chatGroupMember.setAppUserId(userId);
-                                                        chatGroupMember.setChatGroupId(chatGroup.getId());
-                                                        System.out.println("chatGroup.getId()11=====222=====" + chatGroup.getId());
-
-                                                    }
-                                                    if (!chatGroupMemberJsonObject.isNull("privilegeTypeEn")) {
-                                                        chatGroupMember.setPrivilegeTypeEn(chatGroupMemberJsonObject.getInt("privilegeTypeEn"));
-                                                    }
-                                                    if (!chatGroupMemberJsonObject.isNull("adminIs")) {
-                                                        chatGroupMember.setAdminIs(chatGroupMemberJsonObject.getBoolean("adminIs"));
-                                                    }
-
-                                                    if (chatGroupMember.getId() == null) {
-                                                        coreService.saveChatGroupMember(chatGroupMember);
-                                                        System.out.println("saveChatGroupMember=====");
-                                                    } else {
-                                                        coreService.updateChatGroupMember(chatGroupMember);
-                                                        System.out.println("updateChatGroupMember=====");
-                                                    }
-
-                                                    AppUser appUser = coreService.getAppUserById(chatGroupMember.getAppUserId());
-                                                    System.out.println("appUser=====" + appUser);
-                                                    if (appUser == null) {
-                                                        getUserById(context, user, chatGroupMember.getAppUserId());
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        ChatGroupMember tmpChatGroupMemberFS = new ChatGroupMember();
-                                        tmpChatGroupMemberFS.setChatGroupId(chatGroup.getId());
-                                        tmpChatGroupMemberFS.setNotAppUserIdList(userIdList);
-                                        List<ChatGroupMember> ChatGroupMemberRemovedList = coreService.getChatGroupMemberListByParam(tmpChatGroupMemberFS);
-                                        for (ChatGroupMember ChatGroupMemberRemoved : ChatGroupMemberRemovedList) {
-                                            coreService.deleteChatGroupMember(ChatGroupMemberRemoved);
-                                        }
-                                    }
-                                }
-                            }
-                            ChatGroup tmpChatGroupFS = new ChatGroup();
-                            tmpChatGroupFS.setNotServerGroupIdList(serverGroupIdList);
-                            List<ChatGroup> chatGroupUserRemovedList = coreService.getChatGroupListByParam(tmpChatGroupFS);
-                            for (ChatGroup chatGroupUserRemoved : chatGroupUserRemovedList) {
-                                chatGroupUserRemoved.setStatusEn(GeneralStatus.Inactive.ordinal());
-                                coreService.updateChatGroup(chatGroupUserRemoved);
-                            }
-                        }
-                    }
-                }
-
-            } catch (SocketTimeoutException e) {
-                String errorMsg = e.getMessage();
-                if (errorMsg == null) {
-                    errorMsg = "SocketTimeoutException";
-                }
-                Log.d(errorMsg, errorMsg);
-            } catch (SocketException | WebServiceException e) {
-                String errorMsg = e.getMessage();
-                if (errorMsg == null) {
-                    errorMsg = "ChatMessageReceiver";
-                }
-                Log.d(errorMsg, errorMsg);
-            }
-
-        } catch (JSONException e) {
-            String errorMsg = e.getMessage();
-            if (errorMsg == null) {
-                errorMsg = "RegistrationFragment";
-            }
-            Log.d(errorMsg, errorMsg);
-        }
-        updateDeviceSettingByKey(deviceSetting);
-    }
-
     public void getChatGroupList() {
         DeviceSetting deviceSetting = getDeviceSettingByKey(Constants.DEVICE_SETTING_KEY_LAST_CHAT_GROUP_SYNC_DATE);
         List<Long> longList = new ArrayList<>();
@@ -1207,7 +1063,7 @@ public class Services {
                                                 chatGroup.setStatusEn(chatGroupJsonObject.getInt("status"));
                                             }
                                             if (chatGroup.getId() == null) {
-                                                chatGroup = coreService.saveChatGroup(chatGroup);
+                                                coreService.saveChatGroup(chatGroup);
                                             } else {
                                                 coreService.updateChatGroup(chatGroup);
                                             }
@@ -1445,21 +1301,21 @@ public class Services {
             if (chatMessage.getValidUntilDate() != null) {
                 chatMessageJsonObject.put("validUntilDate", simpleDateFormat.format(chatMessage.getValidUntilDate()));
             }
-            if (chatMessage.getReceiverAppUserId() != null) {
-                chatMessageJsonObject.put("receiverUserId", chatMessage.getReceiverAppUserId());
-            }
 
-            if (chatMessage.getReceiverAppUserId() != null) {
-                chatMessageJsonObject.put("receiverUserId", chatMessage.getReceiverAppUserId());
-            }
 
             if (chatMessage.getChatGroupId() != null) {
                 chatMessageJsonObject.put("chatGroupId", coreService.getChatGroupById(chatMessage.getChatGroupId()).getServerGroupId());
             }
 
+            if (chatMessage.getReceiverAppUserId() != null) {
+                chatMessageJsonObject.put("receiverUserId", chatMessage.getReceiverAppUserId());
+                if (checkExistGroup(chatMessage.getReceiverAppUserId())) {
+                    chatMessageJsonObject.put("chatGroupId", "null");
+                }
+            }
+
             if (chatMessage.getCreateNewPvChatGroup() != null) {
                 chatMessageJsonObject.put("isCreateNewPvChatGroup", chatMessage.getCreateNewPvChatGroup());
-               // chatMessageJsonObject.put("chatGroupId", "null");
             }
 
             System.out.println("===getCreateNewPvChatGroup===" + chatMessage.getCreateNewPvChatGroup());
@@ -2343,5 +2199,27 @@ public class Services {
             }
             Log.d(errorMsg, errorMsg);
         }
+    }
+
+
+    public boolean checkExistGroup(Long receiverUserId) {
+        ChatMessage chatMessage = new ChatMessage();
+        chatMessage.setReceiverAppUserId(receiverUserId);
+        listByParam = coreService.getChatMessageListByParam(chatMessage);
+        if (listByParam.size() > 1) {
+            for (ChatMessage m : listByParam) {
+                if (m.getReceiverAppUserId() != null) {
+                    if (m.getReceiverAppUserId().equals(receiverUserId)) {
+                        if (m.getChatGroupId() != null) {
+                            ChatGroup chatGroup = coreService.getChatGroupById(m.getChatGroupId());
+                            if (chatGroup != null) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
