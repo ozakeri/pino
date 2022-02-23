@@ -341,4 +341,20 @@ public class VollyService {
         StringRequest stringRequest = new StringRequest(Request.Method.GET,ws,   listener, errorListener);
         RestClient.getInstance().addToRequestQueue2(stringRequest);
     }
+
+    public void getUserPermissionList(String username,String tokenPass,Response.Listener listener,
+                                       Response.ErrorListener errorListener) {
+        String ws = Constants.WS + "getUserPermissionList";
+        ArrayList<Util.WSParameter> wsParameters = new ArrayList<>();
+        wsParameters.add(new Util.WSParameter("username", username));
+        wsParameters.add(new Util.WSParameter("tokenPass", tokenPass));
+
+        String json = Util.createJson(wsParameters);
+        json = URLEncoder.encode(json);
+        ws = ws + "?INPUT_PARAM=" + json;
+        System.out.println("ws======" + ws);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,ws,   listener, errorListener);
+        RestClient.getInstance().addToRequestQueue2(stringRequest);
+    }
 }
