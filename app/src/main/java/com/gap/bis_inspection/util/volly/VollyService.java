@@ -2,6 +2,7 @@ package com.gap.bis_inspection.util.volly;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
 import com.gap.bis_inspection.app.AppController;
 import com.gap.bis_inspection.common.Constants;
 import com.gap.bis_inspection.common.ImageUtil;
@@ -296,5 +297,48 @@ public class VollyService {
 
             RestClient.getInstance().addToRequestQueue(gsonRequest);
         }
+    }
+
+    public void getServerDateTime(Response.Listener listener,
+                                       Response.ErrorListener errorListener) {
+        String ws = Constants.WS + "getServerDateTime";
+        ArrayList<Util.WSParameter> wsParameters = new ArrayList<>();
+        String json = Util.createJson(wsParameters);
+        json = URLEncoder.encode(json);
+        ws = ws + "?INPUT_PARAM=" + json;
+        System.out.println("ws======" + ws);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,ws,   listener, errorListener);
+        RestClient.getInstance().addToRequestQueue2(stringRequest);
+    }
+
+
+    public void mobileNoConfirmation(String mobileNo,Response.Listener listener,
+                                       Response.ErrorListener errorListener) {
+        String ws = Constants.WS + "getServerDateTime";
+        ArrayList<Util.WSParameter> wsParameters = new ArrayList<>();
+        wsParameters.add(new Util.WSParameter("mobileNo", mobileNo));
+        String json = Util.createJson(wsParameters);
+        json = URLEncoder.encode(json);
+        ws = ws + "?INPUT_PARAM=" + json;
+        System.out.println("ws======" + ws);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,ws,   listener, errorListener);
+        RestClient.getInstance().addToRequestQueue2(stringRequest);
+    }
+
+    public void activationCodeValidation(String mobileNo,String activationCode,Response.Listener listener,
+                                       Response.ErrorListener errorListener) {
+        String ws = Constants.WS + "getServerDateTime";
+        ArrayList<Util.WSParameter> wsParameters = new ArrayList<>();
+        wsParameters.add(new Util.WSParameter("mobileNo", mobileNo));
+        wsParameters.add(new Util.WSParameter("activationCode", activationCode));
+        String json = Util.createJson(wsParameters);
+        json = URLEncoder.encode(json);
+        ws = ws + "?INPUT_PARAM=" + json;
+        System.out.println("ws======" + ws);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,ws,   listener, errorListener);
+        RestClient.getInstance().addToRequestQueue2(stringRequest);
     }
 }

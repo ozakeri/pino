@@ -1,6 +1,7 @@
 package com.gap.bis_inspection.util.volly;
 
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.gap.bis_inspection.app.AppController;
 
@@ -37,6 +38,11 @@ public class RestClient {
     }
 
     public <T> void addToRequestQueue(GsonRequest<T> req) {
+        req.setTag(TAG);
+        getRequestQueue().add(req);
+    }
+
+    public <T> void addToRequestQueue2(StringRequest req) {
         req.setTag(TAG);
         getRequestQueue().add(req);
     }

@@ -18,11 +18,16 @@ import android.widget.Toast;
 
 import com.gap.bis_inspection.R;
 import com.gap.bis_inspection.app.AppController;
+import com.gap.bis_inspection.util.DateUtils;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -275,5 +280,34 @@ public class CommonUtil<T> {
         output = output.replaceAll("8", "٨");
         output = output.replaceAll("9", "٩");
         return output;
+    }
+
+    public static boolean isDeviceDateTimeValid(String result) throws JSONException, ParseException {
+        if (result != null) {
+            JSONObject resultJson = new JSONObject(result);
+            if (!resultJson.isNull(Constants.SUCCESS_KEY)) {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
+                JSONObject jsonObject = resultJson.getJSONObject(Constants.RESULT_KEY);
+                Date serverDateTime = simpleDateFormat.parse(jsonObject.getString("serverDateTime"));
+                if (DateUtils.isValidDateDiff(new Date(), serverDateTime, Constants.VALID_SERVER_AND_DEVICE_TIME_DIFF)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean isConnect(Context context) {
+        boolean isOnline = false;
+        try {
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo netInfo = cm.getActiveNetworkInfo();
+            isOnline = (netInfo != null && netInfo.isConnected());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return isOnline;
     }
 }

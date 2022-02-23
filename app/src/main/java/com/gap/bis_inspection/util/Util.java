@@ -45,12 +45,12 @@ public class Util {
         for (WSParameter wsParameter : wsParameters)
             jsonObject.addProperty(wsParameter.key, wsParameter.value + "");
         String json = jsonObject.toString();
-        System.out.println("json======" +json);
+        System.out.println("json======" + json);
         return json;
     }
 
 
-    public static String getToken (){
+    public static String getToken() {
         return AppController.getInstance().getSharedPreferences().getString(Constants.FIRE_BASE_TOKEN, "");
     }
 
