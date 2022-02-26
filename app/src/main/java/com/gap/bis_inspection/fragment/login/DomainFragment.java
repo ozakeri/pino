@@ -69,7 +69,7 @@ public class DomainFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if (CommonUtil.isConnect(getActivity())){
+                if (CommonUtil.isConnect(getActivity())) {
                     domainEditText = CommonUtil.AutoCompleteFarsiNumberReplacement(domainEditText);
                     globalDomain.setDomain(domainEditText.getText().toString());
 
@@ -97,7 +97,7 @@ public class DomainFragment extends Fragment {
                         }
                     });
 
-                } else{
+                } else {
                     Snackbar.make(view, R.string.label_check_network, Snackbar.LENGTH_SHORT)
                             .show();
                 }

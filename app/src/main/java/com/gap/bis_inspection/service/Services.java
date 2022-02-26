@@ -1020,7 +1020,6 @@ public class Services {
             MyPostJsonService postJsonService = new MyPostJsonService(databaseManager, context);
             try {
                 String result = postJsonService.sendData("getUserChatGroupList", jsonObject, true);
-                System.out.println("====resultGetChatGroupList=" + result);
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 if (result != null) {
                     try {
