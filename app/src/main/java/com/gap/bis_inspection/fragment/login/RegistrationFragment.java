@@ -60,7 +60,7 @@ public class RegistrationFragment extends Fragment {
                 String mobileNo = CommonUtil.farsiNumberReplacement(mobileNoEditText.getText().toString());
                 if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
                     if (CommonUtil.isConnect(getActivity())) {
-                        VollyService.getInstance().mobileNoConfirmation(mobileNoEditText.toString(), new Response.Listener<Object>() {
+                        VollyService.getInstance().mobileNoConfirmation(mobileNoEditText.getText().toString(), new Response.Listener<Object>() {
                             @Override
                             public void onResponse(Object s) {
                                 User user = databaseManager.getUserByMobileNo(mobileNo);

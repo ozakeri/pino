@@ -58,6 +58,7 @@ public class SplashActivity extends AppCompatActivity {
     private IDatabaseManager databaseManager;
     private int counter = 1;
     private List<AttachFile> attachFileList;
+    private User user;
 
 
     @Override
@@ -83,11 +84,63 @@ public class SplashActivity extends AppCompatActivity {
 
         if (!userList.isEmpty()) {
             userIsNull = false;
+            user = userList.get(0);
         } else {
             userIsNull = true;
         }
 
-        Thread background = new Thread() {
+        if (!userIsNull) {
+            if (isConnected()) {
+                /*if (action.equals("newChatMessage") && groupId != null) {
+
+                    AppController.getInstance().setNewMessage(true);
+                    getChatMessageList();
+
+                    ChatGroup tmp = new ChatGroup();
+                    tmp.setServerGroupId(Long.valueOf(groupId));
+                    ChatGroup chatGroup = coreService.getChatGroupByServerGroupId(tmp);
+                    if (chatGroup != null) {
+                        getUserPermissionList();
+                        getDocumentUserList();
+                        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+                        intent.putExtra("chatGroupId", chatGroup.getId());
+                        intent.putExtra("chatGroupName", chatGroup.getName());
+                        startActivity(intent);
+                        finish();
+                    }
+                    return;
+                }*/
+
+
+                try {
+                    getUserPermissionList();
+                    getDocumentUserList();
+                    //getChatMessageList();
+                    //sendChatMessageReadReport();
+                    resumeChatMessageAttachFileList();
+                    resumeAttachFileList("");
+                    //getChatGroupList();
+                    //getChatMessageStatusList();
+
+
+                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            }else {
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.Some_error_accor_contact_admin), Toast.LENGTH_LONG).show();
+
+            }
+        }
+
+
+
+       /* Thread background = new Thread() {
             public void run() {
 
                 try {
@@ -95,29 +148,9 @@ public class SplashActivity extends AppCompatActivity {
                     if (!userIsNull) {
                         if (isConnected()) {
 
-                            if (action.equals("newChatMessage") && groupId != null) {
 
-                                AppController.getInstance().setNewMessage(true);
-                                getChatMessageList();
-
-                                ChatGroup tmp = new ChatGroup();
-                                tmp.setServerGroupId(Long.valueOf(groupId));
-                                ChatGroup chatGroup = coreService.getChatGroupByServerGroupId(tmp);
-                                if (chatGroup != null) {
-                                    getUserPermissionList();
-                                    getDocumentUserList();
-                                    Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
-                                    intent.putExtra("chatGroupId", chatGroup.getId());
-                                    intent.putExtra("chatGroupName", chatGroup.getName());
-                                    startActivity(intent);
-                                    finish();
-                                }
-                                return;
-                            }
 
                             getUserPermissionList();
-                            getDocumentUserList();
-                            //.getLastDocumentVersion();
                             getChatMessageList();
                             sendChatMessageReadReport();
 
@@ -134,7 +167,6 @@ public class SplashActivity extends AppCompatActivity {
                             // services.getChatGroupMemberList();
 
                         } else {
-                            Toast.makeText(getApplicationContext(), getResources().getString(R.string.Some_error_accor_contact_admin), Toast.LENGTH_LONG).show();
                         }
                     } else {
 
@@ -149,9 +181,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         };
-
-        // start thread
-        background.start();
+        background.start();*/
 
     }
 
@@ -172,6 +202,7 @@ public class SplashActivity extends AppCompatActivity {
         VollyService.getInstance().getChatMessageStatusList(new Response.Listener() {
             @Override
             public void onResponse(Object result) {
+                System.out.println("=====getChatMessageStatusList=result=" + result);
                 if (result != null) {
                     JSONObject resultJson = null;
                     try {
@@ -201,6 +232,7 @@ public class SplashActivity extends AppCompatActivity {
                                         }
                                     }
                                 }
+
                             }
                         }
                     } catch (JSONException | ParseException e) {
@@ -242,9 +274,10 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void getChatMessageList() {
-        VollyService.getInstance().getUserChatMessageList(application.getCurrentUser().getUsername(), application.getCurrentUser().getBisPassword(), new Response.Listener() {
+        VollyService.getInstance().getUserChatMessageList(user.getUsername(), user.getBisPassword(), new Response.Listener() {
             @Override
             public void onResponse(Object result) {
+                System.out.println("=====getChatMessageList=result=" + result);
                 if (result != null) {
                     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
                     try {
@@ -330,20 +363,23 @@ public class SplashActivity extends AppCompatActivity {
                                         JSONArray idJsonArray = new JSONArray();
 
                                         for (ChatMessage chatMessage : chatMessageList) {
-                                            List<ChatMessage> tmpChatMessageList = coreService.getChatMessagesByServerMessageId(chatMessage.getServerMessageId());
-                                            if (tmpChatMessageList.isEmpty()) {
-                                                chatMessage = coreService.insertChatMessage(chatMessage);
-                                                if (chatMessage != null) {
-                                                    //EventBus.getDefault().post(new EventBusModel(true));
+                                            if (chatMessage!= null){
+                                                List<ChatMessage> tmpChatMessageList = coreService.getChatMessagesByServerMessageId(chatMessage.getServerMessageId());
+                                                if (tmpChatMessageList.isEmpty()) {
+                                                    chatMessage = coreService.insertChatMessage(chatMessage);
+                                                    if (chatMessage != null) {
+                                                        //EventBus.getDefault().post(new EventBusModel(true));
                                                     /*if (title!= null || body != null){
                                                         sendNotification(context,title,body);
                                                     }*/
+                                                    }
                                                 }
+                                                idJsonArray.put(chatMessage.getServerMessageId());
                                             }
-                                            idJsonArray.put(chatMessage.getServerMessageId());
+
                                         }
 
-                                        VollyService.getInstance().chatMessageDeliveredReport(idJsonArray, application.getCurrentUser().getUsername(), application.getCurrentUser().getBisPassword()
+                                        VollyService.getInstance().chatMessageDeliveredReport(idJsonArray,user.getUsername(), user.getBisPassword()
                                                 , new Response.Listener() {
                                                     @Override
                                                     public void onResponse(Object o) {
@@ -380,13 +416,12 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void getUserPermissionList() {
-
-        User user = application.getCurrentUser();
-        VollyService.getInstance().getUserPermissionList(application.getCurrentUser().getUsername(), application.getCurrentUser().getBisPassword()
+        VollyService.getInstance().getUserPermissionList(user.getUsername(), user.getBisPassword()
                 , new Response.Listener() {
                     @Override
                     public void onResponse(Object result) {
                         try {
+                            System.out.println("=====getUserPermissionList=result=" + result);
                             if (result != null) {
                                 JSONObject resultJson = new JSONObject((String) result);
                                 if (!resultJson.isNull(Constants.HIGH_SECURITY_ERROR_KEY)) {
@@ -443,9 +478,10 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void getDocumentUserList() {
-        VollyService.getInstance().getDocumentUserList(application.getCurrentUser().getUsername(), application.getCurrentUser().getBisPassword(), new Response.Listener() {
+        VollyService.getInstance().getDocumentUserList(user.getUsername(), user.getBisPassword(), new Response.Listener() {
             @Override
             public void onResponse(Object result) {
+                System.out.println("=====getDocumentUserList=result=" + result);
                 if (result != null) {
                     JSONObject resultJson = null;
                     try {
@@ -495,10 +531,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void sendChatMessageReadReport() throws JSONException {
-        VollyService.getInstance().sendChatMessageReadReport(application.getCurrentUser().getUsername(), application.getCurrentUser().getBisPassword()
+        VollyService.getInstance().sendChatMessageReadReport(user.getUsername(), user.getBisPassword()
                 , new Response.Listener() {
                     @Override
                     public void onResponse(Object result) {
+                        System.out.println("=====sendChatMessageReadReport=result=" + result);
                         if (result != null) {
                             JSONObject resultJson = null;
                             try {
@@ -537,10 +574,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void resumeChatMessageAttachFile(ChatMessage chatMessage) throws Exception {
-        VollyService.getInstance().resumeChatMessageAttachFile(chatMessage, application.getCurrentUser().getUsername(), application.getCurrentUser().getBisPassword()
+        VollyService.getInstance().resumeChatMessageAttachFile(chatMessage, user.getUsername(), user.getBisPassword()
                 , new Response.Listener() {
                     @Override
                     public void onResponse(Object result) {
+                        System.out.println("=====resumeChatMessageAttachFile=result=" + result);
                         if (result != null) {
                             JSONObject resultJson = null;
                             try {
@@ -612,10 +650,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void resumeAttachFile(AttachFile attachFile, String attachFileSettingId) throws Exception {
-        VollyService.getInstance().saveEntityAttachFileResumable(attachFile, application.getCurrentUser().getUsername(), application.getCurrentUser().getBisPassword()
+        VollyService.getInstance().saveEntityAttachFileResumable(attachFile, user.getUsername(), user.getBisPassword()
                 , new Response.Listener() {
                     @Override
                     public void onResponse(Object result) {
+                        System.out.println("=====resumeAttachFile=result=" + result);
                         if (result != null) {
                             JSONObject resultJson = null;
                             try {
@@ -642,10 +681,6 @@ public class SplashActivity extends AppCompatActivity {
                                             attachFile.setSendingStatusEn(SendingStatusEn.Sent.ordinal());
                                             attachFile.setSendingStatusDate(new Date());
                                             coreService.updateAttachFile(attachFile);
-
-                                            System.out.println("counter====" + counter);
-                                            System.out.println("attachFileList.size()====" + attachFileList.size());
-
                                             if (counter == attachFileList.size()) {
                                                 EventBus.getDefault().post(new EventBusModel(true, true, true));
                                             }
@@ -687,6 +722,7 @@ public class SplashActivity extends AppCompatActivity {
         VollyService.getInstance().getChatGroupList(new Response.Listener() {
             @Override
             public void onResponse(Object result) {
+                System.out.println("=====getChatGroupList=result=" + result);
                 if (result != null) {
                     JSONObject resultJson = null;
                     List<Long> longList = new ArrayList<>();

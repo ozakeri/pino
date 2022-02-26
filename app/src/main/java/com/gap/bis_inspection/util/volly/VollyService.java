@@ -33,6 +33,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class VollyService {
     private static VollyService instance = null;
@@ -48,8 +49,8 @@ public class VollyService {
     }
 
     private VollyService() {
-        appController = getInstance().appController;
-        databaseManager = new DatabaseManager(appController.getApplicationContext());
+        appController = AppController.getInstance();
+        databaseManager = new DatabaseManager(appController);
         coreService = new CoreService(databaseManager);
     }
 
@@ -221,7 +222,7 @@ public class VollyService {
 
     public void mobileNoConfirmation(String mobileNo, Response.Listener listener,
                                      Response.ErrorListener errorListener) {
-        String ws = Constants.WS + "getServerDateTime";
+        String ws = Constants.WS + "mobileNoConfirmation";
         ArrayList<Util.WSParameter> wsParameters = new ArrayList<>();
         wsParameters.add(new Util.WSParameter("mobileNo", mobileNo));
         String json = Util.createJson(wsParameters);
@@ -235,7 +236,7 @@ public class VollyService {
 
     public void activationCodeValidation(String mobileNo, String activationCode, Response.Listener listener,
                                          Response.ErrorListener errorListener) {
-        String ws = Constants.WS + "getServerDateTime";
+        String ws = Constants.WS + "activationCodeValidation";
         ArrayList<Util.WSParameter> wsParameters = new ArrayList<>();
         wsParameters.add(new Util.WSParameter("mobileNo", mobileNo));
         wsParameters.add(new Util.WSParameter("activationCode", activationCode));

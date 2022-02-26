@@ -473,9 +473,6 @@ public class HomeActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(View view, int position) {
 
-                    System.out.println("getName=======" + permissionList.get(position).getName());
-
-
                     if (permissionList.get(position).getName().equals("ROLE_APP_INSPECTION_DRIVER_VIEW_LIST")) {
                         Intent slideactivity = new Intent(HomeActivity.this, DriverActivity.class);
                         startActivity(slideactivity);

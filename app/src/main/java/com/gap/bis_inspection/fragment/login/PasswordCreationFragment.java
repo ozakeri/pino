@@ -44,7 +44,7 @@ public class PasswordCreationFragment extends Fragment {
     EditText confirmPasswordEditText;
     private IDatabaseManager databaseManager;
     private CoreService coreService;
-    private String password, username = null;
+    private String password;
     private AppController application;
 
     @Override
@@ -99,8 +99,7 @@ public class PasswordCreationFragment extends Fragment {
 
 
                             if (CommonUtil.isConnect(getActivity())) {
-                                username = usernameET.getText().toString();
-                                VollyService.getInstance().getUserPermissionList(username, application.getCurrentUser().getBisPassword()
+                                VollyService.getInstance().getUserPermissionList(application.getCurrentUser().getUsername(), application.getCurrentUser().getBisPassword()
                                         , new Response.Listener() {
                                             @Override
                                             public void onResponse(Object result) {
@@ -153,11 +152,12 @@ public class PasswordCreationFragment extends Fragment {
                                                             application.setPermissionMap(coreService.getUserPermissionMap(user.getId()));
                                                             Snackbar.make(view, R.string.success_login_Toast, Snackbar.LENGTH_SHORT)
                                                                     .show();
-                                                            showHomePage();
                                                         }
                                                     } catch (Exception e) {
 
                                                     }
+
+                                                    showHomePage();
                                                 }
                                             }
                                         }, new Response.ErrorListener() {
@@ -188,6 +188,7 @@ public class PasswordCreationFragment extends Fragment {
     }
 
     public void showHomePage() {
+        System.out.println("showHomePage======");
         Intent i = new Intent(getActivity(), HomeActivity.class);
         i.putExtra("isCreatePass", true);
         startActivity(i);
