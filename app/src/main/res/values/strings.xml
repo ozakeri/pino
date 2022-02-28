@@ -348,10 +348,10 @@
     <string name="label_expireDate">پایان اعتبار تا :</string>
     <string name="label_codeLast">کد</string>
 
-    <string name="label_message_dialogAttachFile_camera">گرفتن عکس</string>
+    <string name="label_message_dialogAttachFile_camera">ارسال تصویر</string>
     <string name="label_message_dialogAttachFile_file">فایل</string>
     <string name="label_message_dialogAttachFile_gallery">گالری</string>
-    <string name="label_message_dialogAttachFile_title">انتخاب فایل</string>
+    <string name="label_message_dialogAttachFile_title">ارسال فایل</string>
 
     <string name="line_timeLine_detailList_moveDistance"> سر فاصله </string>
     <string name="line_timeLine_detailList_halfPathSum"> مجموع تعداد نیمراه </string>

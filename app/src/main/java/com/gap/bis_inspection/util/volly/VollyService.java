@@ -6,11 +6,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.gap.bis_inspection.app.AppController;
 import com.gap.bis_inspection.common.Constants;
 import com.gap.bis_inspection.common.ImageUtil;
+import com.gap.bis_inspection.db.enumtype.LoginStatusEn;
 import com.gap.bis_inspection.db.enumtype.SendingStatusEn;
 import com.gap.bis_inspection.db.manager.DatabaseManager;
 import com.gap.bis_inspection.db.objectmodel.AttachFile;
 import com.gap.bis_inspection.db.objectmodel.ChatMessage;
 import com.gap.bis_inspection.db.objectmodel.DeviceSetting;
+import com.gap.bis_inspection.db.objectmodel.User;
 import com.gap.bis_inspection.service.CoreService;
 import com.gap.bis_inspection.util.EventBusModel;
 import com.gap.bis_inspection.util.Util;
@@ -41,10 +43,12 @@ public class VollyService {
     private CoreService coreService;
     private DatabaseManager databaseManager;
     private AppController appController;
+    private User user;
 
     public static synchronized VollyService getInstance() {
         if (instance == null)
             instance = new VollyService();
+
         return instance;
     }
 
@@ -52,6 +56,24 @@ public class VollyService {
         appController = AppController.getInstance();
         databaseManager = new DatabaseManager(appController);
         coreService = new CoreService(databaseManager);
+
+        if (appController.getCurrentUser() == null) {
+            List<User> userList = databaseManager.listUsers();
+            User user = null;
+            if (!userList.isEmpty()) {
+                user = userList.get(0);
+                if (user.getLoginStatus().equals(LoginStatusEn.Registered.ordinal())) {
+                    appController.setCurrentUser(user);
+                }
+            }
+        }
+
+        if (appController.getCurrentUser() != null){
+            DatabaseManager.SERVER_USER_ID = appController.getCurrentUser().getServerUserId();
+        }
+
+        this.user = appController.getCurrentUser();
+
     }
 
     public void getChatGroupMemberList(AppController application, Response.Listener listener,
@@ -332,6 +354,9 @@ public class VollyService {
 
         String ws = Constants.WS + "chatMessageReadReport";
         ArrayList<Util.WSParameter> wsParameters = new ArrayList<>();
+
+        System.out.println("username=====" + username);
+        System.out.println("tokenPass=====" + tokenPass);
 
         if (!chatMessageList.isEmpty()) {
             wsParameters.add(new Util.WSParameter("username", username));

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jjoe64:graphview:4.1.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6efd89292de8ab9109473d2782f82942/jetified-graphview-4.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6efd89292de8ab9109473d2782f82942/jetified-graphview-4.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6efd89292de8ab9109473d2782f82942/jetified-graphview-4.1.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jjoe64/graphview/4.1.1/f9e87d2ec9a779f2f57e2bf1478add4ce91522d7/graphview-4.1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jjoe64/graphview/4.1.1/e8a66e4c223373b91cdc272cedff45f50ba56653/graphview-4.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

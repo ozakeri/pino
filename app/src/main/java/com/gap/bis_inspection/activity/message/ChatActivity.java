@@ -12,6 +12,7 @@ import android.app.ActivityManager;
 import android.app.Dialog;
 import android.app.NotificationManager;
 import android.content.ClipData;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +27,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.InputType;
@@ -45,6 +47,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -64,6 +68,11 @@ import com.gap.bis_inspection.db.objectmodel.ChatMessage;
 import com.gap.bis_inspection.service.CoreService;
 import com.gap.bis_inspection.service.Services;
 import com.gap.bis_inspection.util.EventBusModel;
+import com.jaiselrahman.filepicker.activity.DirSelectActivity;
+import com.jaiselrahman.filepicker.activity.FilePickerActivity;
+import com.jaiselrahman.filepicker.activity.PickFile;
+import com.jaiselrahman.filepicker.config.Configurations;
+import com.jaiselrahman.filepicker.model.MediaFile;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -110,6 +119,8 @@ public class ChatActivity extends AppCompatActivity {
     private List<ChatMessage> listByParam = null;
     private LinearLayout LinearLayout_group;
     private Boolean groupIsPrivate = false;
+    private final static int FILE_REQUEST_CODE = 1;
+    private ArrayList<MediaFile> mediaFiles = new ArrayList<>();
 
 
     @SuppressLint("SetTextI18n")
@@ -204,10 +215,25 @@ public class ChatActivity extends AppCompatActivity {
         });
 
 
+        final ActivityResultLauncher<Configurations> pickImage = registerForActivityResult(new PickFile().throughDir(true), new ActivityResultCallback<List<MediaFile>>() {
+            @Override
+            public void onActivityResult(List<MediaFile> result) {
+
+                System.out.println("=====result====" + result);
+                if (result != null){
+                    setMediaFiles(result);
+                }
+
+                else
+                    Toast.makeText(ChatActivity.this, "Image not selected", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         ////******attach file*******////
         attachIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 // Create custom dialog object
                 final Dialog dialog = new Dialog(ChatActivity.this);
                 // Include dialog.xml file
@@ -223,7 +249,16 @@ public class ChatActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        if (ContextCompat.checkSelfPermission(getApplicationContext(),
+                        pickImage.launch(new Configurations.Builder()
+                                .setCheckPermission(true)
+                                .setSelectedMediaFiles(mediaFiles)
+                                .enableImageCapture(true)
+                                .setShowVideos(false)
+                                .setSkipZeroSizeFiles(true)
+                                .setMaxSelection(1)
+                                .build());
+
+                    /*    if (ContextCompat.checkSelfPermission(getApplicationContext(),
                                 WRITE_EXTERNAL_STORAGE) + ContextCompat
                                 .checkSelfPermission(getApplicationContext(),
                                         Manifest.permission.CAMERA)
@@ -244,7 +279,7 @@ public class ChatActivity extends AppCompatActivity {
                         } else {
                             // write your logic code if permission already granted
                             cameraIntent();
-                        }
+                        }*/
 
                         dialog.dismiss();
                     }
@@ -254,7 +289,7 @@ public class ChatActivity extends AppCompatActivity {
                     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
                     @Override
                     public void onClick(View view) {
-                        galleryIntent();
+                       // galleryIntent();
                         dialog.dismiss();
                     }
                 });
@@ -263,7 +298,25 @@ public class ChatActivity extends AppCompatActivity {
                     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
                     @Override
                     public void onClick(View view) {
-                        fileIntent();
+                       // fileIntent();
+
+                        Intent intent = new Intent(ChatActivity.this, DirSelectActivity.class);
+                        intent.putExtra(DirSelectActivity.CONFIGS, new Configurations.Builder()
+                                .setCheckPermission(true)
+                                .setSelectedMediaFiles(mediaFiles)
+                                .setShowFiles(true)
+                                .setShowImages(true)
+                                .setShowAudios(true)
+                                .setShowVideos(true)
+                                .setIgnoreNoMedia(false)
+                                .enableVideoCapture(true)
+                                .enableImageCapture(true)
+                                .setIgnoreHiddenFile(false)
+                                .setMaxSelection(1)
+                                .setTitle("Select a file")
+                                .build());
+                        startActivityForResult(intent, FILE_REQUEST_CODE);
+
                         dialog.dismiss();
                     }
                 });
@@ -358,10 +411,11 @@ public class ChatActivity extends AppCompatActivity {
     ////******fileIntent*******////
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     private void fileIntent() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("file/*");
-        //intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-        startActivityForResult(Intent.createChooser(intent, "Select File"), SELECT_FILE);
+        Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+        chooseFile.setType("*/*");
+        chooseFile = Intent.createChooser(chooseFile, "Choose a file");
+        // startActivityForResult(Intent.createChooser(intent, "Select File"), SELECT_FILE);
+        startActivityForResult(chooseFile, SELECT_FILE);
     }
 
 
@@ -397,7 +451,7 @@ public class ChatActivity extends AppCompatActivity {
             listByParam = coreService.getChatMessageListByParam(chatMessage);
 
             System.out.println("listByParam==========" + listByParam.size());
-            if (groupIsPrivate || isPrivateChatMessage){
+            if (groupIsPrivate || isPrivateChatMessage) {
                 LinearLayout_group.setEnabled(false);
             }
 
@@ -407,7 +461,7 @@ public class ChatActivity extends AppCompatActivity {
                         if (m.getReceiverAppUserId().equals(receiverUserId)) {
                             if (m.getChatGroupId() != null) {
                                 ChatGroup chatGroup = coreService.getChatGroupById(m.getChatGroupId());
-                                if (chatGroup != null){
+                                if (chatGroup != null) {
                                     tmpChatMessageFS.setChatGroupId(chatGroup.getId());
                                     groupNameTV.setText(String.valueOf(chatGroup.getName()));
                                     countMemberTV.setText("2");
@@ -416,7 +470,7 @@ public class ChatActivity extends AppCompatActivity {
                                 }
                             }
                         }
-                    }else {
+                    } else {
                         tmpChatMessageFS.setReceiverAppUserId(receiverUserId);
                         groupNameTV.setText(memberName);
                         countMemberTV.setText("2");
@@ -500,7 +554,7 @@ public class ChatActivity extends AppCompatActivity {
             if (receiverUserId != null) {
                 chatMessage.setReceiverAppUserId(receiverUserId);
             }
-            if (groupIsPrivate){
+            if (groupIsPrivate) {
                 chatMessage.setCreateNewPvChatGroup(true);
             }
 
@@ -515,15 +569,11 @@ public class ChatActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void sendChatMessageAttachFile(String filePath) {
-        String message = messageET.getText().toString();
-        //message = message.trim();
-        File file = new File(String.valueOf(filePath));
-        file = saveBitmapToFile(file);
-        // if (file.exists() && Long.compare(file.length(), (long) 1e+7) <= 0) {
+        System.out.println("FirstfilePath===" + filePath);
+        File file = new File(filePath);
         chatMessage = new ChatMessage();
         chatMessage.setChatGroupId(chatGroupId);
         chatMessage.setDateCreation(new Date());
-        //chatMessage.setAttachFileLocalPath(filePath);
         chatMessage.setSenderAppUserId(application.getCurrentUser().getServerUserId());
         chatMessage.setSendingStatusEn(SendingStatusEn.Pending.ordinal());
         chatMessage.setSendingStatusDate(new Date());
@@ -559,8 +609,8 @@ public class ChatActivity extends AppCompatActivity {
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inSampleSize = 2; //try to decrease decoded image
                 options.inPurgeable = true; //purgeable to disk
-                Bitmap bitmap = BitmapFactory.decodeStream(inputStream, null, options);
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 70, outputStream); //compressed bitmap to file
+               // Bitmap bitmap = BitmapFactory.decodeStream(inputStream, null, options);
+               // bitmap.compress(Bitmap.CompressFormat.JPEG, 70, outputStream); //compressed bitmap to file
 
                 byte[] buf = new byte[1024];
                 int len;
@@ -617,7 +667,40 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == FILE_REQUEST_CODE
+                && resultCode == RESULT_OK
+                && data != null) {
+            List<MediaFile> mediaFiles = data.<MediaFile>getParcelableArrayListExtra(FilePickerActivity.MEDIA_FILES);
+            if(mediaFiles != null) {
+
+                setMediaFiles(mediaFiles);
+
+            } else {
+                Toast.makeText(ChatActivity.this, "Image not selected", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void setMediaFiles(List<MediaFile> mediaFilesParam) {
+        this.mediaFiles.clear();
+        this.mediaFiles.addAll(mediaFilesParam);
+
+        for (MediaFile mediaFile : this.mediaFiles) {
+            System.out.println("getName=====" + mediaFile.getName());
+            System.out.println("getPath=====" + mediaFile.getPath());
+            System.out.println("getSize=====" + mediaFile.getSize());
+            System.out.println("getUri=====" + mediaFile.getUri());
+
+            sendChatMessageAttachFile(mediaFile.getPath());
+        }
+
+       // fileListAdapter.notifyDataSetChanged();
+    }
+
+    /*@RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -636,44 +719,33 @@ public class ChatActivity extends AppCompatActivity {
                     System.out.println("isPrivateChat====" + isPrivateChatMessage);
                     System.out.println("receiverUserId====" + receiverUserId);
 
-                    if (isPrivateChatMessage){
+                    if (isPrivateChatMessage) {
                         groupNameTV.setText(memberName);
                         countMemberTV.setText("");
                         LinearLayout_group.setEnabled(false);
                     }
                 }
-
-                /*handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshChatMessageList(true, true);
-                        handler.postDelayed(this, 1000);
-                    }
-                }, 1000);
-
-                refreshChatMessageList(true, true);*/
             }
         } else if (resultCode == Activity.RESULT_OK) {
 
             Uri outputFileUri;
             if (requestCode == SELECT_FILE) {
                 outputFileUri = data.getData();
-                System.out.println("outputFileUri===" + outputFileUri);
+
                 sendChatMessageAttachFile(getRealPathFromURI(outputFileUri));
 
             } else if (requestCode == SELECT_IMAGE) {
                 outputFileUri = data.getData();
-                sendChatMessageAttachFile(getRealPathFromURI(outputFileUri));
+                // sendChatMessageAttachFile(getRealPathFromURI(outputFileUri));
             } else if (requestCode == REQUEST_CAMERA) {
                 //outputFileUri = data.getData();
                 //sendChatMessageAttachFile(getRealPathFromURI(outputFileUri));
                 String capturedImageFilePath = getPathCamera();
-                sendChatMessageAttachFile(capturedImageFilePath);
+                // sendChatMessageAttachFile(capturedImageFilePath);
 
             }
-
         }
-    }
+    }*/
 
     private String getPathCamera() {
         String[] projection = {MediaStore.Images.Media.DATA};
@@ -897,6 +969,101 @@ public class ChatActivity extends AppCompatActivity {
         } catch (Exception e) {
             return null;
         }
+    }
+
+
+    public static String getPathFromURI(final Context context, final Uri uri) {
+
+        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+
+        // DocumentProvider
+        if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
+            // ExternalStorageProvider
+            if (isExternalStorageDocument(uri)) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                if ("primary".equalsIgnoreCase(type)) {
+                    return Environment.getExternalStorageDirectory() + "/" + split[1];
+                }
+            }
+            // DownloadsProvider
+            else if (isDownloadsDocument(uri)) {
+
+                final String id = DocumentsContract.getDocumentId(uri);
+                final Uri contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
+
+                return getDataColumn(context, contentUri, null, null);
+            }
+            // MediaProvider
+            else if (isMediaDocument(uri)) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                Uri contentUri = null;
+                if ("image".equals(type)) {
+                    contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                } else if ("video".equals(type)) {
+                    contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+                } else if ("audio".equals(type)) {
+                    contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+                }
+
+                final String selection = "_id=?";
+                final String[] selectionArgs = new String[]{
+                        split[1]
+                };
+
+                return getDataColumn(context, contentUri, selection, selectionArgs);
+            }
+        }
+        // MediaStore (and general)
+        else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            return getDataColumn(context, uri, null, null);
+        }
+        // File
+        else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            return uri.getPath();
+        }
+
+        return null;
+    }
+
+    public static String getDataColumn(Context context, Uri uri, String selection,
+                                       String[] selectionArgs) {
+
+        Cursor cursor = null;
+        final String column = "_data";
+        final String[] projection = {
+                column
+        };
+
+        try {
+            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
+                    null);
+            if (cursor != null && cursor.moveToFirst()) {
+                final int column_index = cursor.getColumnIndexOrThrow(column);
+                return cursor.getString(column_index);
+            }
+        } finally {
+            if (cursor != null)
+                cursor.close();
+        }
+        return null;
+    }
+
+    public static boolean isExternalStorageDocument(Uri uri) {
+        return "com.android.externalstorage.documents".equals(uri.getAuthority());
+    }
+
+    public static boolean isDownloadsDocument(Uri uri) {
+        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
+    }
+
+    public static boolean isMediaDocument(Uri uri) {
+        return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 
 }

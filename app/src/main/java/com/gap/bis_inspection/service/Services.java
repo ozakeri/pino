@@ -1341,6 +1341,7 @@ public class Services {
                                 chatMessage.setDeliverDate(simpleDateFormat.parse(savedChatMessageJsonObject.getString("dateCreation")));
                             }
                             if (!savedChatMessageJsonObject.isNull("totalReceivedBytes")) {
+                                System.out.println("totalReceivedBytes789-----" + savedChatMessageJsonObject.getInt("totalReceivedBytes"));
                                 chatMessage.setAttachFileSentSize(savedChatMessageJsonObject.getInt("totalReceivedBytes"));
                             }
                         }
@@ -1493,7 +1494,14 @@ public class Services {
 
 
                                     if (!savedAttachFileJsonObject.isNull("totalReceivedBytes")) {
-                                        chatMessage.setAttachFileSentSize(savedAttachFileJsonObject.getInt("totalReceivedBytes"));
+                                        int totalReceivedBytes = savedAttachFileJsonObject.getInt("totalReceivedBytes");
+                                        if (totalReceivedBytes > 0){
+                                            chatMessage.setAttachFileSentSize(savedAttachFileJsonObject.getInt("totalReceivedBytes"));
+                                        }else {
+                                            return;
+                                        }
+                                        System.out.println("totalReceivedBytes456-----" + savedAttachFileJsonObject.getInt("totalReceivedBytes"));
+
                                     }
                                 }
                                 if (chatMessage.getAttachFileSize() != null && chatMessage.getAttachFileSentSize() != null && chatMessage.getAttachFileSentSize().compareTo(chatMessage.getAttachFileSize()) > 0) {
@@ -1894,6 +1902,7 @@ public class Services {
                                     }
 
                                     if (!savedAttachFileJsonObject.isNull("totalReceivedBytes")) {
+                                        System.out.println("totalReceivedBytes123-----" + savedAttachFileJsonObject.getInt("totalReceivedBytes"));
                                         attachFile.setAttachFileSentSize(savedAttachFileJsonObject.getInt("totalReceivedBytes"));
                                     }
                                 }

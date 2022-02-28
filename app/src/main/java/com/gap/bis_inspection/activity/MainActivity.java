@@ -33,12 +33,17 @@ public class MainActivity extends AppCompatActivity {
 
     private AppController application;
     private Handler handler;
+    private CoreService coreService;
+    private DatabaseManager databaseManager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        databaseManager = new DatabaseManager(this);
+        coreService = new CoreService(databaseManager);
 
         application = AppController.getInstance();
 
@@ -72,14 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        IDatabaseManager databaseManager = new DatabaseManager(this);
 
-        List<User> userList = databaseManager.listUsers();
+        List<User> userList = coreService.getDatabaseManager().listUsers();
 
-        //AlarmManagerUtil.scheduleChatMessageReceiver(MainActivity.this);
+        System.out.println("userList========" + userList.size());
 
-
-        CoreService coreService = new CoreService(databaseManager);
 
         /*
          * check userList
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.replace(R.id.fragment_place, new DomainFragment());
         } else {
             User user = userList.get(0);
-            System.out.println("user.getPassword=" + user.getPassword());
+
             if (user.getMobileNo() != null) {
                 if (user.getLoginStatus().equals(LoginStatusEn.Init.ordinal())) {
                     if (user.getExpireDate().compareTo(new Date()) > 0) {
@@ -109,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
                     user = userList.get(0);
                     application = AppController.getInstance();
                     application.setCurrentUser(user);
+                    System.out.println("setCurrentUser=" + user.getBisPassword());
+                    System.out.println("setCurrentUser=" + user.getUsername());
 
                     //new Thread(new MainActivity.GetMessage()).start();
 
@@ -116,9 +120,14 @@ public class MainActivity extends AppCompatActivity {
                         user.setLoginIs(Boolean.TRUE);
                         user.setLastLoginDate(new Date());
                         coreService.updateUser(user);
+
+
+                        System.out.println("getUserPermissionMap=" + user.getId());
                         application.setPermissionMap(coreService.getUserPermissionMap(user.getId()));
                         DatabaseManager.SERVER_USER_ID = user.getServerUserId();
                         showHomePage();
+
+                        System.out.println("getPermissionMap=" +application.getPermissionMap());
                     } else if (!user.getAutoLogin()) {
                         fragmentTransaction.replace(R.id.fragment_place, new LoginFragment());
                     }

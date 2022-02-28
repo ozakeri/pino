@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/bg_button.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/check_box.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/ic_add.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/ic_avatar.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.20625" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/ic_cameraicon.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/ic_file.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/ic_image.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/drawable/ic_settings_24.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_about.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_advert.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_car_monitoring_checklist.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_chat_group_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_check_list.xml" value="0.125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_check_list_question.xml" value="0.19010416666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_complaint_report.xml" value="0.22" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_edit_advert.xml" value="0.25" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_full_screen.xml" value="0.3127317676143387" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_graph_list.xml" value="0.17" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_home.xml" value="0.19010416666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_maps.xml" value="0.1585144927536232" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_message.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_report.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_report_none_entity.xml" value="0.18" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_setting.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_show_map.xml" value="0.125" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_sms.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_station.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/activity_survey_list.xml" value="0.25" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/attach_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/check_list_group_item.xml" value="0.25" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/check_list_item.xml" value="0.39038189533239037" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/dialog.xml" value="0.22" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/form_answer_list_item.xml" value="0.33" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/fragment_activation.xml" value="0.2" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/fragment_domain.xml" value="0.19010416666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/fragment_password_creatin.xml" value="0.19010416666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/fragment_registration.xml" value="0.19010416666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/left_message.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/permission_items.xml" value="0.33" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/profile_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/right_message.xml" value="0.44271844660194176" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/survey_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/survey_list_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/text_spinner.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/toolbar_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/layout/user_chat_group_list.xml" value="0.33" />
+        <entry key="..\:/AndroidProject/pino/app/src/main/res/xml/network_security_config.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProject/pino/filepicker/src/main/res/drawable/ic_selected.xml" value="0.2203125" />
+        <entry key="..\:/AndroidProject/pino/filepicker/src/main/res/layout/filegallery_item.xml" value="0.20153985507246377" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

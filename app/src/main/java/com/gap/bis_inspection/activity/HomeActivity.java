@@ -57,7 +57,6 @@ import com.gap.bis_inspection.db.objectmodel.User;
 import com.gap.bis_inspection.entitiy.Permission;
 import com.gap.bis_inspection.exception.WebServiceException;
 import com.gap.bis_inspection.service.CoreService;
-import com.gap.bis_inspection.service.Services;
 import com.gap.bis_inspection.util.EventBusModel;
 import com.gap.bis_inspection.util.RecyclerItemClickListener;
 import com.gap.bis_inspection.webservice.MyPostJsonService;
@@ -104,7 +103,6 @@ public class HomeActivity extends AppCompatActivity {
     private TextView driverTV;
     private DatabaseManager databaseManager;
     private boolean isCreatePass = false;
-    private Services services;
     private Bitmap bitmap;
     private List<Permission> permissionList;
     private HomeItemsAdapter adapter;
@@ -148,7 +146,6 @@ public class HomeActivity extends AppCompatActivity {
 
         //------ Set field for view in home page
         user = application.getCurrentUser();
-        services = new Services(getApplicationContext());
 
         ////****** get user image *******////
 

@@ -97,8 +97,8 @@ public class ChatGroupListActivity extends AppCompatActivity {
             }
         });
 
-        updateList();
-        updateChatGroupList();
+        //updateList();
+       // updateChatGroupList();
         //getMessage();
 
 
