@@ -166,5 +166,4 @@ public class AttachFile {
     public void setServerAttachFileSettingId(Long serverAttachFileSettingId) {
         this.serverAttachFileSettingId = serverAttachFileSettingId;
     }
-
 }

@@ -150,7 +150,7 @@ public class MediaFileLoader {
         return mediaFile;
     }
 
-    private static @MediaFile.Type
+    public static @MediaFile.Type
     int getMediaType(String mime) {
         if (mime.startsWith("image/")) {
             return MediaFile.TYPE_IMAGE;

@@ -29,6 +29,7 @@ public class ChatMessage {
     private Integer attachFileSize;
     private Integer attachFileSentSize;
     private Integer attachFileReceivedSize;
+    private Integer fileType;
     private Long senderAppUserId;
     private Long receiverAppUserId;
     private Long chatGroupId;
@@ -44,7 +45,7 @@ public class ChatMessage {
         this.id = id;
     }
 
-    public ChatMessage(Long id, Long serverMessageId, java.util.Date validUntilDate, String message, String attachFileLocalPath, String attachFileUserFileName, String attachFileRemoteUrl, java.util.Date sendDate, java.util.Date dateCreation, Boolean deliverIs, java.util.Date deliverDate, Boolean readIs,Boolean isCreateNewPvChatGroup, java.util.Date readDate, Integer sendingStatusEn, java.util.Date sendingStatusDate, Integer attachFileSize, Integer attachFileSentSize, Integer attachFileReceivedSize, Long senderAppUserId, Long receiverAppUserId, Long chatGroupId) {
+    public ChatMessage(Long id, Long serverMessageId, java.util.Date validUntilDate, String message, String attachFileLocalPath, String attachFileUserFileName, String attachFileRemoteUrl, java.util.Date sendDate, java.util.Date dateCreation, Boolean deliverIs, java.util.Date deliverDate, Boolean readIs,Boolean isCreateNewPvChatGroup, java.util.Date readDate, Integer sendingStatusEn, java.util.Date sendingStatusDate, Integer attachFileSize, Integer attachFileSentSize, Integer attachFileReceivedSize, Integer fileType, Long senderAppUserId, Long receiverAppUserId, Long chatGroupId) {
         this.id = id;
         this.serverMessageId = serverMessageId;
         this.validUntilDate = validUntilDate;
@@ -64,6 +65,7 @@ public class ChatMessage {
         this.attachFileSize = attachFileSize;
         this.attachFileSentSize = attachFileSentSize;
         this.attachFileReceivedSize = attachFileReceivedSize;
+        this.fileType = fileType;
         this.senderAppUserId = senderAppUserId;
         this.receiverAppUserId = receiverAppUserId;
         this.chatGroupId = chatGroupId;
@@ -282,5 +284,11 @@ public class ChatMessage {
         isCreateNewPvChatGroup = createNewPvChatGroup;
     }
 
+    public Integer getFileType() {
+        return fileType;
+    }
 
+    public void setFileType(Integer fileType) {
+        this.fileType = fileType;
+    }
 }

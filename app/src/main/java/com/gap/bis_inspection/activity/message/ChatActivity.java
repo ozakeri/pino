@@ -121,6 +121,7 @@ public class ChatActivity extends AppCompatActivity {
     private Boolean groupIsPrivate = false;
     private final static int FILE_REQUEST_CODE = 1;
     private ArrayList<MediaFile> mediaFiles = new ArrayList<>();
+    private int fileType = 0;
 
 
     @SuppressLint("SetTextI18n")
@@ -307,10 +308,10 @@ public class ChatActivity extends AppCompatActivity {
                                 .setSelectedMediaFiles(mediaFiles)
                                 .setShowFiles(true)
                                 .setShowImages(true)
-                                .setShowAudios(true)
-                                .setShowVideos(true)
+                                .setShowAudios(false)
+                                .setShowVideos(false)
                                 .setIgnoreNoMedia(false)
-                                .enableVideoCapture(true)
+                                .enableVideoCapture(false)
                                 .enableImageCapture(true)
                                 .setIgnoreHiddenFile(false)
                                 .setSingleChoiceMode(true)
@@ -584,6 +585,8 @@ public class ChatActivity extends AppCompatActivity {
         chatMessage.setCreateNewPvChatGroup(false);
         chatMessage.setReceiverAppUserId(receiverUserId);
         chatMessage.setCreateNewPvChatGroup(isPrivateChatMessage);
+        chatMessage.setCreateNewPvChatGroup(isPrivateChatMessage);
+        chatMessage.setFileType(fileType);
 
         chatMessage = coreService.insertChatMessage(chatMessage);
 
@@ -695,6 +698,7 @@ public class ChatActivity extends AppCompatActivity {
             System.out.println("getSize=====" + mediaFile.getSize());
             System.out.println("getUri=====" + mediaFile.getUri());
             System.out.println("getMediaType=====" + mediaFile.getMediaType());
+            fileType = mediaFile.getMediaType();
 
             sendChatMessageAttachFile(mediaFile.getPath());
         }
