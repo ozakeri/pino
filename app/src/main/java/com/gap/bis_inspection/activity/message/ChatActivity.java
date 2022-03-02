@@ -249,13 +249,14 @@ public class ChatActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
+
                         pickImage.launch(new Configurations.Builder()
                                 .setCheckPermission(true)
                                 .setSelectedMediaFiles(mediaFiles)
                                 .enableImageCapture(true)
                                 .setShowVideos(false)
                                 .setSkipZeroSizeFiles(true)
-                                .setMaxSelection(1)
+                                .setSingleChoiceMode(true)
                                 .build());
 
                     /*    if (ContextCompat.checkSelfPermission(getApplicationContext(),
@@ -312,7 +313,7 @@ public class ChatActivity extends AppCompatActivity {
                                 .enableVideoCapture(true)
                                 .enableImageCapture(true)
                                 .setIgnoreHiddenFile(false)
-                                .setMaxSelection(1)
+                                .setSingleChoiceMode(true)
                                 .setTitle("Select a file")
                                 .build());
                         startActivityForResult(intent, FILE_REQUEST_CODE);
@@ -693,6 +694,7 @@ public class ChatActivity extends AppCompatActivity {
             System.out.println("getPath=====" + mediaFile.getPath());
             System.out.println("getSize=====" + mediaFile.getSize());
             System.out.println("getUri=====" + mediaFile.getUri());
+            System.out.println("getMediaType=====" + mediaFile.getMediaType());
 
             sendChatMessageAttachFile(mediaFile.getPath());
         }

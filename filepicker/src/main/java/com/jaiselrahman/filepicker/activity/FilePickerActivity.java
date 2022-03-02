@@ -343,6 +343,11 @@ public class FilePickerActivity extends AppCompatActivity
     public void onSelected(FileGalleryAdapter.ViewHolder viewHolder, int position) {
         if (maxCount > 0) {
             setTitle(getResources().getString(title_res, fileGalleryAdapter.getSelectedItemCount(), maxCount, title));
+
+            Intent intent = new Intent();
+            intent.putExtra(MEDIA_FILES, fileGalleryAdapter.getSelectedItems());
+            setResult(RESULT_OK, intent);
+            finish();
         }
     }
 
