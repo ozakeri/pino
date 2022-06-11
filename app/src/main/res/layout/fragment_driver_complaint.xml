@@ -26,7 +26,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/driverName_TV"
                 android:layout_toLeftOf="@+id/img_driverIcon"
                 android:textColor="#ffffff"
@@ -66,7 +66,7 @@
         android:id="@+id/layout_OptionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_option_text"
@@ -187,7 +187,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_height="wrap_content"/>
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/label_spinner_prevYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -197,7 +197,7 @@
                 android:text="@string/label_spinner_prevYear"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/selectSpinnerDate_TV"
                 android:text=""
                 android:textSize="14sp"
@@ -206,7 +206,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/selectSpinnerDate1_TV"
                 android:text="@string/label_spinner_prevDay"
                 android:textSize="14sp"
@@ -280,7 +280,7 @@
         android:background="@color/toolbarDriver"
         android:layout_below="@+id/layout_counter">
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -296,7 +296,7 @@
             android:layout_height="fill_parent"
             android:background="#ffffff" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -310,7 +310,7 @@
             android:layout_height="fill_parent"
             android:background="#ffffff" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -329,7 +329,7 @@
         android:gravity="right"
         android:layout_below="@+id/linearLayout" >
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/counter_TV"
             android:textSize="14sp"
             android:textColor="@color/red"
@@ -337,7 +337,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:textSize="14sp"
             android:layout_margin="5dp"
             android:text="@string/label_driverJobList_counter"

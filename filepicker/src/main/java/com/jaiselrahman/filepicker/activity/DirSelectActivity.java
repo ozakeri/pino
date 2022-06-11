@@ -242,8 +242,10 @@ public class DirSelectActivity extends AppCompatActivity implements DirListAdapt
             } else if (resultCode == RESULT_CANCELED && data != null) {
                 ArrayList<MediaFile> selectedFiles = data.getParcelableArrayListExtra(FilePickerActivity.MEDIA_FILES);
                 if (selectedFiles != null) {
-                    configs.getSelectedMediaFiles().clear();
-                    configs.getSelectedMediaFiles().addAll(selectedFiles);
+                    if (configs.getSelectedMediaFiles() != null){
+                        configs.getSelectedMediaFiles().clear();
+                        configs.getSelectedMediaFiles().addAll(selectedFiles);
+                    }
                 }
             }
         } else {

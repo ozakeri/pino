@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gap.bis_inspection.activity.checklist.FullScreenActivity">
+    tools:context="com.gap.pino.activity.checklist.FullScreenActivity">
 
 
     <RelativeLayout
@@ -29,7 +29,7 @@
 
     </RelativeLayout>
 
-    <com.gap.bis_inspection.util.TouchImageView
+    <com.gap.pino.util.TouchImageView
         android:id="@+id/image_View"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

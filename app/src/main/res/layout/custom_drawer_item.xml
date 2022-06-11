@@ -26,7 +26,7 @@
                 android:layout_marginRight="10dp"
                 android:paddingLeft="7dp" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/drawer_itemName"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -40,7 +40,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/syncDate_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -54,7 +54,7 @@
                 android:textSize="14sp"
                 android:visibility="gone" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/counter_VT"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"

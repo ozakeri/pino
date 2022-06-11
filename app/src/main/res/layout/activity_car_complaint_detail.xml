@@ -12,7 +12,7 @@
         android:layout_height="30dp"
         android:background="@color/toolbarCar">
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:text="@string/label_dialog_detail"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -50,7 +50,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/requestType_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <!--<com.gap.bis_inspection.util.CustomTextView
+                <!--<pinoomTextView
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
@@ -75,7 +75,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/complaintBaseSubject_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <!-- <com.gap.bis_inspection.util.CustomTextView
+                <!-- <pinoomTextView
                      android:layout_width="120dp"
                      android:layout_height="wrap_content"
                      android:layout_margin="3dp"
@@ -100,7 +100,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/requestDate_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <!--   <com.gap.bis_inspection.util.CustomTextView
+                <!--   <pinoomTextView
                        android:layout_width="120dp"
                        android:layout_height="wrap_content"
                        android:layout_margin="3dp"
@@ -125,7 +125,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/requestNo_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <!--<com.gap.bis_inspection.util.CustomTextView
+                <!--<pinoomTextView
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
@@ -150,7 +150,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/requestDescription_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp"  />
 
-                <!--<com.gap.bis_inspection.util.CustomTextView
+                <!--<pinoomTextView
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
@@ -177,7 +177,7 @@
                  android:gravity="right"
                  android:orientation="horizontal">
 
-                 <com.gap.bis_inspection.util.CustomTextView
+                 <pinoomTextView
                      android:id="@+id/requesterName_TV"
                      android:layout_width="150dp"
                      android:layout_height="wrap_content"
@@ -186,7 +186,7 @@
                      android:textColor="#000000"
                      android:textSize="14sp" />
 
-                 <com.gap.bis_inspection.util.CustomTextView
+                 <pinoomTextView
                      android:layout_width="120dp"
                      android:layout_height="wrap_content"
                      android:layout_margin="3dp"
@@ -202,7 +202,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <pinoomTextView
                     android:id="@+id/processStatus_TV"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
@@ -211,7 +211,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <pinoomTextView
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"

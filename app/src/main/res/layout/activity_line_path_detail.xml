@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp">
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:text="@string/label_dialog_detail"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -49,7 +49,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/pathType_TV"
                     android:layout_width="180dp"
                     android:gravity="right"
@@ -58,7 +58,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:layout_width="105dp"
                     android:gravity="left"
                     android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/pathText_TV"
                     android:layout_width="180dp"
                     android:gravity="right"
@@ -84,7 +84,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:layout_width="105dp"
                     android:gravity="left"
                     android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/pathKm_TV"
                     android:layout_width="180dp"
                     android:gravity="right"
@@ -110,7 +110,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:layout_width="105dp"
                     android:gravity="left"
                     android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/stationNo_TV"
                     android:layout_width="180dp"
                     android:gravity="right"
@@ -136,7 +136,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:layout_width="105dp"
                     android:gravity="left"
                     android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/convertNo_TV"
                     android:layout_width="180dp"
                     android:gravity="right"
@@ -162,7 +162,7 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:layout_width="105dp"
                     android:gravity="left"
                     android:layout_height="wrap_content"

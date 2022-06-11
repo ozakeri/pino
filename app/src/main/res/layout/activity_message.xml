@@ -76,7 +76,7 @@
         android:divider="@null"
         android:dividerHeight="0dp" />
 
-    <com.gap.bis_inspection.util.CustomTextViewTitle
+    <com.gap.pino.util.CustomTextViewTitle
         android:id="@+id/txt_newMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,14 +132,14 @@
             android:id="@+id/send_Button"
             android:layout_width="20dp"
             android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/attach_Icon"
             android:background="@mipmap/sendingicon"
-            android:textSize="16sp"
             android:gravity="center"
             android:textColor="@color/white"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/attach_Icon"
-            android:layout_marginLeft="10dp"/>
+            android:textSize="16sp" />
 
     </RelativeLayout>
 

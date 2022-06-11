@@ -11,7 +11,7 @@
                 android:orientation="horizontal"
                 android:layout_margin="5dp">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/memberFamily_VT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
                     android:textSize="12sp"
                     android:layout_margin="5dp"/>
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/memberName_VT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

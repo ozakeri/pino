@@ -25,7 +25,7 @@
                 android:layout_height="50dp"
                 android:background="@color/toolbar_chart">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/titleName_TV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -97,7 +97,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -118,7 +118,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -139,7 +139,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -160,7 +160,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
@@ -181,7 +181,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"

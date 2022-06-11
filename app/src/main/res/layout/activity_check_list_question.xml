@@ -22,7 +22,7 @@
             android:layout_marginRight="7dp"
             android:background="@mipmap/iconchecklist" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/code_VT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                             android:orientation="horizontal">
 
 
-                            <com.gap.bis_inspection.util.CustomTextView
+                            <com.gap.pino.util.CustomTextView
                                 android:id="@+id/formName_TV"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
-                            <com.gap.bis_inspection.util.CustomTextView
+                            <com.gap.pino.util.CustomTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
@@ -102,7 +102,7 @@
                             android:layout_alignParentRight="true"
                             android:orientation="horizontal">
 
-                            <com.gap.bis_inspection.util.CustomTextView
+                            <com.gap.pino.util.CustomTextView
                                 android:id="@+id/lineCode"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
-                            <com.gap.bis_inspection.util.CustomTextView
+                            <com.gap.pino.util.CustomTextView
                                 android:id="@+id/customTextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
-                            <com.gap.bis_inspection.util.CustomTextView
+                            <com.gap.pino.util.CustomTextView
                                 android:id="@+id/plateText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
-                            <com.gap.bis_inspection.util.CustomTextView
+                            <com.gap.pino.util.CustomTextView
                                 android:id="@+id/txt_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
                             android:orientation="horizontal">
 
 
-                            <com.gap.bis_inspection.util.CustomTextView
+                            <com.gap.pino.util.CustomTextView
                                 android:id="@+id/dateAndTime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
-                            <com.gap.bis_inspection.util.CustomTextView
+                            <com.gap.pino.util.CustomTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
@@ -183,7 +183,7 @@
                     android:layout_below="@+id/layoutCardView"
                     android:visibility="gone">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/leftLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -201,7 +201,7 @@
                         android:layout_height="match_parent"
                         android:background="@color/black" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/Question_VT"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -215,7 +215,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/count_VT"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -274,7 +274,7 @@
                             android:layout_margin="10dp"
                             android:background="@mipmap/checklist_attachment" />
 
-                        <com.gap.bis_inspection.util.CustomTextView
+                        <com.gap.pino.util.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"

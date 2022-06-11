@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gap.bis_inspection.activity.checklist.ChecklistFormActivity">
+    tools:context="com.gap.pino.activity.checklist.ChecklistFormActivity">
 
 
     <RelativeLayout
@@ -40,7 +40,7 @@
             android:layout_toLeftOf="@+id/menu_Icon"
             android:background="@mipmap/iconchecklist" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/code_VT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

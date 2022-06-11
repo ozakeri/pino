@@ -25,7 +25,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@mipmap/iconline" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/code_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
 
     </LinearLayout>
 
-    <com.gap.bis_inspection.widget.CustomEditText
+    <com.gap.pino.widget.CustomEditText
         android:id="@+id/search_ET"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
                 android:layout_marginTop="5dp"
                 android:background="@mipmap/iconlogo" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/webSite_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -16,7 +16,7 @@
             android:layout_height="40dp">
 
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/txt_title"
                 android:layout_alignParentRight="true"
                 android:text="ثبت پیوست"

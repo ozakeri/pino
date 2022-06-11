@@ -29,7 +29,7 @@
                     android:layout_height="50dp">
 
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/txt_drivername"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
 
             </LinearLayout>
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/camera_VT"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                 android:background="@color/mdtp_done_disabled_dark"
                 android:visibility="gone"/>
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/gallery_VT"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
                 android:background="@color/mdtp_done_disabled_dark"
                 android:visibility="gone"/>
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/file_VT"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -111,6 +111,17 @@
                 android:layout_height="1dp"
                 android:background="@color/mdtp_done_disabled_dark"
                 android:visibility="gone"/>
+
+            <com.gap.pino.util.CustomTextView
+                android:id="@+id/txt_audio"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/mdtp_button_color"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="صدا"
+                android:drawableRight="@android:drawable/presence_audio_busy"/>
 
         </LinearLayout>
 

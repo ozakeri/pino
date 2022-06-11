@@ -29,7 +29,7 @@
             android:layout_marginRight="10dp"
             android:background="@mipmap/iconline" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/lineid_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                     android:gravity="right"
                     android:orientation="horizontal">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/code_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -110,7 +110,7 @@
                     android:gravity="right"
                     android:orientation="horizontal">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/name_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -134,7 +134,7 @@
                     android:gravity="right"
                     android:orientation="horizontal">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/lineGreade_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -143,7 +143,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -158,7 +158,7 @@
                     android:gravity="right"
                     android:orientation="horizontal">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/lineCompanyController_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -183,7 +183,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/lineCompanyProfit1_TV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -207,7 +207,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/lineCompanyProfit2_TV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -215,7 +215,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -231,7 +231,7 @@
                     android:gravity="right"
                     android:orientation="horizontal">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/serviceTime_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -240,7 +240,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -255,7 +255,7 @@
                     android:gravity="right"
                     android:orientation="horizontal">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/LineProfitCompanyType_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -264,7 +264,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -278,7 +278,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <pinoomTextView
                         android:id="@+id/year_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -287,7 +287,7 @@
                         android:text="-&#45;&#45;"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <pinoomTextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -301,7 +301,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/priceCoFind_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -310,7 +310,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -324,7 +324,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/eCardPrice_TV"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
@@ -333,7 +333,7 @@
                         android:text="---"
                         android:textSize="14sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"

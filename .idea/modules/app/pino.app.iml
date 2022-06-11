@@ -68,6 +68,7 @@
     <orderEntry type="library" name="Gradle: com.loopj.android:android-async-http:1.4.9" level="project" />
     <orderEntry type="library" name="Gradle: cz.msebera.android:httpclient:4.3.6" level="project" />
     <orderEntry type="library" name="Gradle: org.greenrobot:eventbus:3.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: ./app/libs/satpa-release.aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.databinding:viewbinding:4.2.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.karumi:dexter:4.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.material:material:1.4.0@aar" level="project" />
@@ -151,5 +152,6 @@
     <orderEntry type="library" name="Gradle: com.github.rahatarmanahmed:circularprogressview:2.5.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.mindorks.android:prdownloader:0.6.0@aar" level="project" />
     <orderEntry type="module" module-name="pino.filepicker" />
+    <orderEntry type="module" module-name="pino.opencv" />
   </component>
 </module>

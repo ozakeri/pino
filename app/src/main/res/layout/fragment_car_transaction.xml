@@ -29,7 +29,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@mipmap/iconbus" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/plateText_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
         android:id="@+id/layout_OptionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_option_text"
@@ -194,7 +194,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_margin="5dp" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/label_spinner_prevYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -204,7 +204,7 @@
                 android:text="@string/label_spinner_prevYear"
                 android:textSize="12sp" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/selectSpinnerDate_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -213,7 +213,7 @@
                 android:text=""
                 android:textSize="12sp" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/selectSpinnerDate1_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -290,7 +290,7 @@
         android:background="@color/toolbarCar"
         android:visibility="gone">
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="30dp"
@@ -306,7 +306,7 @@
             android:layout_height="fill_parent"
             android:background="#ffffff" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -321,7 +321,7 @@
             android:layout_height="fill_parent"
             android:background="#ffffff" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -340,7 +340,7 @@
         android:gravity="right"
         android:visibility="gone">
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/counter_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -348,7 +348,7 @@
             android:textColor="@color/red"
             android:textSize="10sp" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

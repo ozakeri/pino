@@ -21,7 +21,7 @@
             android:layout_marginRight="10dp"
             android:background="@mipmap/iconbus" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/carName_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/nameFvBefore_TV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
-                  <!--  <com.gap.bis_inspection.util.CustomTextView
+                  <!--  <pinoomTextView
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"
@@ -113,7 +113,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/intParam2_TV"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                         android:text="---"
                         android:textSize="12sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"
@@ -143,7 +143,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/movedKm_TV"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
                         android:text="---"
                         android:textSize="12sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"
@@ -173,7 +173,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/parameter1_TV"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
@@ -184,7 +184,7 @@
                         android:text="---"
                         android:textSize="12sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"
@@ -203,7 +203,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/remainedFullValueFV_TV"
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
@@ -214,7 +214,7 @@
                         android:text="---"
                         android:textSize="12sp" />
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"

@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true">
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_year"
                     android:text="Time"
                     android:textSize="15sp"
@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_monthname"
                     android:text="Time"
                     android:textSize="15sp"

@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:background="@color/toolbarDriver">
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/titleReport_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                     android:layout_margin="10dp"
                     android:background="@mipmap/checklist_attachment" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"

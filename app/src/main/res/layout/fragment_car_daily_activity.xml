@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_propertyCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                     android:text="---"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextViewTitle
+                <com.gap.pino.util.CustomTextViewTitle
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_platText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                     android:textStyle="bold"
                     android:textDirection="firstStrong"/>
 
-                <com.gap.bis_inspection.util.CustomTextViewTitle
+                <com.gap.pino.util.CustomTextViewTitle
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_companyName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                     android:text="---"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextViewTitle
+                <com.gap.pino.util.CustomTextViewTitle
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
@@ -99,7 +99,7 @@
                 android:gravity="right"
                 android:visibility="gone">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_companyController"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
                     android:text="---"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextViewTitle
+                <com.gap.pino.util.CustomTextViewTitle
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_carUsage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
                     android:text="---"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextViewTitle
+                <com.gap.pino.util.CustomTextViewTitle
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
@@ -144,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_activityStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -152,7 +152,7 @@
                     android:text="---"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextViewTitle
+                <com.gap.pino.util.CustomTextViewTitle
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
@@ -166,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_carStatusInPark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -174,7 +174,7 @@
                     android:text="---"
                     android:textSize="14sp" />
 
-                <com.gap.bis_inspection.util.CustomTextViewTitle
+                <com.gap.pino.util.CustomTextViewTitle
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
@@ -234,7 +234,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -242,7 +242,7 @@
                             android:gravity="center"
                             android:text="خط" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -250,7 +250,7 @@
                             android:gravity="center"
                             android:text="خودرو" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -258,7 +258,7 @@
                             android:gravity="center"
                             android:text="زمان" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -328,7 +328,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -336,7 +336,7 @@
                             android:gravity="center"
                             android:text="خط" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -344,7 +344,7 @@
                             android:gravity="center"
                             android:text="راهبر" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -352,7 +352,7 @@
                             android:gravity="center"
                             android:text="شیفت" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -423,7 +423,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -431,7 +431,7 @@
                             android:gravity="center"
                             android:text="خط" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -439,7 +439,7 @@
                             android:gravity="center"
                             android:text="خودرو" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -447,7 +447,7 @@
                             android:gravity="center"
                             android:text="زمان" />
 
-                        <com.gap.bis_inspection.util.CustomTextViewTitle
+                        <com.gap.pino.util.CustomTextViewTitle
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"

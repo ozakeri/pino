@@ -18,7 +18,7 @@
             android:layout_height="50dp">
 
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/txt_drivername"
                 android:layout_alignParentRight="true"
                 android:text="@string/label_message_dialogAttachFile_title"
@@ -51,7 +51,7 @@
 
     </LinearLayout>
 
-    <com.gap.bis_inspection.util.CustomTextView
+    <com.gap.pino.util.CustomTextView
         android:id="@+id/camera_VT"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
@@ -67,7 +67,7 @@
         android:layout_height="1dp"
         android:background="@android:color/black" />
 
-    <com.gap.bis_inspection.util.CustomTextView
+    <com.gap.pino.util.CustomTextView
         android:id="@+id/description_locate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
         android:textColor="@color/fav"
         android:visibility="gone"/>
 
-    <com.gap.bis_inspection.util.CustomTextView
+    <com.gap.pino.util.CustomTextView
         android:id="@+id/gallery_VT"
         android:layout_width="fill_parent"
         android:layout_height="50dp"

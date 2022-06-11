@@ -25,7 +25,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@mipmap/icondriver" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/driverName_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             android:gravity="right"
             android:visibility="gone">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/licenceNo_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
                 android:text="---"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:id="@+id/statistical_TV"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
             android:gravity="right"
             android:visibility="gone">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/driveLicenceTypeEn_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                 android:text="---"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:id="@+id/txt_two"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:gravity="right">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <pinoomTextView
                 android:id="@+id/hejriStartDate_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
                 android:text="-&#45;&#45;"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <pinoomTextView
                 android:id="@+id/txt_three"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             android:gravity="right"
             android:visibility="gone">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/hejriExpireDate_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                 android:text="---"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:id="@+id/txt_four"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"

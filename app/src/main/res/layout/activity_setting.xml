@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gap.bis_inspection.activity.SettingActivity">
+    tools:context="com.gap.pino.activity.SettingActivity">
 
     <RelativeLayout
         android:id="@+id/toolbarNotification"
@@ -25,7 +25,7 @@
                 android:background="@drawable/ic_baseline_arrow_back_24" />
         </RelativeLayout>
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -55,7 +55,7 @@
         android:layout_below="@+id/toolbarNotification"
         android:layout_margin="20sp">
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/switchPassword_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
             android:theme="@style/MySwitch" />
 
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/changeLocalPassword_TV"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -102,7 +102,7 @@
             android:background="@mipmap/edit_password" />
 
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/updateApplication_TV"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -181,7 +181,7 @@
 
         </LinearLayout>
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/changeBisPassword_TV"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -206,7 +206,7 @@
 
 
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/deleteAccount_txt"
             android:layout_width="wrap_content"
             android:layout_height="30dp"

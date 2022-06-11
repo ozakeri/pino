@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:266915874718:android:8db06f737a1340fee3388f",
         "android_client_info": {
-          "package_name": "com.gap.bis_inspection"
+          "package_name": "com.gap.pino"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "266915874718-3da858gl6hc68p77o4dop9mqvntp3jlv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.gap.bis_inspection",
+            "package_name": "com.gap.pino",
             "certificate_hash": "e992b2aa62b47528e00c1d8814f16c684504beab"
           }
         },
@@ -25,7 +25,7 @@
           "client_id": "266915874718-c7dql1prnvjqqej88tvdfqrhf9nmhen5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.gap.bis_inspection",
+            "package_name": "com.gap.pino",
             "certificate_hash": "74b0e6dd9855571d41e35daa5cc02e07e4aea357"
           }
         },

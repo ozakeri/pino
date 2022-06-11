@@ -16,7 +16,7 @@
             android:background="@color/fav">
 
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/txt_title"
                 android:layout_alignParentRight="true"
                 android:text="ویرایش"
@@ -80,14 +80,14 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/txt_car"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" - "
                         android:layout_margin="3dp"/>
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="خودرو : "
@@ -102,14 +102,14 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/txt_advertName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" - "
                         android:layout_margin="3dp"/>
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="نام آگهی : "
@@ -124,14 +124,14 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/txt_requestDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" - "
                         android:layout_margin="3dp"/>
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="تاریخ درخواست : "
@@ -146,14 +146,14 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/txt_processName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-  "
                         android:layout_margin="3dp"/>
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="نام فرایند : "
@@ -169,14 +169,14 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/txt_userCreation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" - "
                         android:layout_margin="3dp"/>
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="انجام دهنده : "
@@ -192,14 +192,14 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/txt_dateCreation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" - "
                         android:layout_margin="3dp"/>
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="تاریخ انجام : "
@@ -214,14 +214,14 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="right">
 
-                    <com.gap.bis_inspection.util.CustomTextView
+                    <com.gap.pino.util.CustomTextView
                         android:id="@+id/txt_description"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" - "
                         android:layout_margin="3dp"/>
 
-                    <com.gap.bis_inspection.util.CustomTextViewTitle
+                    <com.gap.pino.util.CustomTextViewTitle
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="توضیحات : "
@@ -323,7 +323,7 @@
                     android:layout_toLeftOf="@+id/img_add"
                     android:textColor="@color/black" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_attachCount"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.gap.bis_inspection">
+    package="com.gap.pino">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -33,6 +33,8 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -42,7 +44,7 @@
         android:required="true" />
 
     <application
-        android:name=".app.AppController"
+        android:name="com.gap.pino.app.AppController"
         android:allowBackup="true"
         android:configChanges="orientation|keyboardHidden"
         android:icon="@drawable/app_logo_one"
@@ -75,15 +77,15 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name=".activity.graph.GraphListActivity"
+            android:name="com.gap.pino.activity.graph.GraphListActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.graph.GraphActivity"
+            android:name="com.gap.pino.activity.graph.GraphActivity"
             android:exported="false" />
-        <activity android:name=".activity.advert.EditAdvertActivity" />
-        <activity android:name=".activity.advert.AdvertListActivity" />
-        <activity android:name=".activity.advert.AdvertActivity" />
-        <activity android:name=".activity.advert.SearchAdvertActivity" />
+        <activity android:name="com.gap.pino.activity.advert.EditAdvertActivity" />
+        <activity android:name="com.gap.pino.activity.advert.AdvertListActivity" />
+        <activity android:name="com.gap.pino.activity.advert.AdvertActivity" />
+        <activity android:name="com.gap.pino.activity.advert.SearchAdvertActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -111,7 +113,7 @@
         </service>
         -->
         <service
-            android:name=".service.MyFirebaseMessagingService"
+            android:name="com.gap.pino.service.MyFirebaseMessagingService"
             android:directBootAware="true"
             android:exported="false"
             tools:targetApi="n">
@@ -135,7 +137,7 @@
         </receiver>
         -->
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="com.gap.pino.activity.SplashActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
@@ -151,11 +153,11 @@
             android:value="AIzaSyDx1lorCO-c3UFjQI83cNniRQiY5bdtQTI" />
         -->
         <activity
-            android:name=".activity.HomeActivity"
+            android:name="com.gap.pino.activity.HomeActivity"
             android:label=""
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.gap.pino.activity.MainActivity"
             android:label=""
             android:screenOrientation="portrait">
 
@@ -169,100 +171,100 @@
 
         </activity>
         <activity
-            android:name=".activity.car.CarActivity"
+            android:name="com.gap.pino.activity.car.CarActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.CaptureActivity"
+            android:name="com.gap.pino.activity.CaptureActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.line.LineActivity"
+            android:name="com.gap.pino.activity.line.LineActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.driver.DriverTabActivity"
+            android:name="com.gap.pino.activity.driver.DriverTabActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SettingActivity"
+            android:name="com.gap.pino.activity.SettingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.driver.DriverActivity"
+            android:name="com.gap.pino.activity.driver.DriverActivity"
             android:label=""
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.form.SurveyListActivity"
+            android:name="com.gap.pino.activity.form.SurveyListActivity"
             android:label=""
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.driver.DriverChartStatisticalActivity" />
+        <activity android:name="com.gap.pino.activity.driver.DriverChartStatisticalActivity" />
         <activity
-            android:name=".activity.driver.DriverChartThematicActivity"
+            android:name="com.gap.pino.activity.driver.DriverChartThematicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.driver.DriverIncidentDetailActivity"
+            android:name="com.gap.pino.activity.driver.DriverIncidentDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.driver.DriverJobDetailActivity"
+            android:name="com.gap.pino.activity.driver.DriverJobDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.driver.DriverViolationDetailActivity"
+            android:name="com.gap.pino.activity.driver.DriverViolationDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.driver.DriverComplaintDetailActivity"
+            android:name="com.gap.pino.activity.driver.DriverComplaintDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.car.CarTabActivity"
+            android:name="com.gap.pino.activity.car.CarTabActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.line.LineTabActivity"
+            android:name="com.gap.pino.activity.line.LineTabActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.car.CarDriverDetailActivity"
+            android:name="com.gap.pino.activity.car.CarDriverDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.car.CarIncidentDetailActivity"
+            android:name="com.gap.pino.activity.car.CarIncidentDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.car.CarViolationDetailActivity"
+            android:name="com.gap.pino.activity.car.CarViolationDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.car.CarComplaintDetailActivity"
+            android:name="com.gap.pino.activity.car.CarComplaintDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.line.LineIncidentDetailActivity"
+            android:name="com.gap.pino.activity.line.LineIncidentDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.line.LineViolationDetailActivity"
+            android:name="com.gap.pino.activity.line.LineViolationDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.line.LineComplaintDetailActivity"
+            android:name="com.gap.pino.activity.line.LineComplaintDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.driver.DriverChartIncidentActivity"
+            android:name="com.gap.pino.activity.driver.DriverChartIncidentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.driver.DriverChartComplaintActivity"
+            android:name="com.gap.pino.activity.driver.DriverChartComplaintActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.driver.DriverChartViolationActivity"
+            android:name="com.gap.pino.activity.driver.DriverChartViolationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.line.LinePathDetailActivity"
+            android:name="com.gap.pino.activity.line.LinePathDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.line.TimeLineListDetailActivity"
+            android:name="com.gap.pino.activity.line.TimeLineListDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.line.TimeLineDetailActivity"
+            android:name="com.gap.pino.activity.line.TimeLineDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" /> <!-- <service android:name=".service.BackgroundService" /> -->
         <!-- <receiver android:name=".service.ChatMessageReceiver" /> -->
         <!-- <receiver android:name=".service.BootChatMessageReceiverReceiver" /> -->
         <activity
-            android:name=".activity.message.ChatGroupListActivity"
+            android:name="com.gap.pino.activity.message.ChatGroupListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ResultActivity"
+            android:name="com.gap.pino.activity.ResultActivity"
             android:label=""
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.message.ChatActivity"
+            android:name="com.gap.pino.activity.message.ChatActivity"
             android:excludeFromRecents="true"
             android:exported="false"
             android:launchMode="singleTask"
@@ -274,13 +276,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.report.ReportActivity"
+            android:name="com.gap.pino.activity.report.ReportActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.report.ComplaintReportActivity"
+            android:name="com.gap.pino.activity.report.ComplaintReportActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.report.ComplaintReportDetailActivity"
+            android:name="com.gap.pino.activity.report.ComplaintReportDetailActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <!--
  <service
@@ -304,32 +306,39 @@
         </service>
         -->
         <activity
-            android:name=".activity.message.ChatGroupDetailActivity"
+            android:name="com.gap.pino.activity.message.ChatGroupDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.AboutActivity"
+            android:name="com.gap.pino.activity.AboutActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.form.SurveyActivity"
+            android:name="com.gap.pino.activity.form.SurveyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.report.ReportNoneEntityActivity"
+            android:name="com.gap.pino.activity.report.ReportNoneEntityActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.checklist.ChecklistFormActivity"
+            android:name="com.gap.pino.activity.checklist.ChecklistFormActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.checklist.NewCheckListActivity"
+            android:name="com.gap.pino.activity.checklist.NewCheckListActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".activity.checklist.CheckListFormQuestionActivity"
+            android:name="com.gap.pino.activity.checklist.CheckListFormQuestionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.checklist.CheckListFormAnswerActivity"
+            android:name="com.gap.pino.activity.checklist.CheckListFormAnswerActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.NotificationReceiverActivity" />
-        <activity android:name=".activity.checklist.FullScreenActivity" />
-        <activity android:name=".activity.report.ShowMapActivity" />
+        <activity android:name="com.gap.pino.activity.NotificationReceiverActivity" />
+        <activity android:name="com.gap.pino.activity.checklist.FullScreenActivity" />
+        <activity android:name="com.gap.pino.activity.report.ShowMapActivity" />
+        <activity android:name=".activity.PhotoActivity" />
+        <activity android:name=".activity.VideoActivity"
+            android:screenOrientation="landscape"/>
+
+        <activity android:name="com.gap.pino.SatpaLicense" />
+        <activity android:name="com.gap.pino.filechooser.permissions.PermissionActivity" />
+        <activity android:name=".activity.ActivityReadPlate" />
     </application>
 
 </manifest>

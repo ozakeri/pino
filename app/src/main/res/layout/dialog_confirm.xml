@@ -20,7 +20,7 @@
             android:layout_height="50dp">
 
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/txt_drivername"
                 android:layout_alignParentRight="true"
                 android:text="تایید اطلاعات"
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/txt_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                 android:layout_margin="5dp"
                 android:text="نام فرایند"/>
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:id="@+id/txt_processName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

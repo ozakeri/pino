@@ -19,7 +19,7 @@
         android:layout_below="@+id/toolbar_layout"
         android:orientation="vertical">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/title_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

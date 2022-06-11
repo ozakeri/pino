@@ -25,7 +25,7 @@
                 android:layout_marginLeft="5dp" />
         </RelativeLayout>
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:layout_alignParentRight="true"
             android:text="@string/line_timeLine_title"
             android:textColor="#ffffff"
@@ -49,7 +49,7 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/dayTypeOnHolidayEn_TV"
                 android:layout_width="150dp"
                 android:gravity="right"
@@ -59,7 +59,7 @@
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:layout_width="120dp"
                 android:gravity="left"
                 android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/pathTypeEn_TV"
                 android:layout_width="150dp"
                 android:gravity="right"
@@ -85,7 +85,7 @@
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:layout_width="120dp"
                 android:gravity="left"
                 android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/startTime_TV"
                 android:layout_width="150dp"
                 android:gravity="right"
@@ -112,7 +112,7 @@
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:layout_width="120dp"
                 android:gravity="left"
                 android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/endTime_TV"
                 android:layout_width="150dp"
                 android:gravity="right"
@@ -139,7 +139,7 @@
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:layout_width="120dp"
                 android:gravity="left"
                 android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/halfPathSum_TV"
                 android:layout_width="150dp"
                 android:gravity="right"
@@ -166,7 +166,7 @@
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:layout_width="120dp"
                 android:gravity="left"
                 android:layout_height="wrap_content"
@@ -183,7 +183,7 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/StartDate_TV"
                 android:layout_width="150dp"
                 android:gravity="right"
@@ -193,7 +193,7 @@
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
-            <com.gap.bis_inspection.util.CustomTextViewTitle
+            <com.gap.pino.util.CustomTextViewTitle
                 android:layout_width="120dp"
                 android:gravity="left"
                 android:layout_height="wrap_content"
@@ -212,7 +212,7 @@
             android:visibility="gone"
             android:gravity="right">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/counter_TV"
                 android:textSize="14sp"
                 android:textColor="@color/red"
@@ -220,7 +220,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:textSize="14sp"
                 android:layout_margin="10dp"
                 android:text="@string/label_driverJobList_counter"
@@ -236,7 +236,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
@@ -252,7 +252,7 @@
                 android:layout_height="fill_parent"
                 android:background="#ffffff" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -268,7 +268,7 @@
                 android:layout_height="fill_parent"
                 android:background="#ffffff" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -284,7 +284,7 @@
                 android:layout_height="fill_parent"
                 android:background="#ffffff" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/pino.iml" filepath="$PROJECT_DIR$/.idea/modules/pino.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pino.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pino.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/filepicker/pino.filepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/filepicker/pino.filepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/opencv/pino.opencv.iml" filepath="$PROJECT_DIR$/.idea/modules/opencv/pino.opencv.iml" />
     </modules>
   </component>
 </project>

@@ -20,7 +20,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/txt_plateText"
             android:layout_toLeftOf="@+id/img_carIcon"
             android:textColor="#ffffff"
@@ -70,7 +70,7 @@
             android:visibility="gone">
 
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="0dp"
                 android:text="@string/car_driver_list_mobileNo1"
                 android:layout_height="30dp"
@@ -85,7 +85,7 @@
                 android:layout_height="fill_parent"
                 android:background="#ffffff" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="0dp"
                 android:text="@string/car_driver_list_driverCode"
                 android:layout_height="30dp"
@@ -101,7 +101,7 @@
                 android:background="#ffffff" />
 
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="0dp"
                 android:text="@string/car_driver_list_driverName"
                 android:layout_height="30dp"
@@ -117,7 +117,7 @@
                 android:background="#ffffff" />
 
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="0dp"
                 android:text="@string/car_driver_list_driverType"
                 android:layout_height="30dp"
@@ -141,7 +141,7 @@
         android:visibility="gone"
         android:gravity="right">
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/counter_TV"
             android:textSize="15sp"
             android:textColor="@color/red"
@@ -150,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:textSize="12sp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="12sp"

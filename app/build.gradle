@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
     buildToolsVersion '30.0.3'
     defaultConfig {
-        applicationId "com.gap.bis_inspection"
+        applicationId "com.gap.pino"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 32
         versionName '2.6.3'
         versionCode 33
         useLibrary 'org.apache.http.legacy'
@@ -40,6 +40,18 @@ android {
           sourceCompatibility JavaVersion.VERSION_1_8
           targetCompatibility JavaVersion.VERSION_1_8
       }*/
+
+
+    signingConfigs {
+        satpa_release {
+            storeFile file('D:\\Projects\\Android\\khosravi-970614.jks')
+            storePassword '846722003'
+            keyAlias 'ANPR_KeyStore'
+            keyPassword '846722003'
+        }
+    }
+
+    compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
 }
 
 dependencies {
@@ -91,5 +103,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-directboot:20.2.0'
 
     implementation project(path: ':filepicker')
+    implementation project(path: ':opencv')
+    implementation files('libs/satpa-release.aar')
 
 }

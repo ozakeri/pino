@@ -31,7 +31,7 @@
                     android:layout_margin="5dp" />
             </RelativeLayout>
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -50,7 +50,7 @@
             android:layout_margin="5dp"
             android:layout_below="@+id/txt_toolbar"/>
 
-        <com.gap.bis_inspection.util.CustomTextView
+        <com.gap.pino.util.CustomTextView
             android:id="@+id/txt_count"
             android:layout_width="wrap_content"
             android:layout_height="50dp"

@@ -26,14 +26,14 @@
                 android:layout_below="@+id/img_driver"
                 android:layout_centerVertical="true">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:id="@+id/txt_driverCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:text="50000"/>
 
-                <com.gap.bis_inspection.util.CustomTextViewTitle
+                <com.gap.pino.util.CustomTextViewTitle
                     android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

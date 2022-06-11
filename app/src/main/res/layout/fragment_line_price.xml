@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:text="---"
                     android:id="@+id/year_TV"
                     android:textSize="15sp"
@@ -77,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:text="@string/line_year_label"
                     android:textSize="15sp"
                     android:layout_margin="10dp"
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:text="---"
                     android:id="@+id/priceCoFind_TV"
                     android:textSize="15sp"
@@ -99,7 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:text="@string/line_priceCoFind_label"
                     android:textSize="15sp"
                     android:layout_margin="10dp"
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:text="---"
                     android:id="@+id/eCardPrice_TV"
                     android:textSize="15sp"
@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <com.gap.bis_inspection.util.CustomTextView
+                <com.gap.pino.util.CustomTextView
                     android:text="@string/line_eCardPrice_label"
                     android:textSize="15sp"
                     android:layout_margin="10dp"

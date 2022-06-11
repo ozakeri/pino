@@ -25,7 +25,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@mipmap/icondriver" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -87,7 +87,7 @@
             </androidx.cardview.widget.CardView>
 
 
-            <com.gap.bis_inspection.widget.CustomEditText
+            <com.gap.pino.widget.CustomEditText
                 android:id="@+id/txt_search"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -100,7 +100,7 @@
 
 
 
-            <com.gap.bis_inspection.widget.CustomEditText
+            <com.gap.pino.widget.CustomEditText
                 android:id="@+id/txt_family"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -111,7 +111,7 @@
                 android:visibility="gone"
                 android:background="@drawable/border"/>
 
-            <com.gap.bis_inspection.widget.CustomEditText
+            <com.gap.pino.widget.CustomEditText
                 android:id="@+id/txt_name"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -184,7 +184,7 @@
                 android:layout_marginTop="5dp"
                 android:background="@mipmap/iconlogo" />
 
-            <com.gap.bis_inspection.util.CustomTextView
+            <com.gap.pino.util.CustomTextView
                 android:id="@+id/webSite_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
